@@ -1,26 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap');
 @import "tailwindcss";
 
+
+/* ── Design Tokens ────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --magic-purple: #3A0080;
+  --deep-violet: #5C0FC8;
+  --star-gold: #FFD700;
+  --hot-pink: #FF1493;
+  --sky-cyan: #00D4FF;
+  --slide-orange: #FF6B35;
+  --ball-green: #39D353;
+  --ride-red: #FF3B30;
+  --off-white: #FFF9F0;
+  --background: var(--off-white);
+  --foreground: #222;
 }
 
 @theme inline {
+  --color-magic-purple: var(--magic-purple);
+  --color-deep-violet: var(--deep-violet);
+  --color-star-gold: var(--star-gold);
+  --color-hot-pink: var(--hot-pink);
+  --color-sky-cyan: var(--sky-cyan);
+  --color-slide-orange: var(--slide-orange);
+  --color-ball-green: var(--ball-green);
+  --color-ride-red: var(--ride-red);
+  --color-off-white: var(--off-white);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-display: 'Fredoka One', cursive;
+  --font-body: 'Nunito', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* ── Base ─────────────────────────────────────── */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
+  margin: 0;
+  background: var(--off-white);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+/* ── Utility Animations ───────────────────────── */
+
+/* Twinkle (star sparkle) */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50%      { opacity: 1;   transform: scale(1.2); }
+}
+.animate-twinkle {
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+/* Wiggle (CTA hover) */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25%      { transform: rotate(-3deg); }
+  75%      { transform: rotate(3deg); }
+}
+.animate-wiggle {
+  animation: wiggle 0.4s ease-in-out;
+}
+
+/* Float (magic hat idle) */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Fade up on scroll entrance */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+.animate-fade-up {
+  animation: fadeUp 0.6s ease-out forwards;
+}
+
+/* Confetti rain */
+@keyframes confettiFall {
+  0%   { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+.animate-confetti {
+  animation: confettiFall 3s ease-in forwards;
+}
+
+/* Slide in from bottom (page transition) */
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-in {
+  animation: slideInUp 0.3s ease-out;
+}
+
+/* Sparkle size variants */
+.sparkle { position: absolute; pointer-events: none; }
+.sparkle-sm { width: 6px; height: 6px; }
+.sparkle-md { width: 10px; height: 10px; }
+.sparkle-lg { width: 14px; height: 14px; }
+
+/* ── Ninduga Background Patterns ──────────────── */
+.bg-pattern-dots {
+  position: relative;
+}
+.bg-pattern-dots::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--star-gold) 2px, transparent 2px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes panStripe {
+  0% { background-position: 0 0; }
+  100% { background-position: 60px 60px; }
+}
+
+.bg-pattern-stripes {
+  background-size: 60px 60px;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 20px,
+    rgba(255, 255, 255, 0.05) 20px,
+    rgba(255, 255, 255, 0.05) 40px
+  );
+  animation: panStripe 4s linear infinite;
+}
+
+/* ── Scroll reveal (used by Intersection Observer) */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Card hover lift ──────────────────────────── */
+.card-hover {
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+}
+.card-hover:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(58, 0, 128, 0.25);
+}
+
+/* ── Gold CTA button style ────────────────────── */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  background: var(--star-gold);
+  color: var(--magic-purple);
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  border-radius: 9999px;
+  border: 2px solid var(--magic-purple);
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  box-shadow: 0px 6px 0px var(--magic-purple), 0px 10px 15px rgba(0,0,0,0.15);
+  transform: translateY(0);
+}
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 8px 0px var(--magic-purple), 0px 12px 20px rgba(0,0,0,0.2);
+}
+.btn-gold:active {
+  transform: translateY(6px);
+  box-shadow: 0px 0px 0px var(--magic-purple), 0px 2px 5px rgba(0,0,0,0.1);
+}
+
+/* ── Pink CTA button style ────────────────────── */
+.btn-pink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  background: var(--hot-pink);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  border-radius: 9999px;
+  border: 2px solid var(--deep-violet);
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  box-shadow: 0px 6px 0px var(--deep-violet), 0px 10px 15px rgba(0,0,0,0.15);
+  transform: translateY(0);
+}
+.btn-pink:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 8px 0px var(--deep-violet), 0px 12px 20px rgba(0,0,0,0.2);
+}
+.btn-pink:active {
+  transform: translateY(6px);
+  box-shadow: 0px 0px 0px var(--deep-violet), 0px 2px 5px rgba(0,0,0,0.1);
+}
+
+/* ── Scrollbar styling ────────────────────────── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--off-white); }
+::-webkit-scrollbar-thumb {
+  background: var(--deep-violet);
+  border-radius: 4px;
+}
+
+/* ── Promo card (image banner top + caption below) */
+.promo-card {
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.09);
+  transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+.promo-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 16px 40px rgba(58,0,128,0.18);
+}
+
+/* ── Hero mosaic tile ─────────────────────────── */
+.mosaic-tile {
+  border-radius: 0.875rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+}
+
+/* ── Wide explore card ────────────────────────── */
+.explore-card {
+  position: relative;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  min-height: 220px;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.explore-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+.explore-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.65) 30%, transparent 100%);
+}
+.explore-card-label {
+  position: relative;
+  z-index: 2;
+  padding: 1.25rem 1.5rem;
+  color: #fff;
+}
+
+/* ── Text outline (hero heading) ──────────────── */
+.text-outline-gold {
+  -webkit-text-stroke: 2px var(--star-gold);
+}
+
+/* ── Scrollbar hide utility ───────────────────── */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+
+/* ── Section heading uppercase ────────────────── */
+.section-heading {
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ── Footer social icon ───────────────────────── */
+.footer-social-icon {
+  background-color: rgba(255,255,255,0.08);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.footer-social-icon:hover {
+  background-color: var(--magic-purple);
+}
+
+/* ── Bounce-Style Slanted Sections ────────────── */
+.slant-top {
+  clip-path: polygon(0 0, 100% 4vw, 100% 100%, 0 100%);
+  margin-top: -4vw;
+  padding-top: 8vw;
+  position: relative;
+  z-index: 10;
+}
+.slant-bottom {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4vw), 0 100%);
+  margin-bottom: -4vw;
+  padding-bottom: 8vw;
+  position: relative;
+  z-index: 10;
+}
+.slant-both {
+  clip-path: polygon(0 4vw, 100% 0, 100% calc(100% - 4vw), 0 100%);
+  margin-top: -4vw;
+  margin-bottom: -4vw;
+  padding-top: 8vw;
+  padding-bottom: 8vw;
+  position: relative;
+  z-index: 10;
 }
