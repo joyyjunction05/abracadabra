@@ -86,7 +86,7 @@ function ChaosFloaters() {
   ];
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none z-10 scale-[0.6] md:scale-100 opacity-60 md:opacity-100">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none z-10 scale-[0.8] md:scale-100 opacity-90 md:opacity-100">
       {items.map((item, i) => (
         <motion.div
           key={i}
@@ -198,49 +198,53 @@ export default function HomePage() {
         <ChaosFloaters />
 
         {/* Huge centered text block */}
-        <div className="relative z-20 mx-auto max-w-6xl px-4 text-center py-10 lg:py-20">
+        <div className="relative z-20 mx-auto max-w-6xl px-4 text-center py-6 md:py-10 lg:py-20">
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring", bounce: 0.5, duration: 0.8 }}
-            className="inline-block bg-star-gold text-magic-purple px-6 py-2 rounded-full font-black text-sm md:text-xl uppercase tracking-widest mb-6 shadow-[0_10px_0_var(--hot-pink)] -rotate-2 border-4 border-magic-purple"
+            className="inline-block bg-star-gold text-magic-purple px-4 md:px-6 py-1.5 md:py-2 rounded-full font-black text-xs sm:text-sm md:text-xl uppercase tracking-widest mb-8 md:mb-6 shadow-[0_6px_0_var(--hot-pink),0_0_15px_rgba(255,20,147,0.5)] md:shadow-[0_10px_0_var(--hot-pink)] -rotate-2 border-4 border-magic-purple animate-pulse"
           >
             🎡 The Ultimate Kids Destination!
           </motion.div>
           
-          <motion.h1
-            className="text-[clamp(2.5rem,8vw,8rem)] text-white leading-[0.9] font-black uppercase tracking-tighter mb-6"
-            style={{
-              fontFamily: "var(--font-display)",
-              textShadow: "4px 4px 0px var(--slide-orange), 8px 8px 0px var(--hot-pink), 14px 14px 0px var(--deep-violet)",
-              WebkitTextStroke: "2px var(--deep-violet)",
-            }}
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-          >
-            Aabracadabrrahh!
-          </motion.h1>
+          <div className="relative inline-block">
+            <span className="absolute -top-4 -left-4 md:-top-6 md:-left-10 text-3xl md:text-5xl animate-wiggle drop-shadow-md">✨</span>
+            <motion.h1
+              className="text-[9vw] sm:text-[8vw] md:text-[8vw] lg:text-[8rem] text-white leading-normal md:leading-[0.9] font-black uppercase tracking-tighter mb-8 md:mb-6 relative z-10"
+              style={{
+                fontFamily: "var(--font-display)",
+                textShadow: "4px 4px 0px var(--slide-orange), 8px 8px 0px var(--hot-pink), 14px 14px 0px var(--deep-violet)",
+                WebkitTextStroke: "2px var(--deep-violet)",
+              }}
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+            >
+              Aabracadabrrahh!
+            </motion.h1>
+            <span className="absolute -bottom-2 -right-4 md:-bottom-4 md:-right-8 text-3xl md:text-5xl animate-bounce-slow drop-shadow-md z-0">✨</span>
+          </div>
 
           <motion.p
-            className="text-lg md:text-2xl max-w-2xl mx-auto leading-snug font-black text-white bg-black/40 backdrop-blur px-6 py-4 rounded-3xl border-4 border-star-gold/50 shadow-2xl mb-8"
+            className="text-base sm:text-lg md:text-2xl max-w-2xl mx-auto leading-snug font-black text-white bg-black/40 backdrop-blur px-4 md:px-6 py-3 md:py-4 rounded-3xl border-4 border-star-gold/50 shadow-[0_4px_10px_rgba(0,0,0,0.5),0_0_20px_var(--magic-purple)] md:shadow-2xl mb-8 md:mb-8"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
           >
-            Bengaluru&apos;s favourite <span className="text-star-gold">Play Zone & Party Hall</span> for kids aged 2–12.
+            Bengaluru&apos;s favourite <span className="text-star-gold" style={{ textShadow: "0 0 10px var(--star-gold)" }}>Play Zone & Party Hall</span> for kids aged 2–12.
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-6 justify-center"
+            className="flex flex-col sm:flex-row gap-6 md:gap-6 justify-center px-4 md:px-0"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.5 }}
           >
-            <Link href="#play-zones" className="w-full sm:w-auto btn-gold !text-xl md:!text-2xl !px-6 md:!px-10 !py-4 shadow-[0_8px_0_var(--magic-purple),0_15px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_10px_0_var(--magic-purple),0_20px_40px_rgba(0,0,0,0.5)] -rotate-2">
+            <Link href="#play-zones" className="w-full sm:w-auto btn-gold !text-lg md:!text-2xl !px-6 md:!px-10 !py-4 md:!py-4 shadow-[0_4px_0_var(--magic-purple),0_8px_20px_rgba(0,0,0,0.3)] md:shadow-[0_8px_0_var(--magic-purple),0_15px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_6px_0_var(--magic-purple),0_10px_20px_rgba(0,0,0,0.4)] md:hover:shadow-[0_10px_0_var(--magic-purple),0_20px_40px_rgba(0,0,0,0.5)] -rotate-1 -translate-x-1 md:-translate-x-0 md:-rotate-2 transition-all">
               🗺️ EXPLORE ZONES
             </Link>
-            <Link href="#birthday-parties" className="w-full sm:w-auto btn-pink !text-xl md:!text-2xl !px-6 md:!px-10 !py-4 shadow-[0_8px_0_var(--deep-violet),0_15px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_10px_0_var(--deep-violet),0_20px_40px_rgba(0,0,0,0.5)] rotate-2">
+            <Link href="#birthday-parties" className="w-full sm:w-auto btn-pink !text-lg md:!text-2xl !px-6 md:!px-10 !py-4 md:!py-4 shadow-[0_4px_0_var(--deep-violet),0_8px_20px_rgba(0,0,0,0.3)] md:shadow-[0_8px_0_var(--deep-violet),0_15px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_6px_0_var(--deep-violet),0_10px_20px_rgba(0,0,0,0.4)] md:hover:shadow-[0_10px_0_var(--deep-violet),0_20px_40px_rgba(0,0,0,0.5)] rotate-1 translate-x-1 md:translate-x-0 md:rotate-2 transition-all">
               🎂 BOOK A PARTY
             </Link>
           </motion.div>
