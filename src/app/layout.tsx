@@ -57,6 +57,49 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "EntertainmentBusiness",
+              name: "Aabracadabrrahh",
+              alternateName: "Aabracadabrrahh Indoor Play Zone",
+              url: "https://aabracadabrrahh.com",
+              logo: "https://aabracadabrrahh.com/logo.png",
+              image: "https://aabracadabrrahh.com/og-image.jpg",
+              description: "Bengaluru's premier Carnival-themed indoor play zone for kids (2-12 yrs). Best destination for safe play and stress-free birthday parties.",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Electronic City",
+                addressLocality: "Bengaluru",
+                addressRegion: "Karnataka",
+                postalCode: "560100",
+                addressCountry: "IN"
+              },
+              telephone: "+917996693125",
+              priceRange: "$$",
+              openingHoursSpecification: [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday"
+                  ],
+                  opens: "11:00",
+                  closes: "21:00"
+                }
+              ]
+            })
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col overflow-x-hidden w-full" style={{ fontFamily: "var(--font-body)" }}>
         <Navbar />
         <main className="flex-1 pt-16 animate-slide-in">{children}</main>

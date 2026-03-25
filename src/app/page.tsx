@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Ticket, PartyPopper, Clock, Users, Coffee, Gift, Pizza, Sparkles, MessageCircle, PhoneCall, Wand2, Camera } from 'lucide-react';
+import { Ticket, PartyPopper, Clock, Users, Coffee, Gift, Pizza, Sparkles, MessageCircle, PhoneCall, Wand2, Camera, Eye, ShieldCheck, VolumeX, Rocket, Compass, Heart } from 'lucide-react';
 import ScrollReveal from "@/components/ScrollReveal";
 
 /* ── Data ──────────────────────────────────────── */
@@ -44,12 +44,12 @@ const EXPLORE_ITEMS = [
 ];
 
 const TRUST_ITEMS = [
-  { icon: "👀", label: "Bright & Visible Play" },
-  { icon: "🧼", label: "Clean & Maintained" },
-  { icon: "🛡️", label: "Safe & Engaging" },
-  { icon: "👨‍🏫", label: "Friendly Staffing" },
-  { icon: "☕", label: "Comfortable Cafe" },
-  { icon: "🔇", label: "Relaxing Acoustics" },
+  { icon: <Eye size={28} strokeWidth={2.5} className="text-magic-purple" />, label: "Bright & Visible Play" },
+  { icon: <Sparkles size={28} strokeWidth={2.5} className="text-hot-pink" />, label: "Clean & Maintained" },
+  { icon: <ShieldCheck size={28} strokeWidth={2.5} className="text-sky-cyan" />, label: "Safe & Engaging" },
+  { icon: <Users size={28} strokeWidth={2.5} className="text-star-gold" />, label: "Friendly Staffing" },
+  { icon: <Coffee size={28} strokeWidth={2.5} className="text-deep-violet" />, label: "Comfortable Cafe" },
+  { icon: <VolumeX size={28} strokeWidth={2.5} className="text-ball-green" />, label: "Relaxing Acoustics" },
 ];
 
 const TESTIMONIALS = [
@@ -187,8 +187,8 @@ export default function HomePage() {
       {/* ========= ZERO: HERO (MAXIMALIST) ========= */}
       <section
         id="home"
-        className="relative flex items-center justify-center overflow-hidden bg-magic-purple pt-16"
-        style={{ minHeight: "calc(100vh - 80px)" }}
+        className="relative flex items-center justify-center overflow-hidden bg-magic-purple pt-2 md:pt-8"
+        style={{ minHeight: "calc(100svh - 80px)" }}
       >
         {/* Ninduga Background layers */}
         <div className="absolute inset-0 bg-pattern-stripes opacity-20" />
@@ -227,7 +227,7 @@ export default function HomePage() {
           </div>
 
           <motion.p
-            className="text-sm xs:text-base sm:text-lg md:text-2xl max-w-2xl mx-auto leading-snug font-black text-white bg-transparent md:bg-black/40 md:backdrop-blur px-2 md:px-6 py-2 md:py-4 rounded-3xl border-0 md:border-4 border-star-gold/50 shadow-none md:shadow-2xl mb-8 md:mb-8"
+            className="text-sm xs:text-base sm:text-lg md:text-2xl max-w-2xl mx-auto leading-snug font-black text-white bg-black/40 backdrop-blur-md px-4 md:px-6 py-3 md:py-4 rounded-3xl md:rounded-[2rem] border-2 md:border-4 border-magic-purple/50 shadow-xl md:shadow-2xl mb-8 md:mb-10"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
@@ -318,18 +318,18 @@ export default function HomePage() {
                 {/* Layered overlapping tickets */}
                 <div className="bg-white p-5 md:p-8 rounded-3xl shadow-2xl md:rotate-3 border-8 border-star-gold relative z-10">
                   <motion.div 
-                    className="absolute -top-12 -left-12 z-20"
+                    className="absolute -top-16 md:-top-12 -left-2 md:-left-12 z-20"
                     animate={{ y: [0, -20, 0], rotate: [-10, 10, -10] }}
                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                   >
                     <span 
-                      className="text-8xl inline-block"
+                      className="text-6xl md:text-8xl inline-block"
                       style={{ filter: "drop-shadow(2px 5px 5px rgba(0,0,0,0.5)) drop-shadow(4px 10px 15px rgba(0,0,0,0.4)) saturate(1.5)" }}
                     >
                       🎂
                     </span>
                   </motion.div>
-                  <h3 className="text-3xl md:text-4xl text-magic-purple font-black uppercase font-display mb-4">Party Packages</h3>
+                  <h3 className="text-3xl md:text-4xl text-magic-purple font-black md:text-left text-center mt-6 md:mt-0 uppercase font-display mb-4">Party Packages</h3>
                   <div className="bg-sky-cyan rounded-xl p-4 mb-4 border-4 border-deep-violet -rotate-1 shadow-inner">
                      <p className="text-deep-violet font-black text-lg">Starting from ₹12,000</p>
                      <p className="text-deep-violet/90 font-bold text-sm">For 15 kids. Includes play time + decor + meal box!</p>
@@ -497,23 +497,24 @@ export default function HomePage() {
       </section>
 
       {/* ========= FIVE: VISIT / TRUST STRIP ========= */}
-      <section id="visit" className="bg-sky-cyan text-white py-12 lg:py-16 px-4 bg-pattern-stripes relative z-20 shadow-[0_-20px_50px_rgba(0,0,0,0.3)]">
+      <section id="visit" className="bg-sky-cyan text-white py-12 md:py-24 px-4 bg-pattern-stripes relative z-20 shadow-[0_-20px_50px_rgba(0,0,0,0.2)]">
         <div className="mx-auto max-w-6xl">
-          <div className="bg-white rounded-[40px] p-8 md:p-12 shadow-[15px_15px_0_var(--deep-violet)] border-8 border-star-gold text-magic-purple relative">
-             <div className="absolute -top-10 -right-6 text-7xl animate-wiggle drop-shadow-lg">✨</div>
+          <div className="bg-white rounded-3xl md:rounded-[40px] p-6 sm:p-8 md:p-14 shadow-2xl relative border border-white/40">
              <ScrollReveal>
-               <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 uppercase font-display leading-tight drop-shadow-[3px_3px_0_var(--star-gold)]">
-                 Tailored For Families With Young Children 👨‍👩‍👧‍👦
+               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6 uppercase font-display leading-tight text-magic-purple">
+                 Tailored For Families With Young Children
                </h2>
-               <p className="text-deep-violet font-bold text-xl md:text-2xl mb-8 leading-snug max-w-3xl">
+               <p className="text-foreground/70 font-semibold text-lg md:text-xl mb-10 leading-relaxed max-w-4xl">
                   Experience a safe, bright, and highly engaging play environment with premium facility design. While kids stay active, parents can relax in our comfortable, noise-managed waiting area featuring excellent food options!
                </p>
                
-               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10">
+               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-12">
                  {TRUST_ITEMS.map((item) => (
-                   <div key={item.label} className="flex gap-3 items-center bg-off-white p-3 rounded-2xl border-4 border-magic-purple shadow-[4px_4px_0_var(--magic-purple)]">
-                     <span className="text-3xl">{item.icon}</span>
-                     <span className="text-sm font-black uppercase leading-tight">
+                   <div key={item.label} className="flex gap-4 items-center bg-white p-4 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-gray-100 hover:shadow-[0_8px_30px_rgba(0,0,0,0.1)] transition-shadow">
+                     <div className="p-3 rounded-xl bg-gray-50 flex items-center justify-center shadow-sm border border-gray-100">
+                       {item.icon}
+                     </div>
+                     <span className="text-sm md:text-base font-bold text-deep-violet uppercase tracking-wide leading-tight">
                        {item.label}
                      </span>
                    </div>
@@ -521,21 +522,33 @@ export default function HomePage() {
                </div>
 
                {/* Mission, Vision, Values Block */}
-               <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center sm:text-left border-t-4 border-dashed border-star-gold/30 pt-10 relative z-20">
-                 <div className="flex flex-col">
-                   <span className="text-4xl block mb-2">🚀</span>
-                   <h3 className="text-2xl font-black font-display uppercase text-magic-purple mb-2">Our Mission</h3>
-                   <div className="font-bold text-deep-violet border border-magic-purple/10 bg-off-white/50 p-4 rounded-2xl flex-1 shadow-inner leading-snug">To provide a safe, engaging, and physically active environment tailored exclusively for families with young children.</div>
+               <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 text-center sm:text-left border-t border-gray-200 pt-12 relative z-20">
+                 <div className="flex flex-col gap-4">
+                   <div className="bg-magic-purple/10 w-14 h-14 rounded-2xl flex items-center justify-center mx-auto sm:mx-0 shadow-inner border border-magic-purple/20">
+                     <Rocket size={28} className="text-magic-purple" strokeWidth={2.5} />
+                   </div>
+                   <h3 className="text-xl md:text-2xl font-black font-display uppercase text-magic-purple">Our Mission</h3>
+                   <p className="font-semibold text-foreground/70 leading-relaxed text-sm md:text-base">
+                     To provide a safe, engaging, and physically active environment tailored exclusively for families with young children.
+                   </p>
                  </div>
-                 <div className="flex flex-col">
-                   <span className="text-4xl block mb-2">🌟</span>
-                   <h3 className="text-2xl font-black font-display uppercase text-magic-purple mb-2">Our Vision</h3>
-                   <div className="font-bold text-deep-violet border border-magic-purple/10 bg-off-white/50 p-4 rounded-2xl flex-1 shadow-inner leading-snug">To pioneer a destination where extraordinary facility design seamlessly meets a relaxing, noise-cancelled haven for parents.</div>
+                 <div className="flex flex-col gap-4">
+                   <div className="bg-star-gold/10 w-14 h-14 rounded-2xl flex items-center justify-center mx-auto sm:mx-0 shadow-inner border border-star-gold/20">
+                     <Compass size={28} className="text-star-gold" strokeWidth={2.5} />
+                   </div>
+                   <h3 className="text-xl md:text-2xl font-black font-display uppercase text-star-gold">Our Vision</h3>
+                   <p className="font-semibold text-foreground/70 leading-relaxed text-sm md:text-base">
+                     To pioneer a destination where extraordinary facility design seamlessly meets a relaxing, noise-cancelled haven for parents.
+                   </p>
                  </div>
-                 <div className="flex flex-col">
-                   <span className="text-4xl block mb-2">💎</span>
-                   <h3 className="text-2xl font-black font-display uppercase text-magic-purple mb-2">Our Values</h3>
-                   <div className="font-bold text-deep-violet border border-magic-purple/10 bg-off-white/50 p-4 rounded-2xl flex-1 shadow-inner leading-snug">Uncompromising cleanliness, incredibly friendly staffing, bright visibility, and premium parent comfort.</div>
+                 <div className="flex flex-col gap-4">
+                   <div className="bg-hot-pink/10 w-14 h-14 rounded-2xl flex items-center justify-center mx-auto sm:mx-0 shadow-inner border border-hot-pink/20">
+                     <Heart size={28} className="text-hot-pink" strokeWidth={2.5} />
+                   </div>
+                   <h3 className="text-xl md:text-2xl font-black font-display uppercase text-hot-pink">Our Values</h3>
+                   <p className="font-semibold text-foreground/70 leading-relaxed text-sm md:text-base">
+                     Uncompromising cleanliness, incredibly friendly staffing, bright visibility, and premium parent comfort.
+                   </p>
                  </div>
                </div>
              </ScrollReveal>
