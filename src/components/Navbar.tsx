@@ -37,14 +37,14 @@ export default function Navbar() {
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-5">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 no-underline hover:scale-105 transition-transform">
-          <Image
-            src="/logo.png"
-            alt="Aabracadabrrahh Logo"
-            width={180}
-            height={180}
-            className="w-auto h-12 md:h-14 object-contain scale-150 origin-left ml-6"
-            priority
-          />
+            <Image
+              src="/logo.png"
+              alt="Aabracadabrrahh Logo"
+              width={180}
+              height={180}
+              className="w-auto h-12 md:h-14 object-contain scale-110 sm:scale-125 md:scale-150 origin-left ml-2 md:ml-6"
+              priority
+            />
         </Link>
 
         {/* Desktop links */}

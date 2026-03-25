@@ -242,7 +242,7 @@ export default function PlayZonesPage() {
       {/* ========= BOTTOM CTA ========= */}
       <section className="py-20 px-6">
         <ScrollReveal>
-          <div className="mx-auto max-w-4xl bg-star-gold rounded-3xl p-10 text-center shadow-xl relative overflow-hidden">
+          <div className="mx-auto max-w-4xl bg-star-gold rounded-3xl p-6 md:p-10 text-center shadow-xl relative overflow-hidden">
             <SparkleStars />
             <div className="relative z-10">
               <h2 className="text-3xl md:text-4xl text-magic-purple mb-4" style={{ fontFamily: "var(--font-display)" }}>

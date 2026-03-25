@@ -237,7 +237,7 @@ export default function EventsPage() {
         </ScrollReveal>
 
         <div className="mx-auto max-w-7xl">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {PAST_EVENTS_IMAGES.map((img, i) => (
               <ScrollReveal key={i} delay={i * 100}>
                 <div className="aspect-square bg-white/10 rounded-2xl flex flex-col items-center justify-center gap-3 p-4 hover:bg-white/20 transition-colors border border-white/5">

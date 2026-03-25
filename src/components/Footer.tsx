@@ -1,49 +1,25 @@
 import Link from "next/link";
 import Image from "next/image";
+import { FiInstagram, FiFacebook, FiYoutube } from "react-icons/fi";
 
 const FOOTER_COLUMNS = [
   {
-    heading: "Play Zones",
+    heading: "Explore",
     links: [
-      { href: "#play-zones", label: "Ball Pit" },
-      { href: "#play-zones", label: "Trampoline Zone" },
-      { href: "#play-zones", label: "Climbing Wall" },
-      { href: "#play-zones", label: "Toddler Corner" },
-      { href: "#play-zones", label: "Art & Craft Room" },
-      { href: "#play-zones", label: "All Play Zones" },
+      { href: "/", label: "Home" },
+      { href: "/play-zones", label: "Play Zones" },
+      { href: "/birthday-parties", label: "Birthday Parties" },
+      { href: "/events", label: "What's On" },
+      { href: "/gallery", label: "Wall of Magic" },
     ],
   },
   {
-    heading: "Parties & Events",
+    heading: "Plan Your Visit",
     links: [
-      { href: "#birthday-parties", label: "Birthday Packages" },
-      { href: "#events", label: "Upcoming Events" },
-      { href: "#events", label: "Workshops" },
-      { href: "#events", label: "Summer Camp" },
-      { href: "#events", label: "School Field Trips" },
-      { href: "#events", label: "Full Venue Hire" },
-    ],
-  },
-  {
-    heading: "Visit Us",
-    links: [
-      { href: "#visit", label: "Plan Your Visit" },
-      { href: "#visit", label: "Opening Hours" },
-      { href: "#pricing", label: "Ticket Prices" },
-      { href: "#visit", label: "Safety & Rules" },
-      { href: "#contact", label: "Contact Us" },
-      { href: "#gallery", label: "Gallery" },
-    ],
-  },
-  {
-    heading: "Quick Links",
-    links: [
-      { href: "#home", label: "Home" },
-      { href: "#play-zones", label: "Play Zones" },
-      { href: "#birthday-parties", label: "Birthday Parties" },
-      { href: "#pricing", label: "Pricing" },
-      { href: "#events", label: "Events & Workshops" },
-      { href: "#gallery", label: "Gallery" },
+      { href: "/visit", label: "Opening Hours & Rules" },
+      { href: "/visit", label: "Pricing & Passes" },
+      { href: "/contact", label: "Contact Us" },
+      { href: "/contact", label: "Location Map" },
     ],
   },
 ];
@@ -52,19 +28,19 @@ const SOCIALS = [
   {
     href: "https://instagram.com/aabracadabrrahh",
     label: "Instagram",
-    icon: "📸",
+    icon: <FiInstagram size={22} />,
     handle: "@aabracadabrrahh",
   },
   {
     href: "https://facebook.com",
     label: "Facebook",
-    icon: "📘",
+    icon: <FiFacebook size={22} />,
     handle: "Facebook",
   },
   {
     href: "https://youtube.com",
     label: "YouTube",
-    icon: "🎬",
+    icon: <FiYoutube size={22} />,
     handle: "YouTube",
   },
 ];
@@ -83,7 +59,7 @@ export default function Footer() {
                 alt="Aabracadabrrahh Logo"
                 width={160}
                 height={160}
-                className="w-auto h-14 object-contain brightness-0 invert"
+                className="w-auto h-20 object-contain drop-shadow-lg"
                 priority
               />
             </div>
@@ -159,43 +135,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Social handle strip */}
-      <div
-        className="border-t py-4"
-        style={{ borderColor: "rgba(255,255,255,0.06)", backgroundColor: "rgba(255,255,255,0.02)" }}
-      >
-        <div className="mx-auto max-w-7xl px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p
-            className="text-xs font-black uppercase tracking-widest"
-            style={{ color: "rgba(255,255,255,0.35)" }}
-          >
-            Follow us{" "}
-            <a
-              href="https://instagram.com/aabracadabrrahh"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="no-underline transition-colors hover:text-white"
-              style={{ color: "var(--star-gold)" }}
-            >
-              @AABRACADABRRAHH
-            </a>
-          </p>
-          <div className="flex gap-4">
-            {SOCIALS.map((s) => (
-              <a
-                key={s.label}
-                href={s.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs font-semibold no-underline transition-colors hover:text-white"
-                style={{ color: "rgba(255,255,255,0.4)" }}
-              >
-                {s.icon} {s.handle}
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
 
       {/* Copyright bar */}
       <div

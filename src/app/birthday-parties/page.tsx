@@ -214,7 +214,7 @@ export default function BirthdayPartiesPage() {
             {PACKAGES.map((pkg, i) => (
               <ScrollReveal key={pkg.name} delay={i * 150}>
                 <div
-                  className={`card-hover relative bg-white rounded-3xl p-8 shadow-xl border-t-8 flex flex-col h-full ${
+                  className={`card-hover relative bg-white rounded-3xl p-6 md:p-8 shadow-xl border-t-8 flex flex-col h-full ${
                     pkg.isPopular ? "border-star-gold scale-100 md:scale-105 z-10" : `border-transparent ${pkg.color.replace("bg-", "border-")}`
                   }`}
                 >
@@ -316,7 +316,7 @@ export default function BirthdayPartiesPage() {
                 e.preventDefault();
                 alert("Thank you! Your party enquiry has been submitted. We'll be in touch soon! 🎩");
               }}>
-                <div className="grid grid-cols-2 gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-xs font-bold text-deep-violet mb-1 uppercase tracking-wide">Parent&apos;s Name</label>
                     <input required type="text" className="w-full bg-off-white border border-gray-200 rounded-xl px-4 py-3 outline-none focus:border-magic-purple transition-colors" placeholder="Rahul Sharma" />
@@ -327,7 +327,7 @@ export default function BirthdayPartiesPage() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-xs font-bold text-deep-violet mb-1 uppercase tracking-wide">Child&apos;s Name & Age</label>
                     <input required type="text" className="w-full bg-off-white border border-gray-200 rounded-xl px-4 py-3 outline-none focus:border-magic-purple transition-colors" placeholder="Aanya (5)" />
@@ -338,7 +338,7 @@ export default function BirthdayPartiesPage() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-xs font-bold text-deep-violet mb-1 uppercase tracking-wide">Package</label>
                     <select className="w-full bg-off-white border border-gray-200 rounded-xl px-4 py-3 outline-none focus:border-magic-purple transition-colors appearance-none cursor-pointer">

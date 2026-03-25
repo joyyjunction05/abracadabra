@@ -30,7 +30,7 @@ export default function ContactPage() {
       <section className="py-12 px-6 relative z-20 -mt-8">
         <div className="mx-auto max-w-5xl grid md:grid-cols-3 gap-6">
           <ScrollReveal delay={100}>
-            <div className="card-hover bg-white rounded-3xl p-8 text-center shadow-lg border border-magic-purple/10 flex flex-col items-center h-full">
+            <div className="card-hover bg-white rounded-3xl p-6 sm:p-8 text-center shadow-lg border border-magic-purple/10 flex flex-col items-center h-full">
               <div className="w-16 h-16 rounded-full bg-ball-green/20 flex items-center justify-center text-3xl mb-4">💬</div>
               <h3 className="text-xl text-magic-purple font-bold mb-2">WhatsApp Us</h3>
               <p className="text-sm text-foreground/70 mb-4 flex-1">
@@ -48,7 +48,7 @@ export default function ContactPage() {
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <div className="card-hover bg-white rounded-3xl p-8 text-center shadow-lg border border-magic-purple/10 flex flex-col items-center h-full mt-4 md:mt-0">
+            <div className="card-hover bg-white rounded-3xl p-6 sm:p-8 text-center shadow-lg border border-magic-purple/10 flex flex-col items-center h-full mt-4 md:mt-0">
               <div className="w-16 h-16 rounded-full bg-slide-orange/20 flex items-center justify-center text-3xl mb-4">📞</div>
               <h3 className="text-xl text-magic-purple font-bold mb-2">Call Us</h3>
               <p className="text-sm text-foreground/70 mb-4 flex-1">
@@ -61,7 +61,7 @@ export default function ContactPage() {
           </ScrollReveal>
 
           <ScrollReveal delay={300}>
-            <div className="card-hover bg-white rounded-3xl p-8 text-center shadow-lg border border-magic-purple/10 flex flex-col items-center h-full mt-4 md:mt-0">
+            <div className="card-hover bg-white rounded-3xl p-6 sm:p-8 text-center shadow-lg border border-magic-purple/10 flex flex-col items-center h-full mt-4 md:mt-0">
               <div className="w-16 h-16 rounded-full bg-sky-cyan/20 flex items-center justify-center text-3xl mb-4">✉️</div>
               <h3 className="text-xl text-magic-purple font-bold mb-2">Email Us</h3>
               <p className="text-sm text-foreground/70 mb-4 flex-1">
@@ -96,7 +96,7 @@ export default function ContactPage() {
                   alert("Message sent! Our magic owls are delivering it right now. 🦉✨");
                 }}
               >
-                <div className="grid grid-cols-2 gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-xs font-bold text-deep-violet mb-1 uppercase tracking-wide">Your Name</label>
                     <input required type="text" className="w-full bg-off-white border border-gray-200 rounded-xl px-4 py-3 outline-none focus:border-magic-purple transition-colors" placeholder="Kabir Arora" />
@@ -107,7 +107,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div className="col-span-2 sm:col-span-1">
                     <label className="block text-xs font-bold text-deep-violet mb-1 uppercase tracking-wide">Email Address</label>
                     <input required type="email" className="w-full bg-off-white border border-gray-200 rounded-xl px-4 py-3 outline-none focus:border-magic-purple transition-colors" placeholder="kabir@example.com" />

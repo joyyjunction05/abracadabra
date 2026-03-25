@@ -57,7 +57,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full" suppressHydrationWarning>
-      <body className="min-h-full flex flex-col" style={{ fontFamily: "var(--font-body)" }}>
+      <body className="min-h-full flex flex-col overflow-x-hidden w-full" style={{ fontFamily: "var(--font-body)" }}>
         <Navbar />
         <main className="flex-1 pt-16 animate-slide-in">{children}</main>
         <Footer />

@@ -9,25 +9,18 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 const PRICING = [
   {
-    age: "Toddlers (2–5 yrs)",
-    weekdays: "₹499",
-    weekends: "₹599",
+    age: "Walk-In Play (Per Kid)",
+    weekdays: "₹400",
+    weekends: "₹450",
     duration: "1 Hour Session",
     color: "bg-hot-pink",
   },
   {
-    age: "Kids (6–12 yrs)",
-    weekdays: "₹599",
-    weekends: "₹699",
-    duration: "1 Hour Session",
+    age: "Birthday Booking (Per Kid)",
+    weekdays: "₹700",
+    weekends: "₹800",
+    duration: "3 Hour Session",
     color: "bg-deep-violet",
-  },
-  {
-    age: "Family Combo (2 Kids + 2 Adults)",
-    weekdays: "₹1999",
-    weekends: "₹2399",
-    duration: "2 Hour Session",
-    color: "bg-slide-orange",
   },
 ];
 
@@ -39,10 +32,10 @@ const HOURS = [
 ];
 
 const AMENITIES = [
-  { icon: "🍕", label: "Café & Food Counter" },
-  { icon: "🛋️", label: "Parent Seating Area" },
-  { icon: "🍼", label: "Nursing & Baby Care Room" },
-  { icon: "🔐", label: "Secure Lockers" },
+  { icon: "🍕", label: "Premium Cafe & Good Food Options" },
+  { icon: "🛋️", label: "Comfortable Parent Lounge" },
+  { icon: "🔇", label: "Noise-Cancelled Parent Environment" },
+  { icon: "🧹", label: "Dedicated Cleaning & Maintenance" },
   { icon: "🛜", label: "Free High-Speed WiFi" },
   { icon: "🚼", label: "Stroller Accessible" },
 ];
@@ -153,7 +146,7 @@ export default function VisitPage() {
         <div className="mx-auto max-w-6xl grid md:grid-cols-2 gap-8">
           {/* Hours Card */}
           <ScrollReveal>
-            <div className="bg-white rounded-3xl p-8 shadow-xl border border-magic-purple/10 h-full">
+            <div className="bg-white rounded-3xl p-6 md:p-8 shadow-xl border border-magic-purple/10 h-full">
               <div className="flex items-center gap-3 mb-8">
                 <span className="text-4xl">🕒</span>
                 <h2
@@ -188,7 +181,7 @@ export default function VisitPage() {
 
           {/* Pricing Outline */}
           <ScrollReveal delay={200}>
-            <div className="bg-white rounded-3xl p-8 shadow-xl border border-magic-purple/10 h-full">
+            <div className="bg-white rounded-3xl p-6 md:p-8 shadow-xl border border-magic-purple/10 h-full">
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4">
                 <div className="flex items-center gap-3">
                   <span className="text-4xl">🎟️</span>
@@ -277,7 +270,7 @@ export default function VisitPage() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-sky-cyan/10 p-4 rounded-xl">
                   <span className="text-2xl block mb-2">🚇</span>
                   <p className="font-bold text-sm text-magic-purple">Nearest Metro</p>
@@ -314,7 +307,7 @@ export default function VisitPage() {
             >
               Facilities On-Site
             </h2>
-            <div className="grid grid-cols-2 gap-x-4 gap-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-6">
               {AMENITIES.map((a, i) => (
                 <div key={i} className="flex gap-3 items-start">
                   <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-xl flex-shrink-0">
@@ -327,7 +320,7 @@ export default function VisitPage() {
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
+            <div className="bg-white/10 backdrop-blur-md rounded-3xl p-6 md:p-8 border border-white/20">
               <h2
                 className="text-2xl md:text-3xl text-hot-pink mb-6"
                 style={{ fontFamily: "var(--font-display)" }}
