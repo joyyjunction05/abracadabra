@@ -277,7 +277,7 @@ export default function HomePage() {
                 Play Zones
               </h2>
               <p className="text-deep-violet text-xl max-w-2xl mx-auto font-black italic">
-                Unleash the energy in our massive indoor arena!
+                Let them burn off that energy in our massive indoor arena!
               </p>
             </div>
           </ScrollReveal>
@@ -437,7 +437,7 @@ export default function HomePage() {
                 <div className="absolute top-1/2 -right-8 w-12 h-12 bg-ball-green rounded-full border-l-8 border-dashed border-magic-purple"></div>
                 
                 <div className="bg-deep-violet text-white text-center py-4 px-6 rounded-2xl mb-6 shadow-md border-4 border-white -mt-14 mx-4 -rotate-1">
-                  <h3 className="text-3xl lg:text-4xl font-black uppercase font-display tracking-wider drop-shadow-md text-star-gold">GOLD Package</h3>
+                  <h3 className="text-2xl lg:text-3xl font-black uppercase font-display tracking-wider drop-shadow-md text-star-gold leading-tight">Birthday Gold Package</h3>
                 </div>
                 
                 <div className="text-center mb-8 mt-6">
@@ -540,10 +540,10 @@ export default function HomePage() {
           <div className="bg-white rounded-3xl md:rounded-[40px] p-6 sm:p-8 md:p-14 shadow-2xl relative border border-white/40">
              <ScrollReveal>
                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6 uppercase font-display leading-tight text-magic-purple">
-                 Tailored For Families With Young Children
+                 Built Only For Young Families
                </h2>
                <p className="text-foreground/70 font-semibold text-lg md:text-xl mb-10 leading-relaxed max-w-4xl">
-                  Experience a safe, bright, and highly engaging play environment with premium facility design. While kids stay active, parents can relax in our comfortable, noise-managed waiting area featuring excellent food options!
+                  We built a massive, bright, and incredibly safe space designed strictly for kids under 12. And because we know the chaos of parenting, we built a quiet, acoustic-managed café right next to it just for you!
                </p>
                
                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-12">

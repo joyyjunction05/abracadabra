@@ -69,7 +69,7 @@ export default function Footer() {
             </p>
             {/* Contact info */}
             <address className="not-italic text-sm space-y-2 mb-5" style={{ color: "rgba(255,255,255,0.5)" }}>
-              <p>📍 Electronic City Phase 1, Bengaluru — 560100</p>
+              <p>📍 Electronic City Phase 1, Bengaluru 560100</p>
               <p>
                 📞{" "}
                 <a
