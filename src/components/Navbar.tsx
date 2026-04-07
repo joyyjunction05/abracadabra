@@ -28,10 +28,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 h-20 transition-colors duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 h-20 transition-all duration-300 border-b-4 border-star-gold ${
         scrolled
-          ? "bg-magic-purple shadow-lg shadow-black/20"
-          : "bg-magic-purple"
+          ? "bg-white shadow-xl shadow-black/10"
+          : "bg-white shadow-md shadow-black/8"
       }`}
     >
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-5">
@@ -53,7 +53,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-base font-bold text-white/90 transition-colors hover:text-star-gold no-underline tracking-wide"
+              className="relative text-base font-black text-magic-purple/80 hover:text-magic-purple transition-all duration-200 no-underline tracking-wider px-4 py-1.5 rounded-full hover:bg-star-gold hover:shadow-[0_3px_0_var(--hot-pink)] hover:-translate-y-0.5 active:translate-y-0 active:shadow-none"
             >
               {link.label}
             </Link>
@@ -71,17 +71,17 @@ export default function Navbar() {
           aria-label="Toggle menu"
         >
           <span
-            className={`block h-0.5 w-6 bg-star-gold transition-transform duration-300 ${
+            className={`block h-0.5 w-6 bg-magic-purple transition-transform duration-300 ${
               mobileOpen ? "translate-y-2 rotate-45" : ""
             }`}
           />
           <span
-            className={`block h-0.5 w-6 bg-star-gold transition-opacity duration-300 ${
+            className={`block h-0.5 w-6 bg-magic-purple transition-opacity duration-300 ${
               mobileOpen ? "opacity-0" : ""
             }`}
           />
           <span
-            className={`block h-0.5 w-6 bg-star-gold transition-transform duration-300 ${
+            className={`block h-0.5 w-6 bg-magic-purple transition-transform duration-300 ${
               mobileOpen ? "-translate-y-2 -rotate-45" : ""
             }`}
           />
@@ -96,14 +96,14 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="overflow-hidden bg-magic-purple md:hidden"
+            className="overflow-hidden bg-white border-t-2 border-star-gold md:hidden shadow-lg"
           >
             <div className="flex flex-col gap-3 px-6 py-4">
               {NAV_LINKS.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-base font-semibold text-white/90 transition-colors hover:text-star-gold no-underline"
+                  className="relative block w-full text-center text-lg font-black text-magic-purple/90 bg-magic-purple/5 border-2 border-transparent hover:border-magic-purple hover:text-magic-purple transition-all duration-200 no-underline py-3 px-4 rounded-full hover:bg-star-gold active:bg-star-gold shadow-[0_3px_0_rgba(0,0,0,0.05)] hover:shadow-[0_4px_0_var(--hot-pink)] hover:-translate-y-1 active:translate-y-0 active:shadow-none mb-1"
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}

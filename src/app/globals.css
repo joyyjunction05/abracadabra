@@ -52,52 +52,6 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ── Utility Animations ───────────────────────── */
 
-/* Twinkle (star sparkle) */
-@keyframes twinkle {
-  0%, 100% { opacity: 0.3; transform: scale(0.8); }
-  50%      { opacity: 1;   transform: scale(1.2); }
-}
-.animate-twinkle {
-  animation: twinkle 2s ease-in-out infinite;
-}
-
-/* Wiggle (CTA hover) */
-@keyframes wiggle {
-  0%, 100% { transform: rotate(0deg); }
-  25%      { transform: rotate(-3deg); }
-  75%      { transform: rotate(3deg); }
-}
-.animate-wiggle {
-  animation: wiggle 0.4s ease-in-out;
-}
-
-/* Float (magic hat idle) */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-12px); }
-}
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-/* Fade up on scroll entrance */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px) scale(0.97); }
-  to   { opacity: 1; transform: translateY(0)    scale(1); }
-}
-.animate-fade-up {
-  animation: fadeUp 0.6s ease-out forwards;
-}
-
-/* Confetti rain */
-@keyframes confettiFall {
-  0%   { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
-  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
-}
-.animate-confetti {
-  animation: confettiFall 3s ease-in forwards;
-}
-
 /* Slide in from bottom (page transition) */
 @keyframes slideInUp {
   from { opacity: 0; transform: translateY(20px); }
@@ -108,6 +62,69 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Sparkle size variants */
+.sparkle { position: absolute; pointer-events: none; }
+.sparkle-sm { width: 6px; height: 6px; }
+.sparkle-md { width: 10px; height: 10px; }
+.sparkle-lg { width: 14px; height: 14px; }
+
+/* ── Motion Accessibility Safeguard ───────────── */
+@media (prefers-reduced-motion: no-preference) {
+  /* Twinkle (star sparkle) */
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(0.8); }
+    50%      { opacity: 1;   transform: scale(1.2); }
+  }
+  .animate-twinkle {
+    animation: twinkle 2s ease-in-out infinite;
+  }
+
+  /* Wiggle (CTA hover) */
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25%      { transform: rotate(-3deg); }
+    75%      { transform: rotate(3deg); }
+  }
+  .animate-wiggle {
+    animation: wiggle 0.4s ease-in-out;
+  }
+
+  /* Float (magic hat idle) */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-12px); }
+  }
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Fade up on scroll entrance */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0)    scale(1); }
+  }
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  /* Confetti rain */
+  @keyframes confettiFall {
+    0%   { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+  }
+  .animate-confetti {
+    animation: confettiFall 3s ease-in forwards;
+  }
+
+  /* Marquee infinite scroll */
+  @keyframes scrollMarquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    animation: scrollMarquee 40s linear infinite;
+  }
+}
+/* ─────────────────────────────────────────────── */
 .sparkle { position: absolute; pointer-events: none; }
 .sparkle-sm { width: 6px; height: 6px; }
 .sparkle-md { width: 10px; height: 10px; }
@@ -335,4 +352,13 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 8vw;
   position: relative;
   z-index: 10;
+}
+
+/* ── Carnival Hero Gradient ────────────────────── */
+.bg-hero-carnival {
+  background:
+    radial-gradient(ellipse at 10% 0%, #FFD700 0%, transparent 45%),
+    radial-gradient(ellipse at 90% 0%, #00D4FF 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 100%, #FF6B35 0%, transparent 55%),
+    linear-gradient(135deg, #FF1493 0%, #5C0FC8 50%, #3A0080 100%);
 }

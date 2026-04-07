@@ -43,6 +43,12 @@ const EXPLORE_ITEMS = [
   { label: "Art Corner", image: "/art_corner.png", bg: "from-sky-cyan to-ball-green", rotate: "rotate-3" },
 ];
 
+const PLAY_ACTIVITIES = [
+  "Slide", "Lite-Brite", "Toddler Play Zone", "Kids Softplay Area", "Obstacles",
+  "Balancing Bridges", "Rope Tunnels", "Ball Pool", "Ball Shower", "Wave Slides",
+  "Spiral Tube Slide", "Trampoline Area", "Foam Pit", "Climbing Zone", "Interactive Play", "Sand Play"
+];
+
 const TRUST_ITEMS = [
   { icon: <Eye size={28} strokeWidth={2.5} className="text-magic-purple" />, label: "Bright & Visible Play" },
   { icon: <Sparkles size={28} strokeWidth={2.5} className="text-hot-pink" />, label: "Clean & Maintained" },
@@ -64,12 +70,12 @@ const UPCOMING_EVENTS = [
 ];
 
 const GALLERY_IMAGES = [
-  { bg: "bg-magic-purple", emoji: "📸", rotate: "-rotate-6" },
-  { bg: "bg-hot-pink", emoji: "🤸", rotate: "rotate-3" },
-  { bg: "bg-slide-orange", emoji: "🏰", rotate: "-rotate-2" },
-  { bg: "bg-star-gold", emoji: "🎂", rotate: "rotate-6" },
-  { bg: "bg-sky-cyan", emoji: "🎳", rotate: "-rotate-4" },
-  { bg: "bg-ball-green", emoji: "🎨", rotate: "rotate-2" },
+  { src: "/gallery/gallery_busy_board_1775568236187.png", label: "Busy Board Fun", altText: "Toddlers developing fine motor skills at the wooden busy board within Aabracadabrrahh indoor play zone", rotate: "-rotate-6", bg: "bg-magic-purple", delay: 0 },
+  { src: "/gallery/gallery_play_structure_1775568255348.png", label: "Massive Play Structure", altText: "Huge multi-level indoor kids play structure with wave slides and colorful soft play obstacles", rotate: "rotate-3", bg: "bg-hot-pink", delay: 100 },
+  { src: "/gallery/gallery_ball_pit_1775568277347.png", label: "Colorful Ball Pit", altText: "Premium colorful toddler ball pit filled with cyan and pink balls in a modern Bengaluru playplace", rotate: "-rotate-2", bg: "bg-slide-orange", delay: 200 },
+  { src: "/gallery/gallery_birthday_party_1775568311467.png", label: "Premium Birthdays", altText: "Beautifully decorated kids birthday party banquet table inside a fun indoor amusement center", rotate: "rotate-6", bg: "bg-star-gold", delay: 300 },
+  { src: "/gallery/gallery_trampoline_1775568331543.png", label: "Neon Trampolines", altText: "Kids jumping safely on an indoor trampoline park with glowing neon edges", rotate: "-rotate-4", bg: "bg-sky-cyan", delay: 400 },
+  { src: "/gallery/gallery_parent_lounge_1775568363278.png", label: "Parent Lounge", altText: "Comfortable relaxing noise-cancelling parent waiting lounge cafe overlooking the children's play area", rotate: "rotate-2", bg: "bg-ball-green", delay: 500 },
 ];
 
 /* ── Ninduga Decorators (Extreme abundance of floating elements) ── */
@@ -86,7 +92,7 @@ function ChaosFloaters() {
   ];
 
   return (
-    <div className="absolute inset-0 pointer-events-none z-10 scale-[0.8] md:scale-100 opacity-90 md:opacity-100">
+    <div className="absolute inset-0 pointer-events-none z-10 scale-[0.6] opacity-[0.15] sm:scale-[0.8] sm:opacity-50 md:scale-100 md:opacity-100 overflow-hidden">
       {items.map((item, i) => (
         <motion.div
           key={i}
@@ -187,7 +193,7 @@ export default function HomePage() {
       {/* ========= ZERO: HERO (MAXIMALIST) ========= */}
       <section
         id="home"
-        className="relative flex items-center justify-center overflow-hidden bg-magic-purple pt-2 md:pt-8"
+        className="relative flex items-center justify-center overflow-hidden bg-hero-carnival pt-2 md:pt-8"
         style={{ minHeight: "calc(100svh - 80px)" }}
       >
         {/* Ninduga Background layers */}
@@ -198,20 +204,20 @@ export default function HomePage() {
         <ChaosFloaters />
 
         {/* Huge centered text block */}
-        <div className="relative z-20 mx-auto max-w-6xl px-4 text-center py-6 md:py-10 lg:py-20 flex flex-col items-center">
+        <div className="relative z-20 mx-auto w-full max-w-6xl px-2 sm:px-4 text-center py-6 md:py-10 lg:py-20 flex flex-col items-center">
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring", bounce: 0.5, duration: 0.8 }}
             className="inline-block bg-star-gold text-magic-purple px-4 md:px-6 py-1.5 md:py-2 rounded-full font-black text-[10px] sm:text-sn md:text-xl uppercase tracking-widest mb-4 md:mb-6 shadow-[0_4px_0_var(--hot-pink)] md:shadow-[0_10px_0_var(--hot-pink)] md:-rotate-2 border-2 md:border-4 border-magic-purple"
           >
-            🎡 The Ultimate Kids Destination!
+            🎡 Bengaluru&apos;s Favourite Plazone — Ages 1 to 12!
           </motion.div>
           
-          <div className="relative inline-block mt-4 md:mt-0">
+          <div className="relative inline-block mt-4 md:mt-0 w-[95%] max-w-full">
             <span className="absolute -top-4 -left-2 md:-top-6 md:-left-10 text-2xl md:text-5xl animate-wiggle drop-shadow-md">✨</span>
             <motion.h1
-              className="text-4xl xs:text-5xl sm:text-6xl md:text-[6rem] lg:text-[7.5rem] text-white leading-tight md:leading-[0.9] font-black uppercase tracking-tighter mb-4 md:mb-6 relative z-10"
+              className="text-[2.2rem] xxs:text-4xl xs:text-5xl sm:text-6xl md:text-[6rem] lg:text-[7.5rem] text-white leading-tight md:leading-[0.9] font-black uppercase tracking-tighter mb-4 md:mb-6 relative z-10 w-full"
               style={{
                 fontFamily: "var(--font-display)",
                 textShadow: "0.05em 0.05em 0px var(--slide-orange), 0.1em 0.1em 0px var(--hot-pink), 0.15em 0.15em 0px var(--deep-violet)",
@@ -227,13 +233,18 @@ export default function HomePage() {
           </div>
 
           <motion.p
-            className="text-sm xs:text-base sm:text-lg md:text-2xl max-w-2xl mx-auto leading-snug font-black text-white bg-black/40 backdrop-blur-md px-4 md:px-6 py-3 md:py-4 rounded-3xl md:rounded-[2rem] border-2 md:border-4 border-magic-purple/50 shadow-xl md:shadow-2xl mb-8 md:mb-10"
+            className="text-sm xs:text-base sm:text-lg md:text-2xl max-w-2xl mx-auto leading-snug font-black text-white bg-black/40 backdrop-blur-md px-4 md:px-6 py-3 md:py-4 rounded-3xl md:rounded-[2rem] border-2 md:border-4 border-white/20 shadow-xl md:shadow-2xl mb-8 md:mb-10"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
             style={{ textShadow: "1px 2px 4px rgba(0,0,0,0.8)" }}
           >
-            Bengaluru&apos;s favourite <span className="text-star-gold" style={{ textShadow: "0 0 10px var(--star-gold)" }}>Play Zone & Party Hall</span> for kids aged 2–12.
+            Bengaluru&apos;s favourite{" "}
+            <span className="text-star-gold" style={{ textShadow: "0 0 10px var(--star-gold)" }}>Play Zone</span>
+            {" "}for ages <span className="text-star-gold" style={{ textShadow: "0 0 10px var(--star-gold)" }}>1–12</span>.
+            <span className="block mt-2 text-xs sm:text-sm md:text-base font-bold text-white/80 tracking-wide">
+              🧩 Unique Busy Board &nbsp;·&nbsp; 🏋️ Gross Motor Development &nbsp;·&nbsp; ✌️ Pincer Grasp
+            </span>
           </motion.p>
 
           <motion.div
@@ -288,6 +299,24 @@ export default function HomePage() {
               </ScrollReveal>
             ))}
           </div>
+
+          {/* Activity Marquee */}
+          <div className="mt-20 w-full overflow-hidden flex bg-magic-purple py-4 md:py-6 shadow-inner border-y-4 border-star-gold rounded-3xl relative">
+            <div className="absolute top-0 bottom-0 left-0 w-8 md:w-32 bg-gradient-to-r from-off-white to-transparent z-10 pointer-events-none rounded-l-3xl"></div>
+            <div className="absolute top-0 bottom-0 right-0 w-8 md:w-32 bg-gradient-to-l from-off-white to-transparent z-10 pointer-events-none rounded-r-3xl"></div>
+            
+            <div className="flex w-[200%] animate-marquee">
+              {/* Double array for seamless loop */}
+              {[...PLAY_ACTIVITIES, ...PLAY_ACTIVITIES].map((activity, idx) => (
+                <div key={idx} className="flex items-center flex-shrink-0">
+                  <span className="text-base md:text-2xl font-black uppercase tracking-wider text-white px-4 md:px-8 drop-shadow-md">
+                    {activity}
+                  </span>
+                  <span className="text-star-gold opacity-50 px-2 md:px-4 text-xl md:text-3xl">✦</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -334,7 +363,9 @@ export default function HomePage() {
                      <p className="text-deep-violet font-black text-lg">Starting from ₹12,000</p>
                      <p className="text-deep-violet/90 font-bold text-sm">For 15 kids. Includes play time + decor + meal box!</p>
                   </div>
-                  <button className="w-full btn-pink justify-center !text-xl">Download Brochure 📄</button>
+                  <a href="https://wa.me/917996693125?text=Hi!%20I%20want%20to%20book%20a%20gold%20birthday%20package!" target="_blank" rel="noopener noreferrer" className="mt-4 w-full flex justify-center btn-pink !text-lg shadow-[0_4px_0_var(--magic-purple)] no-underline">
+                    Secure Date via WhatsApp 📱
+                  </a>
                 </div>
                 <div className="absolute top-10 -right-10 bg-deep-violet w-full h-full rounded-3xl -rotate-6 z-0 border-8 border-white opacity-50" />
               </ScrollReveal>
@@ -396,7 +427,7 @@ export default function HomePage() {
               </div>
             </ScrollReveal>
 
-            {/* ADULT TICKET */}
+            {/* BIRTHDAY TICKET */}
             <ScrollReveal delay={200} className="w-full max-w-md">
               <div className="bg-white rounded-3xl p-8 shadow-[15px_15px_0_var(--sky-cyan)] border-8 border-dashed border-magic-purple relative -rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-300">
                 <div className="absolute -top-6 -left-6 w-16 h-16 bg-star-gold rounded-full flex items-center justify-center text-3xl shadow-lg border-4 border-white animate-wiggle z-20">
@@ -406,26 +437,33 @@ export default function HomePage() {
                 <div className="absolute top-1/2 -right-8 w-12 h-12 bg-ball-green rounded-full border-l-8 border-dashed border-magic-purple"></div>
                 
                 <div className="bg-deep-violet text-white text-center py-4 px-6 rounded-2xl mb-6 shadow-md border-4 border-white -mt-14 mx-4 -rotate-1">
-                  <h3 className="text-3xl lg:text-4xl font-black uppercase font-display tracking-wider drop-shadow-md">Birthday Bash</h3>
+                  <h3 className="text-3xl lg:text-4xl font-black uppercase font-display tracking-wider drop-shadow-md text-star-gold">GOLD Package</h3>
                 </div>
                 
                 <div className="text-center mb-8 mt-6">
-                  <span className="text-5xl lg:text-6xl font-black text-sky-cyan font-display drop-shadow-[2px_2px_0_var(--magic-purple)]">₹700-800</span>
-                  <p className="text-deep-violet font-bold uppercase tracking-widest text-sm mt-3 bg-off-white inline-block px-4 py-1 rounded-full border-2 border-magic-purple">Per Kid / 3 Hours</p>
+                  <span className="text-5xl font-black text-sky-cyan font-display drop-shadow-[2px_2px_0_var(--magic-purple)] flex flex-col gap-2">
+                    <span>₹800 <span className="text-2xl text-magic-purple tracking-widest uppercase">Per Kid</span></span>
+                    <span>₹600 <span className="text-2xl text-magic-purple tracking-widest uppercase">Per Adult</span></span>
+                  </span>
+                  <p className="text-deep-violet font-bold uppercase tracking-widest text-xs mt-4 bg-off-white inline-block px-4 py-1 rounded-full border-2 border-magic-purple">*18% GST Applicable</p>
                 </div>
                 
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-start gap-4">
-                    <span className="mt-[-4px]"><PartyPopper className="text-slide-orange w-8 h-8 drop-shadow-[2px_2px_0_var(--magic-purple)]" strokeWidth={2.5} /></span>
-                    <span className="text-magic-purple font-black text-lg leading-tight uppercase">3 Hours of Ultimate Play & Party</span>
+                    <span className="mt-[-4px]"><PartyPopper className="text-slide-orange w-6 h-6 drop-shadow-[1px_1px_0_var(--magic-purple)]" strokeWidth={2.5} /></span>
+                    <span className="text-magic-purple font-black text-base leading-tight uppercase">3 Hour Private Access to Party Hall <br/><span className="text-hot-pink text-sm tracking-wide">(₹5000 Booking Fee)</span></span>
                   </li>
                   <li className="flex items-start gap-4">
-                    <span className="mt-[-4px]"><Pizza className="text-star-gold w-8 h-8 drop-shadow-[2px_2px_0_var(--magic-purple)]" strokeWidth={2.5} /></span>
-                    <span className="text-magic-purple font-black text-lg leading-tight uppercase">Delicious Buffet Food Included</span>
+                    <span className="mt-[-4px]"><Clock className="text-ball-green w-6 h-6 drop-shadow-[1px_1px_0_var(--magic-purple)]" strokeWidth={2.5} /></span>
+                    <span className="text-magic-purple font-black text-base leading-tight uppercase">3 Hour Access to Play Area</span>
                   </li>
                   <li className="flex items-start gap-4">
-                    <span className="mt-[-4px]"><Sparkles className="text-hot-pink w-8 h-8 drop-shadow-[2px_2px_0_var(--magic-purple)]" strokeWidth={2.5} /></span>
-                    <span className="text-magic-purple font-black text-lg leading-tight uppercase">Party Hall Booking Available <br/><span className="text-hot-pink text-sm tracking-wide">(₹4000 - ₹5000 extra)</span></span>
+                    <span className="mt-[-4px]"><Pizza className="text-star-gold w-6 h-6 drop-shadow-[1px_1px_0_var(--magic-purple)]" strokeWidth={2.5} /></span>
+                    <span className="text-magic-purple font-black text-base leading-tight uppercase">Premium Pure Veg Food Spread</span>
+                  </li>
+                  <li className="flex items-start gap-4">
+                    <span className="mt-[-4px]"><Sparkles className="text-hot-pink w-6 h-6 drop-shadow-[1px_1px_0_var(--magic-purple)]" strokeWidth={2.5} /></span>
+                    <span className="text-magic-purple font-black text-base leading-tight uppercase">Premium Birthday Decor Included <br/><span className="text-deep-violet text-sm tracking-wide">(Customised Decor at extra cost)</span></span>
                   </li>
                 </ul>
               </div>
@@ -479,15 +517,15 @@ export default function HomePage() {
             </div>
           </ScrollReveal>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 justify-center items-center gap-6 lg:gap-8 perspective-1000">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-10 perspective-1000">
             {GALLERY_IMAGES.map((img, i) => (
-              <ScrollReveal key={i} delay={i * 50} className="flex justify-center w-full">
-                <div className={`w-full max-w-[200px] aspect-[4/5] bg-white p-3 md:p-4 rounded-md shadow-[5px_5px_15px_rgba(0,0,0,0.5)] ${img.rotate} hover:rotate-0 hover:scale-110 hover:z-30 transition-all duration-300 relative`}>
-                  <div className={`${img.bg} w-full h-[80%] rounded-sm flex items-center justify-center text-6xl shadow-inner`}>
-                    {img.emoji}
+              <ScrollReveal key={i} delay={img.delay} className="flex justify-center w-full">
+                <div className={`w-full aspect-[4/3] bg-white p-3 md:p-4 rounded-xl shadow-[5px_5px_15px_rgba(0,0,0,0.5)] ${img.rotate} hover:rotate-0 hover:scale-105 hover:z-30 transition-all duration-300 relative group`}>
+                  <div className={`${img.bg} w-full h-[85%] rounded-md flex items-center justify-center overflow-hidden shadow-inner relative`}>
+                    <Image src={img.src} alt={img.altText} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-110 transition-transform duration-500" />
                   </div>
-                  <div className="h-[20%] w-full flex items-center justify-center font-display text-magic-purple/40 text-sm md:text-xl uppercase tracking-widest mt-2 border-t border-gray-200 pt-2">
-                    Aabracadabrrahh
+                  <div className="h-[15%] w-full flex items-center justify-center font-display text-magic-purple text-xs md:text-sm uppercase tracking-widest mt-2 border-t border-gray-200/50 pt-2 font-bold">
+                    {img.label}
                   </div>
                 </div>
               </ScrollReveal>
@@ -538,7 +576,7 @@ export default function HomePage() {
                    </div>
                    <h3 className="text-xl md:text-2xl font-black font-display uppercase text-star-gold">Our Vision</h3>
                    <p className="font-semibold text-foreground/70 leading-relaxed text-sm md:text-base">
-                     To pioneer a destination where extraordinary facility design seamlessly meets a relaxing, noise-cancelled haven for parents.
+                     To pioneer a destination where extraordinary facility design seamlessly meets a relaxing, noise-cancelling haven for parents.
                    </p>
                  </div>
                  <div className="flex flex-col gap-4">
@@ -554,6 +592,17 @@ export default function HomePage() {
              </ScrollReveal>
           </div>
         </div>
+      </section>
+
+      {/* ========= 5.5: PARENT GUARANTEE (Visual Break) ========= */}
+      <section className="py-16 md:py-24 px-4 bg-off-white text-center border-y-8 border-dashed border-sky-cyan/30 relative z-10">
+         <div className="max-w-4xl mx-auto flex flex-col items-center">
+            <span className="text-6xl mb-6 drop-shadow-md">🛋️</span>
+            <h2 className="text-3xl md:text-5xl font-black font-display text-magic-purple uppercase mb-6 drop-shadow-sm">The Parent Guarantee</h2>
+            <p className="text-lg md:text-2xl text-foreground/80 font-semibold leading-relaxed">
+              We know that an amazing playplace for kids means absolutely nothing if it&apos;s stressful for parents. That&apos;s why we&apos;ve designed our entire facility around your comfort. From high-visibility angles to pristine hygiene and acoustic noise-cancelling treatments—<span className="text-magic-purple font-black">you can finally sit back, relax, and actually enjoy their playtime.</span>
+            </p>
+         </div>
       </section>
 
       {/* ========= SIX: CONTACT (Explosive Banner) ========= */}

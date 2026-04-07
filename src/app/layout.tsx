@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   keywords: ["indoor play zone", "kids birthday party venue", "role play city", "trampoline park bengaluru", "electronic city kids activities", "Aabracadabrrahh"],
   authors: [{ name: "Aabracadabrrahh Fun Zone" }],
   creator: "Aabracadabrrahh",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Aabracadabrrahh | Magical Indoor Play Zone",
     description: "Bengaluru's premier Carnival-themed indoor play area. Book the ultimate stress-free birthday party for your child!",
