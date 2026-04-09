@@ -11,6 +11,7 @@ const FOOTER_COLUMNS = [
       { href: "/birthday-parties", label: "Birthday Parties" },
       { href: "/events", label: "What's On" },
       { href: "/gallery", label: "Wall of Magic" },
+      { href: "/blog", label: "Blog & Tips" },
     ],
   },
   {

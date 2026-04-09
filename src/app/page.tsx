@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Ticket, PartyPopper, Clock, Users, Coffee, Gift, Pizza, Sparkles, MessageCircle, PhoneCall, Wand2, Camera, Eye, ShieldCheck, VolumeX, Rocket, Compass, Heart } from 'lucide-react';
+import { Ticket, PartyPopper, Clock, Users, Coffee, Gift, Pizza, Sparkles, MessageCircle, PhoneCall, Eye, ShieldCheck, VolumeX, Rocket, Compass, Heart } from 'lucide-react';
 import ScrollReveal from "@/components/ScrollReveal";
 
 /* ── Data ──────────────────────────────────────── */
@@ -56,17 +56,6 @@ const TRUST_ITEMS = [
   { icon: <Users size={28} strokeWidth={2.5} className="text-star-gold" />, label: "Friendly Staffing" },
   { icon: <Coffee size={28} strokeWidth={2.5} className="text-deep-violet" />, label: "Comfortable Cafe" },
   { icon: <VolumeX size={28} strokeWidth={2.5} className="text-ball-green" />, label: "Relaxing Acoustics" },
-];
-
-const TESTIMONIALS = [
-  { name: "Priya M.", text: "Kids absolutely LOVE this place! Spotless and staff is caring.", stars: 5 },
-  { name: "Rahul K.", text: "Best birthday ever! They took care of decor, food, everything.", stars: 5 },
-  { name: "Anita S.", text: "Safe & fun. Toddler zone is perfect for my 3yo. Highly recommend!", stars: 5 },
-];
-
-const UPCOMING_EVENTS = [
-  { title: "Summer Magic Carnival 🎡", date: "April 5, 2026", desc: "Magic shows & unlimited fun!", tagColor: "bg-ride-red" },
-  { title: "STEM Workshop 🔬", date: "April 12, 2026", desc: "Science fun for ages 5–12.", tagColor: "bg-ball-green" },
 ];
 
 const GALLERY_IMAGES = [
@@ -122,6 +111,7 @@ function SparkleStars({ count = 25 }: { count?: number }) {
   const [stars, setStars] = useState<{ left: string; top: string; delay: string; id: number; color: string }[]>([]);
   useEffect(() => {
     const colors = ["#FFD700", "#FF1493", "#00D4FF", "#39D353", "#FFF"];
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setStars(
       Array.from({ length: count }, (_, i) => ({
         id: i,
@@ -214,10 +204,10 @@ export default function HomePage() {
             🎡 Bengaluru&apos;s Favourite Plazone — Ages 1 to 12!
           </motion.div>
           
-          <div className="relative inline-block mt-4 md:mt-0 w-[95%] max-w-full">
-            <span className="absolute -top-4 -left-2 md:-top-6 md:-left-10 text-2xl md:text-5xl animate-wiggle drop-shadow-md">✨</span>
+          <div className="relative flex justify-center mt-4 md:mt-0 w-max max-w-[100vw]">
+            <span className="absolute -top-4 -left-2 md:-top-6 md:-left-8 text-2xl md:text-5xl animate-wiggle drop-shadow-md">✨</span>
             <motion.h1
-              className="text-[2.2rem] xxs:text-4xl xs:text-5xl sm:text-6xl md:text-[6rem] lg:text-[7.5rem] text-white leading-tight md:leading-[0.9] font-black uppercase tracking-tighter mb-4 md:mb-6 relative z-10 w-full"
+              className="text-[2.2rem] xxs:text-3xl xs:text-4xl sm:text-6xl md:text-[5.5rem] lg:text-[7rem] text-white leading-tight md:leading-[0.9] font-black uppercase tracking-tighter mb-4 md:mb-6 relative z-10 w-max text-center"
               style={{
                 fontFamily: "var(--font-display)",
                 textShadow: "0.05em 0.05em 0px var(--slide-orange), 0.1em 0.1em 0px var(--hot-pink), 0.15em 0.15em 0px var(--deep-violet)",
@@ -233,7 +223,7 @@ export default function HomePage() {
           </div>
 
           <motion.p
-            className="text-sm xs:text-base sm:text-lg md:text-2xl max-w-2xl mx-auto leading-snug font-black text-white bg-black/40 backdrop-blur-md px-4 md:px-6 py-3 md:py-4 rounded-3xl md:rounded-[2rem] border-2 md:border-4 border-white/20 shadow-xl md:shadow-2xl mb-8 md:mb-10"
+            className="text-sm xs:text-base sm:text-lg md:text-2xl max-w-2xl mx-auto leading-snug font-black text-white bg-black/40 backdrop-blur-md px-4 md:px-6 py-3 md:py-4 rounded-3xl md:rounded-[2rem] border-2 md:border-4 border-white/20 shadow-xl md:shadow-2xl mb-8 md:mb-10 text-center"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
@@ -243,7 +233,7 @@ export default function HomePage() {
             <span className="text-star-gold" style={{ textShadow: "0 0 10px var(--star-gold)" }}>Play Zone</span>
             {" "}for ages <span className="text-star-gold" style={{ textShadow: "0 0 10px var(--star-gold)" }}>1–12</span>.
             <span className="block mt-2 text-xs sm:text-sm md:text-base font-bold text-white/80 tracking-wide">
-              🧩 Unique Busy Board &nbsp;·&nbsp; 🏋️ Gross Motor Development &nbsp;·&nbsp; ✌️ Pincer Grasp
+              🧩 Fun Activities &nbsp;·&nbsp; 🤸 Active Play &nbsp;·&nbsp; ✨ Safe & Clean
             </span>
           </motion.p>
 
@@ -334,7 +324,7 @@ export default function HomePage() {
                   Ultimate<br/><span className="text-star-gold" style={{ textShadow: "5px 5px 0 var(--magic-purple)" }}>Birthdays!</span>
                 </h2>
                 <p className="text-white font-black text-xl md:text-2xl mb-8 leading-snug bg-magic-purple/20 p-4 rounded-2xl border-2 border-white/30 backdrop-blur">
-                  Custom themes, decorations, games, food, and endless play time. Give your child a party they'll never forget!
+                  Custom themes, decorations, games, food, and endless play time. Give your child a party they&apos;ll never forget!
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <a href="tel:+917996693125" className="btn-gold !text-xl shadow-[0_6px_0_var(--magic-purple)] hover:shadow-[0_8px_0_var(--magic-purple)]">📞 Plan With Us</a>
