@@ -6,15 +6,15 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_LINKS = [
-  { href: "/#home", label: "Home" },
-  { href: "/#play-zones", label: "Play Zones" },
-  { href: "/#birthday-parties", label: "Birthdays" },
-  { href: "/#pricing", label: "Pricing" },
-  { href: "/#events", label: "Events" },
-  { href: "/#visit", label: "Visit" },
-  { href: "/#gallery", label: "Gallery" },
+  { href: "#home", label: "Home" },
+  { href: "#play-zones", label: "Play Zones" },
+  { href: "#birthday-parties", label: "Birthdays" },
+  { href: "#pricing", label: "Pricing" },
+  { href: "#events", label: "Events" },
+  { href: "#visit", label: "Visit" },
+  { href: "#gallery", label: "Gallery" },
   { href: "/blog", label: "Blog" },
-  { href: "/#contact", label: "Contact" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -29,20 +29,20 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 h-20 transition-all duration-300 border-b-4 border-star-gold ${
+      className={`fixed top-0 left-0 right-0 z-50 h-20 md:h-24 transition-all duration-300 border-b-4 border-star-gold ${
         scrolled
           ? "bg-white shadow-xl shadow-black/10"
           : "bg-white shadow-md shadow-black/8"
       }`}
     >
-      <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-5">
-        <Link href="/" className="flex items-center gap-2 no-underline hover:scale-105 transition-transform mr-8 lg:mr-16 shrink-0">
+      <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-5 py-1">
+        <Link href="/" className="flex items-center py-1 gap-2 no-underline hover:scale-105 transition-transform mr-6 lg:mr-10 shrink-0">
             <Image
               src="/logo.png"
               alt="Aabracadabrrahh Logo"
-              width={180}
-              height={180}
-              className="w-auto h-12 md:h-14 object-contain scale-110 sm:scale-125 md:scale-150 origin-left ml-2 md:ml-6"
+              width={300}
+              height={110}
+              className="w-auto h-[68px] md:h-[84px] object-contain origin-left"
               priority
             />
         </Link>
@@ -58,9 +58,9 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Link href="/#birthday-parties" className="btn-gold !text-xs lg:!text-sm xl:!text-base !py-1.5 lg:!py-2 !px-3 lg:!px-4 xl:!px-6 shadow-[0_4px_0_var(--deep-violet)] hover:shadow-[0_6px_0_var(--deep-violet)] whitespace-nowrap lg:ml-2 shrink-0">
+          <a href="https://wa.me/917996693125?text=Hi!%20I%27d%20like%20to%20book%20a%20party%20at%20Aabracadabrrahh!" target="_blank" rel="noopener noreferrer" className="btn-gold !text-xs lg:!text-sm xl:!text-base !py-1.5 lg:!py-2 !px-3 lg:!px-4 xl:!px-6 shadow-[0_4px_0_var(--deep-violet)] hover:shadow-[0_6px_0_var(--deep-violet)] whitespace-nowrap lg:ml-2 shrink-0">
             🎂 Book
-          </Link>
+          </a>
         </div>
 
         {/* Mobile hamburger */}
@@ -109,13 +109,15 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Link
-                href="/#birthday-parties"
-                className="btn-gold text-center mt-2"
+              <a
+                href="https://wa.me/917996693125?text=Hi!%20I%27d%20like%20to%20book%20a%20party%20at%20Aabracadabrrahh!"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-gold text-center mt-2 no-underline"
                 onClick={() => setMobileOpen(false)}
               >
                 🎂 Book a Party
-              </Link>
+              </a>
             </div>
           </motion.div>
         )}

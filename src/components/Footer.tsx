@@ -6,21 +6,21 @@ const FOOTER_COLUMNS = [
   {
     heading: "Explore",
     links: [
-      { href: "/", label: "Home" },
-      { href: "/play-zones", label: "Play Zones" },
-      { href: "/birthday-parties", label: "Birthday Parties" },
-      { href: "/events", label: "What's On" },
-      { href: "/gallery", label: "Wall of Magic" },
+      { href: "/#home", label: "Home" },
+      { href: "/#play-zones", label: "Play Zones" },
+      { href: "/#birthday-parties", label: "Birthday Parties" },
+      { href: "/#events", label: "What's On" },
+      { href: "/#gallery", label: "Wall of Magic" },
       { href: "/blog", label: "Blog & Tips" },
     ],
   },
   {
     heading: "Plan Your Visit",
     links: [
-      { href: "/visit", label: "Opening Hours & Rules" },
-      { href: "/visit", label: "Pricing & Passes" },
-      { href: "/contact", label: "Contact Us" },
-      { href: "/contact", label: "Location Map" },
+      { href: "/#visit", label: "Opening Hours & Rules" },
+      { href: "/#pricing", label: "Pricing & Passes" },
+      { href: "/#contact", label: "Contact Us" },
+      { href: "/#visit", label: "Location Map" },
     ],
   },
 ];
@@ -58,14 +58,14 @@ export default function Footer() {
               <Image
                 src="/logo.png"
                 alt="Aabracadabrrahh Logo"
-                width={160}
-                height={160}
-                className="w-auto h-20 object-contain drop-shadow-lg"
+                width={180}
+                height={180}
+                className="w-auto h-24 object-contain drop-shadow-lg"
                 priority
               />
             </div>
             <p className="text-sm leading-relaxed mb-5" style={{ color: "rgba(255,255,255,0.5)" }}>
-              Bengaluru&apos;s favourite Play Zone &amp; Party Hall for kids aged 2–12.
+              ECity&apos;s favourite Play Zone &amp; Party Hall for kids aged 1–12.
               Making magic happen every day in Electronic City.
             </p>
             {/* Contact info */}

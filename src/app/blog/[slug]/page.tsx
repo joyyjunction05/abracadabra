@@ -57,7 +57,7 @@ export default async function BlogPostPage({
   const relatedPosts = allPosts.filter((p) => p.slug !== post.slug).slice(0, 2);
 
   return (
-    <main className="overflow-x-hidden bg-white pt-24 pb-16">
+    <main className="overflow-x-hidden bg-white pt-28 pb-16">
       {/* JSON-LD Schemas */}
       <script
         type="application/ld+json"

@@ -11,8 +11,8 @@ export const metadata: Metadata = {
     template: "%s | Aabracadabrrahh",
     default: "Aabracadabrrahh | Magical Indoor Play Zone & Birthday Parties in Bengaluru",
   },
-  description: "Bengaluru's premier Carnival-themed indoor play zone for kids (2-12 yrs). Walk-ins, hassle-free birthday parties, events, and workshops in Electronic City.",
-  keywords: ["indoor play zone", "kids birthday party venue", "role play city", "trampoline park bengaluru", "electronic city kids activities", "Aabracadabrrahh"],
+  description: "ECity's premier Carnival-themed indoor play zone for kids (1-12 yrs). Walk-ins, hassle-free birthday parties, events, and workshops in Electronic City.",
+  keywords: ["indoor play zone", "kids birthday party venue", "trampoline park bengaluru", "electronic city kids activities", "Aabracadabrrahh"],
   authors: [{ name: "Aabracadabrrahh Fun Zone" }],
   creator: "Aabracadabrrahh",
   alternates: {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Aabracadabrrahh | Magical Indoor Play Zone",
-    description: "Bengaluru's premier Carnival-themed indoor play area. Book the ultimate stress-free birthday party for your child!",
+    description: "ECity's premier Carnival-themed indoor play area. Book the ultimate stress-free birthday party for your child!",
     url: "https://aabracadabrrahh.com",
     siteName: "Aabracadabrrahh",
     images: [
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Aabracadabrrahh | Magical Indoor Play Zone",
-    description: "Bengaluru's premier Carnival-themed indoor play area. Book the ultimate stress-free birthday party for your child!",
+    description: "ECity's premier Carnival-themed indoor play area. Book the ultimate stress-free birthday party for your child!",
     images: ["/og-image.jpg"],
   },
   robots: {
@@ -72,7 +72,7 @@ export default function RootLayout({
               url: "https://aabracadabrrahh.com",
               logo: "https://aabracadabrrahh.com/logo.png",
               image: "https://aabracadabrrahh.com/og-image.jpg",
-              description: "Bengaluru's premier Carnival-themed indoor play zone for kids (2-12 yrs). Best destination for safe play and stress-free birthday parties.",
+              description: "ECity's premier Carnival-themed indoor play zone for kids (1-12 yrs). Best destination for safe play and stress-free birthday parties.",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "Electronic City",
@@ -90,13 +90,19 @@ export default function RootLayout({
                     "Monday",
                     "Tuesday",
                     "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday",
-                    "Sunday"
+                    "Thursday"
                   ],
                   opens: "11:00",
-                  closes: "21:00"
+                  closes: "22:00"
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: [
+                    "Friday",
+                    "Saturday"
+                  ],
+                  opens: "11:00",
+                  closes: "22:30"
                 }
               ]
             })
@@ -105,7 +111,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col overflow-x-hidden w-full" style={{ fontFamily: "var(--font-body)" }}>
         <Navbar />
-        <main className="flex-1 pt-16 animate-slide-in">{children}</main>
+        <main className="flex-1 animate-slide-in">{children}</main>
         <Footer />
         <WhatsAppButton />
         <CookieBanner />
