@@ -58,7 +58,7 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <a href="https://wa.me/917996693125?text=Hi!%20I%27d%20like%20to%20book%20a%20party%20at%20Aabracadabrrahh!" target="_blank" rel="noopener noreferrer" className="btn-gold !text-xs lg:!text-sm xl:!text-base !py-1.5 lg:!py-2 !px-3 lg:!px-4 xl:!px-6 shadow-[0_4px_0_var(--deep-violet)] hover:shadow-[0_6px_0_var(--deep-violet)] whitespace-nowrap lg:ml-2 shrink-0">
+          <a href="https://wa.me/917996693125?text=Hi%20Aabracadabrrahh!%20I%27d%20love%20to%20learn%20more%20about%20your%20Play%20Zone%20and%20Birthday%20Party%20packages!" target="_blank" rel="noopener noreferrer" className="btn-gold !text-xs lg:!text-sm xl:!text-base !py-1.5 lg:!py-2 !px-3 lg:!px-4 xl:!px-6 shadow-[0_4px_0_var(--deep-violet)] hover:shadow-[0_6px_0_var(--deep-violet)] whitespace-nowrap lg:ml-2 shrink-0">
             🎂 Book
           </a>
         </div>
@@ -110,7 +110,7 @@ export default function Navbar() {
                 </Link>
               ))}
               <a
-                href="https://wa.me/917996693125?text=Hi!%20I%27d%20like%20to%20book%20a%20party%20at%20Aabracadabrrahh!"
+                href="https://wa.me/917996693125?text=Hi%20Aabracadabrrahh!%20I%27d%20love%20to%20learn%20more%20about%20your%20Play%20Zone%20and%20Birthday%20Party%20packages!"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-gold text-center mt-2 no-underline"

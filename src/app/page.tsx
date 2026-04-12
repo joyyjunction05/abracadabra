@@ -42,7 +42,7 @@ const EXPLORE_ITEMS = [
   { label: "Toddler Busy Board", image: "/gallery/gallery_busy_board_1775568236187.png", bg: "from-hot-pink to-ride-red", rotate: "-rotate-3" },
   { label: "Lite-Brite", image: "/lite_brite.png", bg: "from-star-gold to-slide-orange", rotate: "rotate-1" },
   { label: "Kids Soft Play Area", image: "/gallery/gallery_ball_pit_1775568277347.png", bg: "from-ball-green to-sky-cyan", rotate: "-rotate-2" },
-  { label: "Trampoline", image: "/gallery/gallery_trampoline_1775568331543.png", bg: "from-deep-violet to-hot-pink", rotate: "rotate-3" },
+  { label: "Trampoline", image: "/gallery/gallery_trampoline_normal.png", bg: "from-deep-violet to-hot-pink", rotate: "rotate-3" },
 ];
 
 const PLAY_ACTIVITIES = [
@@ -68,7 +68,7 @@ const GALLERY_IMAGES = [
   { src: "/gallery/gallery_play_structure_1775568255348.png", label: "Massive Play Structure", altText: "Huge multi-level indoor kids play structure with wave slides and colorful soft play obstacles", rotate: "rotate-3", bg: "bg-hot-pink", delay: 100 },
   { src: "/gallery/gallery_ball_pit_1775568277347.png", label: "Colorful Ball Pit", altText: "Premium colorful toddler ball pit filled with cyan and pink balls in a modern Bengaluru playplace", rotate: "-rotate-2", bg: "bg-slide-orange", delay: 200 },
   { src: "/gallery/gallery_birthday_party_1775568311467.png", label: "Premium Birthdays", altText: "Beautifully decorated kids birthday party banquet table inside a fun indoor amusement center", rotate: "rotate-6", bg: "bg-star-gold", delay: 300 },
-  { src: "/gallery/gallery_trampoline_1775568331543.png", label: "Trampolines", altText: "Kids jumping safely on an indoor trampoline park", rotate: "-rotate-4", bg: "bg-sky-cyan", delay: 400 },
+  { src: "/gallery/gallery_trampoline_normal.png", label: "Trampolines", altText: "Kids jumping safely on an indoor trampoline park", rotate: "-rotate-4", bg: "bg-sky-cyan", delay: 400 },
   { src: "/gallery/gallery_parent_lounge_1775568363278.png", label: "Parent Lounge", altText: "Comfortable air-conditioned parent seating lounge with snacks, overlooking the children's play area", rotate: "rotate-2", bg: "bg-ball-green", delay: 500 },
 ];
 
@@ -167,7 +167,7 @@ function StickyActionBar() {
             <div className="flex items-center gap-3">
               <span className="font-display font-black text-magic-purple text-lg hidden sm:block uppercase">The Fun Never Stops!</span>
               <a href="tel:+917996693125" className="btn-pink !text-sm !py-1.5 !px-3 sm:!px-5 no-underline border-2 border-white shadow-lg">☎️ Call</a>
-              <a href="https://wa.me/917996693125?text=Hi!%20I%27d%20like%20to%20book%20a%20party%20at%20Aabracadabrrahh!" target="_blank" rel="noopener noreferrer" className="btn-gold !bg-white !text-magic-purple !text-sm !py-1.5 !px-3 sm:!px-5 no-underline border-2 border-magic-purple shadow-lg">🎟️ Book</a>
+              <a href="https://wa.me/917996693125?text=Hi%20Aabracadabrrahh!%20I%27d%20love%20to%20learn%20more%20about%20your%20Play%20Zone%20and%20Birthday%20Party%20packages!" target="_blank" rel="noopener noreferrer" className="btn-gold !bg-white !text-magic-purple !text-sm !py-1.5 !px-3 sm:!px-5 no-underline border-2 border-magic-purple shadow-lg">🎟️ Book</a>
             </div>
             <Link href="#visit" className="text-sm font-black text-magic-purple no-underline hover:text-hot-pink transition-colors hidden md:block uppercase bg-white/50 px-3 py-1 rounded-full border border-magic-purple">
               📍 Electronic City, Bangalore
@@ -219,7 +219,7 @@ export default function HomePage() {
               }}
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
+              transition={{ duration: 0.6 }}
             >
               Aabracadabrrahh!
             </motion.h1>
@@ -250,7 +250,7 @@ export default function HomePage() {
             <Link href="#play-zones" className="w-[85%] sm:w-auto btn-gold !text-base md:!text-2xl !px-6 md:!px-10 !py-3 md:!py-4 shadow-[0_4px_0_var(--magic-purple)] md:shadow-[0_8px_0_var(--magic-purple),0_15px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_4px_0_var(--magic-purple)] md:hover:shadow-[0_10px_0_var(--magic-purple),0_20px_40px_rgba(0,0,0,0.5)] rotate-0 md:-rotate-2 transition-transform mx-auto">
               🗺️ EXPLORE ZONES
             </Link>
-            <a href="https://wa.me/917996693125?text=Hi!%20I%27d%20like%20to%20book%20a%20party%20at%20Aabracadabrrahh!" target="_blank" rel="noopener noreferrer" className="w-[85%] sm:w-auto btn-pink !text-base md:!text-2xl !px-6 md:!px-10 !py-3 md:!py-4 shadow-[0_4px_0_var(--deep-violet)] md:shadow-[0_8px_0_var(--deep-violet),0_15px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_4px_0_var(--deep-violet)] md:hover:shadow-[0_10px_0_var(--deep-violet),0_20px_40px_rgba(0,0,0,0.5)] rotate-0 md:rotate-2 transition-transform mx-auto no-underline">
+            <a href="https://wa.me/917996693125?text=Hi%20Aabracadabrrahh!%20I%27d%20love%20to%20learn%20more%20about%20your%20Play%20Zone%20and%20Birthday%20Party%20packages!" target="_blank" rel="noopener noreferrer" className="w-[85%] sm:w-auto btn-pink !text-base md:!text-2xl !px-6 md:!px-10 !py-3 md:!py-4 shadow-[0_4px_0_var(--deep-violet)] md:shadow-[0_8px_0_var(--deep-violet),0_15px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_4px_0_var(--deep-violet)] md:hover:shadow-[0_10px_0_var(--deep-violet),0_20px_40px_rgba(0,0,0,0.5)] rotate-0 md:rotate-2 transition-transform mx-auto no-underline">
               🎂 BOOK A PARTY
             </a>
           </motion.div>
@@ -332,7 +332,7 @@ export default function HomePage() {
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <a 
-                    href="https://wa.me/917996693125?text=Hi!%20I%27d%20like%20to%20book%20a%20party%20at%20Aabracadabrrahh!" 
+                    href="https://wa.me/917996693125?text=Hi%20Aabracadabrrahh!%20I%27d%20love%20to%20learn%20more%20about%20your%20Play%20Zone%20and%20Birthday%20Party%20packages!" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="btn-gold !text-xl shadow-[0_6px_0_var(--magic-purple)] hover:shadow-[0_8px_0_var(--magic-purple)] no-underline flex items-center justify-center gap-2"
@@ -364,7 +364,7 @@ export default function HomePage() {
                      <p className="text-deep-violet font-black text-lg">Starting from ₹600 per person</p>
                     <p className="text-deep-violet/90 font-bold text-sm">Create magical memories with complete packages including play time & premium food</p>
                   </div>
-                  <a href="https://wa.me/917996693125?text=Hi!%20I%20want%20to%20book%20a%20gold%20birthday%20package!" target="_blank" rel="noopener noreferrer" className="mt-4 w-full flex items-center justify-center bg-hot-pink hover:bg-hot-pink/90 text-white font-black px-6 py-4 rounded-full text-lg shadow-[0_4px_0_var(--magic-purple)] border-4 border-magic-purple transition-transform hover:-translate-y-1 no-underline">
+                  <a href="https://wa.me/917996693125?text=Hi%20Aabracadabrrahh!%20I%27d%20like%20to%20book%20the%20Gold%20Birthday%20Package%20for%20my%20child%27s%20special%20day!" target="_blank" rel="noopener noreferrer" className="mt-4 w-full flex items-center justify-center bg-hot-pink hover:bg-hot-pink/90 text-white font-black px-6 py-4 rounded-full text-lg shadow-[0_4px_0_var(--magic-purple)] border-4 border-magic-purple transition-transform hover:-translate-y-1 no-underline">
                     Secure Date via WhatsApp 📱
                   </a>
                 </div>
@@ -486,7 +486,7 @@ export default function HomePage() {
                   </div>
 
                   <a 
-                    href="https://wa.me/917996693125?text=Hi!%20I%27d%20like%20to%20book%20a%20party%20at%20Aabracadabrrahh!" 
+                    href="https://wa.me/917996693125?text=Hi%20Aabracadabrrahh!%20I%27d%20love%20to%20learn%20more%20about%20your%20Play%20Zone%20and%20Birthday%20Party%20packages!" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="w-full flex items-center justify-center bg-star-gold hover:bg-star-gold/90 text-magic-purple font-black px-6 py-4 sm:py-5 rounded-full text-xl md:text-2xl shadow-[0_6px_0_var(--magic-purple)] hover:shadow-[0_8px_0_var(--magic-purple)] border-4 border-magic-purple transition-all hover:-translate-y-1 active:translate-y-0 active:shadow-none no-underline group uppercase tracking-widest mt-auto mb-2"
@@ -695,7 +695,7 @@ export default function HomePage() {
               </h2>
 
               <a 
-                href="https://wa.me/917996693125?text=Hi!%20I%20want%20to%20know%20more%20about%20Aabracadabrrahh"
+                href="https://wa.me/917996693125?text=Hi%20Aabracadabrrahh!%20I%27d%20love%20to%20learn%20more%20about%20your%20Play%20Zone%20and%20Birthday%20Party%20packages!"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group/btn relative inline-flex items-center justify-center bg-star-gold text-magic-purple font-black uppercase tracking-widest px-8 md:px-20 py-5 md:py-8 rounded-[1.5rem] md:rounded-[2.5rem] text-2xl md:text-5xl shadow-[12px_12px_0_var(--magic-purple)] hover:translate-y-2 hover:shadow-[6px_6px_0_var(--magic-purple)] active:translate-y-5 active:shadow-none transition-all duration-200 border-4 border-magic-purple overflow-hidden"

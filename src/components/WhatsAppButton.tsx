@@ -5,14 +5,13 @@ import { useState } from "react";
 export default function WhatsAppButton() {
   const [hovered, setHovered] = useState(false);
 
-  const message = encodeURIComponent(
-    "Hi! I'd like to know more about Aabracadabrrahh play zone 🎩"
-  );
+  const message = encodeURIComponent("Hi Aabracadabrrahh! I'd love to learn more about your Play Zone and Birthday Party packages!");
+
 
   return (
     <a
       id="whatsapp-fab"
-      href={`https://wa.me/919876543210?text=${message}`}
+      href={`https://wa.me/917996693125?text=${message}`}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 flex items-center gap-2 no-underline"
