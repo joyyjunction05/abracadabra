@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FiInstagram, FiFacebook, FiYoutube } from "react-icons/fi";
+import { FiInstagram } from "react-icons/fi";
 
 const FOOTER_COLUMNS = [
   {
@@ -31,18 +31,6 @@ const SOCIALS = [
     label: "Instagram",
     icon: <FiInstagram size={22} />,
     handle: "@aabracadabrrahh",
-  },
-  {
-    href: "https://facebook.com",
-    label: "Facebook",
-    icon: <FiFacebook size={22} />,
-    handle: "Facebook",
-  },
-  {
-    href: "https://youtube.com",
-    label: "YouTube",
-    icon: <FiYoutube size={22} />,
-    handle: "YouTube",
   },
 ];
 
@@ -84,11 +72,11 @@ export default function Footer() {
               <p>
                 ✉️{" "}
                 <a
-                  href="mailto:hello@aabracadabrrahh.com"
+                  href="mailto:enquiry@aabra-ca-dabrrahh.com"
                   className="hover:text-star-gold transition-colors no-underline"
                   style={{ color: "inherit" }}
                 >
-                  hello@aabracadabrrahh.com
+                  enquiry@aabra-ca-dabrrahh.com
                 </a>
               </p>
             </address>
@@ -142,9 +130,42 @@ export default function Footer() {
         className="border-t py-4"
         style={{ borderColor: "rgba(255,255,255,0.06)" }}
       >
-        <div className="mx-auto max-w-7xl px-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs" style={{ color: "rgba(255,255,255,0.25)" }}>
-          <p>© {new Date().getFullYear()} Aabracadabrrahh. All rights reserved.</p>
-          <p>Made with ✨ magic and lots of love · Electronic City, Bengaluru</p>
+        <div className="mx-auto max-w-7xl px-6 flex flex-col gap-3 text-xs" style={{ color: "rgba(255,255,255,0.25)" }}>
+          {/* Policy links */}
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8">
+            <a
+              href="/Privacy Policy.docx"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-star-gold no-underline"
+              style={{ color: "rgba(255,255,255,0.45)" }}
+            >
+              Privacy Policy
+            </a>
+            <a
+              href="/T&C.docx"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-star-gold no-underline"
+              style={{ color: "rgba(255,255,255,0.45)" }}
+            >
+              Terms &amp; Conditions
+            </a>
+            <a
+              href="/Refund Policy.docx"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-star-gold no-underline"
+              style={{ color: "rgba(255,255,255,0.45)" }}
+            >
+              Refund Policy
+            </a>
+          </div>
+          {/* Copyright line */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-2">
+            <p>© {new Date().getFullYear()} Joyy Junction. All rights reserved.</p>
+            <p>Made with ✨ magic and lots of love · Electronic City, Bengaluru</p>
+          </div>
         </div>
       </div>
     </footer>

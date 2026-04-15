@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Ticket, PartyPopper, Clock, Users, Coffee, Gift, Pizza, Sparkles, MessageCircle, PhoneCall, Eye, ShieldCheck, Rocket, Compass, Heart } from 'lucide-react';
+import { Ticket, PartyPopper, Clock, Users, Coffee, Gift, Pizza, Sparkles, MessageCircle, PhoneCall, Eye, ShieldCheck, Rocket, Compass, Heart, Mail, MapPin, Send } from 'lucide-react';
 import ScrollReveal from "@/components/ScrollReveal";
 
 /* ── Data ──────────────────────────────────────── */
@@ -166,8 +166,8 @@ function StickyActionBar() {
           <div className="mx-auto max-w-6xl px-4 py-2 flex items-center justify-between gap-2">
             <div className="flex items-center gap-3">
               <span className="font-display font-black text-magic-purple text-lg hidden sm:block uppercase">The Fun Never Stops!</span>
-              <a href="tel:+917996693125" className="btn-pink !text-sm !py-1.5 !px-3 sm:!px-5 no-underline border-2 border-white shadow-lg">☎️ Call</a>
-              <a href="https://wa.me/917996693125?text=Hi%20Aabracadabrrahh!%20I%27d%20love%20to%20learn%20more%20about%20your%20Play%20Zone%20and%20Birthday%20Party%20packages!" target="_blank" rel="noopener noreferrer" className="btn-gold !bg-white !text-magic-purple !text-sm !py-1.5 !px-3 sm:!px-5 no-underline border-2 border-magic-purple shadow-lg">🎟️ Book</a>
+              <a href="tel:+917996693125" className="btn-pink !text-sm !py-1.5 !px-3 sm:!px-5 no-underline border-2 border-white shadow-lg">Call</a>
+              <a href="https://wa.me/917996693125?text=Hi%20Aabracadabrrahh!%20I%20would%20love%20to%20learn%20more%20about%20your%20Play%20Zone%20and%20Birthday%20Party%20packages." target="_blank" rel="noopener noreferrer" className="btn-gold !bg-white !text-magic-purple !text-sm !py-1.5 !px-3 sm:!px-5 no-underline border-2 border-magic-purple shadow-lg">Book</a>
             </div>
             <Link href="#visit" className="text-sm font-black text-magic-purple no-underline hover:text-hot-pink transition-colors hidden md:block uppercase bg-white/50 px-3 py-1 rounded-full border border-magic-purple">
               📍 Electronic City, Bangalore
@@ -176,6 +176,104 @@ function StickyActionBar() {
         </motion.div>
       )}
     </AnimatePresence>
+  );
+}
+
+/* ── Contact Form ───────────────────────────────── */
+function ContactForm() {
+  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const text =
+      `Hi Aabracadabrrahh!\n\n` +
+      `My name is ${form.name} and I wanted to reach out.\n\n` +
+      `My Email: ${form.email}\n` +
+      `Subject: ${form.subject}\n\n` +
+      `My Message:\n${form.message}\n\n` +
+      `Looking forward to hearing from you.`;
+    window.open(`https://wa.me/917996693125?text=${encodeURIComponent(text)}`, "_blank");
+  };
+
+  const inputBase =
+    "w-full bg-white border-4 border-magic-purple/20 focus:border-hot-pink rounded-2xl px-5 py-3.5 text-magic-purple font-bold placeholder:text-magic-purple/30 placeholder:font-semibold outline-none transition-all duration-200 focus:shadow-[0_0_0_4px_rgba(255,20,147,0.15)] text-base";
+
+  return (
+    <div className="bg-white rounded-3xl border-4 border-white/30 shadow-[8px_8px_0_var(--star-gold)] p-8 md:p-10">
+      <h3 className="text-2xl md:text-3xl font-black text-magic-purple uppercase font-display mb-2 drop-shadow-sm">Give Us a Shout! 📣</h3>
+      <p className="text-magic-purple/50 font-semibold text-sm mb-8 uppercase tracking-widest">We reply fast, pinky promise 🤙</p>
+
+      <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="flex flex-col gap-2">
+            <label className="text-xs font-black text-magic-purple uppercase tracking-widest">Your Name *</label>
+            <input
+              name="name"
+              type="text"
+              required
+              placeholder="e.g. Priya Sharma"
+              value={form.name}
+              onChange={handleChange}
+              className={inputBase}
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <label className="text-xs font-black text-magic-purple uppercase tracking-widest">Email ID *</label>
+            <input
+              name="email"
+              type="email"
+              required
+              placeholder="hello@example.com"
+              value={form.email}
+              onChange={handleChange}
+              className={inputBase}
+            />
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <label className="text-xs font-black text-magic-purple uppercase tracking-widest">Subject *</label>
+          <input
+            name="subject"
+            type="text"
+            required
+            placeholder="e.g. Birthday Party Booking"
+            value={form.subject}
+            onChange={handleChange}
+            className={inputBase}
+          />
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <label className="text-xs font-black text-magic-purple uppercase tracking-widest">Your Message *</label>
+          <textarea
+            name="message"
+            required
+            rows={5}
+            placeholder="Tell us what's on your mind..."
+            value={form.message}
+            onChange={handleChange}
+            className={`${inputBase} resize-none`}
+          />
+        </div>
+
+        <button
+          type="submit"
+          className="group w-full flex items-center justify-center gap-3 bg-hot-pink hover:bg-hot-pink/90 text-white font-black uppercase tracking-widest px-8 py-4 rounded-full text-lg shadow-[0_6px_0_var(--magic-purple)] hover:shadow-[0_8px_0_var(--magic-purple)] border-4 border-magic-purple transition-all hover:-translate-y-1 active:translate-y-0 active:shadow-none"
+        >
+          <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" strokeWidth={2.5} />
+          Send Message via WhatsApp
+        </button>
+
+        <p className="text-center text-magic-purple/40 text-[11px] font-bold uppercase tracking-widest">
+          * Opens WhatsApp with your message pre-filled
+        </p>
+      </form>
+    </div>
   );
 }
 
@@ -332,12 +430,12 @@ export default function HomePage() {
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <a 
-                    href="https://wa.me/917996693125?text=Hi%20Aabracadabrrahh!%20I%27d%20love%20to%20learn%20more%20about%20your%20Play%20Zone%20and%20Birthday%20Party%20packages!" 
+                    href="https://wa.me/917996693125?text=Hi%20Aabracadabrrahh!%20I%20would%20like%20to%20enquire%20about%20your%20Birthday%20Party%20packages." 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="btn-gold !text-xl shadow-[0_6px_0_var(--magic-purple)] hover:shadow-[0_8px_0_var(--magic-purple)] no-underline flex items-center justify-center gap-2"
                   >
-                    ☎️ Plan With Us
+                    Plan With Us
                   </a>
                 </div>
               </ScrollReveal>
@@ -361,11 +459,11 @@ export default function HomePage() {
                   </motion.div>
                   <h3 className="text-3xl md:text-4xl text-magic-purple font-black md:text-left text-center mt-6 md:mt-0 uppercase font-display mb-4">Party Packages</h3>
                   <div className="bg-sky-cyan rounded-xl p-4 mb-4 border-4 border-deep-violet -rotate-1 shadow-inner">
-                     <p className="text-deep-violet font-black text-lg">Starting from ₹600 per person</p>
+                     <p className="text-deep-violet font-black text-lg">Starting from ₹ 800 for Kids</p>
                     <p className="text-deep-violet/90 font-bold text-sm">Create magical memories with complete packages including play time & premium food</p>
                   </div>
-                  <a href="https://wa.me/917996693125?text=Hi%20Aabracadabrrahh!%20I%27d%20like%20to%20book%20the%20Gold%20Birthday%20Package%20for%20my%20child%27s%20special%20day!" target="_blank" rel="noopener noreferrer" className="mt-4 w-full flex items-center justify-center bg-hot-pink hover:bg-hot-pink/90 text-white font-black px-6 py-4 rounded-full text-lg shadow-[0_4px_0_var(--magic-purple)] border-4 border-magic-purple transition-transform hover:-translate-y-1 no-underline">
-                    Secure Date via WhatsApp 📱
+                  <a href="https://wa.me/917996693125?text=Hi%20Aabracadabrrahh!%20I%20would%20like%20to%20enquire%20about%20booking%20a%20Birthday%20Package%20for%20my%20child." target="_blank" rel="noopener noreferrer" className="mt-4 w-full flex items-center justify-center bg-hot-pink hover:bg-hot-pink/90 text-white font-black px-6 py-4 rounded-full text-lg shadow-[0_4px_0_var(--magic-purple)] border-4 border-magic-purple transition-transform hover:-translate-y-1 no-underline">
+                    Secure Your Date via WhatsApp
                   </a>
                 </div>
                 <div className="absolute top-10 -right-10 bg-deep-violet w-full h-full rounded-3xl -rotate-6 z-0 border-8 border-white opacity-50" />
@@ -403,12 +501,18 @@ export default function HomePage() {
                 </div>
                 
                 <div className="text-center mb-8 mt-6">
-                  <div className="flex justify-center items-baseline gap-2">
-                    <span className="text-5xl lg:text-6xl font-black text-slide-orange font-display drop-shadow-[2px_2px_0_var(--magic-purple)]">₹400</span>
-                    <span className="text-3xl font-black text-magic-purple opacity-50">/</span>
-                    <span className="text-5xl lg:text-6xl font-black text-slide-orange font-display drop-shadow-[2px_2px_0_var(--magic-purple)]">₹450</span>
+                  <div className="flex justify-center items-center gap-4 md:gap-6 mb-3">
+                    <div className="flex flex-col items-center">
+                      <span className="text-[10px] font-black text-magic-purple/50 uppercase tracking-widest mb-1 bg-magic-purple/5 px-2 py-0.5 rounded-full">Weekday</span>
+                      <span className="text-4xl lg:text-5xl font-black text-slide-orange font-display drop-shadow-[2px_2px_0_var(--magic-purple)]">₹400</span>
+                    </div>
+                    <span className="text-3xl font-black text-magic-purple/20">|</span>
+                    <div className="flex flex-col items-center">
+                      <span className="text-[10px] font-black text-magic-purple/50 uppercase tracking-widest mb-1 bg-magic-purple/5 px-2 py-0.5 rounded-full">Weekend</span>
+                      <span className="text-4xl lg:text-5xl font-black text-hot-pink font-display drop-shadow-[2px_2px_0_var(--magic-purple)]">₹450</span>
+                    </div>
                   </div>
-                  <p className="text-deep-violet font-bold uppercase tracking-widest text-sm mt-3 bg-off-white inline-block px-4 py-1 rounded-full border-2 border-magic-purple">Per Hour (Wkdy/Wknd)</p>
+                  <p className="text-deep-violet font-bold uppercase tracking-widest text-[10px] bg-off-white inline-block px-4 py-1.5 rounded-full border-2 border-magic-purple shadow-sm">Per Child (Per Hour)</p>
                 </div>
                 
                 <ul className="space-y-4 mb-8">
@@ -422,85 +526,148 @@ export default function HomePage() {
                   </li>
                   <li className="flex items-start gap-4">
                     <span className="mt-[-4px]"><Coffee className="text-hot-pink w-8 h-8" strokeWidth={2.5} /></span>
-                    <span className="text-magic-purple font-black text-lg leading-tight uppercase">Cafe access for relaxing parents</span>
+                    <span className="text-magic-purple font-black text-lg leading-tight uppercase">Cafe access for parents</span>
+                  </li>
+                </ul>
+
+                <div className="mt-2 bg-magic-purple/5 border-2 border-magic-purple/10 rounded-2xl py-3.5 px-4 flex items-center justify-center gap-3">
+                  <Ticket className="text-magic-purple" size={24} />
+                  <span className="font-black text-magic-purple text-sm uppercase tracking-widest">Available at Counter</span>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* BIRTHDAY TICKET SUMMARY */}
+            <ScrollReveal delay={200} className="w-full max-w-md">
+              <div className="bg-white rounded-3xl p-8 shadow-[15px_15px_0_var(--star-gold)] border-8 border-dashed border-hot-pink relative rotate-[-2deg] hover:rotate-0 hover:scale-[1.02] transition-all duration-300">
+                <div className="absolute -top-6 -left-6 md:-top-8 md:-left-8 w-16 h-16 md:w-20 md:h-20 bg-magic-purple rounded-full flex items-center justify-center text-3xl shadow-lg border-4 border-white animate-pulse-slow z-20">
+                  <Gift className="text-white w-8 h-8 md:w-10 md:h-10 drop-shadow-md" />
+                </div>
+                <div className="absolute top-1/2 -left-8 w-12 h-12 bg-ball-green rounded-full border-r-8 border-dashed border-hot-pink"></div>
+                <div className="absolute top-1/2 -right-8 w-12 h-12 bg-ball-green rounded-full border-l-8 border-dashed border-hot-pink"></div>
+                
+                <div className="bg-hot-pink text-white text-center py-4 px-6 rounded-2xl mb-6 shadow-md border-4 border-white -mt-14 mx-4 rotate-1">
+                  <h3 className="text-3xl lg:text-4xl font-black uppercase font-display tracking-wider drop-shadow-md">Birthdays</h3>
+                </div>
+
+                <div className="text-center mb-8 mt-6">
+                  <p className="text-magic-purple font-black uppercase text-sm mb-1 tracking-widest">Packages Start From</p>
+                  <div className="flex justify-center items-baseline gap-2">
+                    <span className="text-5xl lg:text-6xl font-black text-hot-pink font-display drop-shadow-[2px_2px_0_var(--magic-purple)]">₹700</span>
+                  </div>
+                  <p className="text-deep-violet font-bold uppercase tracking-widest text-[10px] mt-3 bg-hot-pink/10 inline-block px-4 py-1.5 rounded-full border border-hot-pink/20">Per Child (Min 5 Kids)</p>
+                </div>
+                
+                <ul className="space-y-4 mb-8">
+                  <li className="flex items-start gap-4">
+                     <span className="mt-[-4px]"><PartyPopper className="text-star-gold w-8 h-8" strokeWidth={2.5} /></span>
+                    <span className="text-magic-purple font-black text-lg leading-tight uppercase">Dedicated Party Venue</span>
+                  </li>
+                  <li className="flex items-start gap-4">
+                     <span className="mt-[-4px]"><Pizza className="text-sky-cyan w-8 h-8" strokeWidth={2.5} /></span>
+                    <span className="text-magic-purple font-black text-lg leading-tight uppercase">Premium Food & Drink</span>
+                  </li>
+                  <li className="flex items-start gap-4">
+                     <span className="mt-[-4px]"><Sparkles className="text-hot-pink w-8 h-8" strokeWidth={2.5} /></span>
+                    <span className="text-magic-purple font-black text-lg leading-tight uppercase">Gorgeous Theme Decor</span>
                   </li>
                 </ul>
               </div>
             </ScrollReveal>
 
-            {/* BIRTHDAY TICKET */}
-            <ScrollReveal delay={200} className="w-full max-w-xl">
-              <div className="bg-white rounded-3xl p-6 sm:p-8 xl:p-10 shadow-[15px_15px_0_var(--star-gold)] lg:shadow-[20px_20px_0_var(--star-gold)] border-8 border-dashed border-hot-pink relative rotate-[-2deg] hover:rotate-0 hover:scale-[1.02] transition-all duration-300">
-                {/* Top badge */}
-                <div className="absolute -top-6 -left-6 md:-top-8 md:-left-8 w-16 h-16 md:w-20 md:h-20 bg-magic-purple rounded-full flex items-center justify-center text-3xl shadow-lg border-4 border-white animate-pulse-slow z-20">
-                  <Gift className="text-white w-8 h-8 md:w-10 md:h-10 drop-shadow-md" />
-                </div>
+          </div>
 
-                {/* Ticket Notches */}
-                <div className="absolute top-[45%] -left-8 w-12 h-12 bg-ball-green rounded-full border-r-8 border-dashed border-hot-pink"></div>
-                <div className="absolute top-[45%] -right-8 w-12 h-12 bg-ball-green rounded-full border-l-8 border-dashed border-hot-pink"></div>
-                
-                <div className="relative z-10 flex flex-col h-full">
-                  <div className="bg-hot-pink text-white text-center py-4 px-6 rounded-2xl mb-8 shadow-md border-4 border-white -mt-10 lg:-mt-14 mx-auto w-10/12 rotate-[1deg]">
-                    <h3 className="text-3xl lg:text-4xl font-black uppercase font-display tracking-wider drop-shadow-md">Birthday Packages</h3>
-                  </div>
+          {/* DETAILED BIRTHDAY PACKAGES GRID (Full Width) */}
+          <div className="mt-20 lg:mt-32 max-w-5xl mx-auto">
+            <ScrollReveal>
+              <div className="text-center mb-10">
+                <h3 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight font-display drop-shadow-[3px_3px_0_var(--magic-purple)] mb-3">
+                  Choose Your <span className="text-hot-pink" style={{ textShadow: "3px 3px 0 var(--magic-purple)" }}>Package</span>
+                </h3>
+                <p className="text-white/80 font-bold uppercase tracking-widest text-sm">Every party tailored to perfection</p>
+              </div>
 
-                  <div className="grid grid-cols-3 gap-1.5 sm:gap-4 mb-8 mx-[-10px] sm:mx-0">
-                    {[
-                      { name: "Silver", price: "₹700", icon: "🍰", desc: "Cozy Corner (5-10)", color: "text-sky-cyan", border: "border-sky-cyan", shadow: "shadow-[2px_2px_0_var(--sky-cyan)] sm:shadow-[4px_4px_0_var(--sky-cyan)]", bg: "bg-sky-cyan/10" },
-                      { name: "Gold", price: "₹800", icon: "👑", desc: "Party Hall (MIN 25)", color: "text-star-gold", border: "border-star-gold", shadow: "shadow-[2px_2px_0_var(--star-gold)] sm:shadow-[4px_4px_0_var(--star-gold)]", bg: "bg-star-gold/10" },
-                      { name: "Diamond", price: "₹950", icon: "💎", desc: "Elite Hall (MIN 25)", color: "text-hot-pink", border: "border-hot-pink", shadow: "shadow-[2px_2px_0_var(--hot-pink)] sm:shadow-[4px_4px_0_var(--hot-pink)]", bg: "bg-hot-pink/10" }
-                    ].map((tier) => (
-                      <div key={tier.name} className={`${tier.bg} rounded-xl sm:rounded-2xl p-2 sm:p-4 border-2 sm:border-4 ${tier.border} ${tier.shadow} flex flex-col items-center text-center relative group hover:-translate-y-1 sm:hover:-translate-y-2 transition-transform`}>
-                        <div className="relative z-10 flex flex-col items-center">
-                          <span className="text-2xl sm:text-4xl mb-1 sm:mb-2 group-hover:scale-125 group-hover:rotate-6 transition-transform">{tier.icon}</span>
-                          <span className={`font-black text-[11px] min-[390px]:text-[13px] sm:text-2xl font-display uppercase tracking-wider drop-shadow-sm ${tier.color}`}>{tier.name}</span>
-                          <div className="flex items-baseline mt-0.5 sm:mt-1 mb-1.5 sm:mb-2">
-                            <span className="text-[15px] min-[390px]:text-[17px] sm:text-3xl font-black text-magic-purple leading-none">{tier.price}</span>
-                          </div>
-                          <div className="bg-white px-1 sm:px-2 py-1 sm:py-1.5 rounded sm:rounded-lg border-[1px] sm:border-2 border-white/60 sm:border-white shadow-sm mt-auto w-full flex items-center justify-center min-h-[36px] sm:min-h-[44px]">
-                             <span className="text-[7.5px] min-[390px]:text-[8.5px] sm:text-[10px] font-black uppercase text-magic-purple opacity-90 leading-tight block truncate sm:whitespace-normal">{tier.desc}</span>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="bg-magic-purple/5 rounded-3xl p-4 sm:p-6 border-b-8 border-r-8 border-magic-purple/10 mb-8 mt-2">
-                    <h4 className="text-magic-purple font-black uppercase text-sm mb-4 flex items-center justify-center gap-2 tracking-widest text-center">
-                      <Sparkles size={18} className="text-star-gold" /> ALL PACKAGES INCLUDE <Sparkles size={18} className="text-star-gold" />
-                    </h4>
-                    <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                      {[
-                        { label: "3H Play Time", icon: <Clock size={20} className="text-slide-orange" /> },
-                        { label: "Premium Food", icon: <Pizza size={20} className="text-sky-cyan" /> },
-                        { label: "Theme Decor", icon: <Gift size={20} className="text-hot-pink" /> },
-                        { label: "Guided Games", icon: <PartyPopper size={20} className="text-ball-green" /> }
-                      ].map((feat) => (
-                        <div key={feat.label} className="flex flex-col xl:flex-row items-center gap-2 xl:gap-3 bg-white p-2 xl:p-3 rounded-2xl shadow-sm border-2 border-transparent hover:border-magic-purple/20 transition-colors text-center xl:text-left">
-                          <div className="bg-off-white p-1.5 xl:p-2 rounded-xl">{feat.icon}</div>
-                          <span className="font-black text-[9px] xl:text-[11px] text-magic-purple/90 uppercase leading-none">{feat.label}</span>
-                        </div>
-                      ))}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-12">
+                {[
+                  {
+                    name: "Silver", price: "₹700", icon: "🍰", desc: "Cozy Corner", capacity: "5–10 Kids",
+                    color: "text-sky-cyan", border: "border-sky-cyan", shadow: "shadow-[6px_6px_0_var(--sky-cyan)]", bg: "bg-white", badgeBg: "bg-sky-cyan",
+                    features: ["Cozy Corner (5–10 Kids)", "Box Meals Provided"],
+                  },
+                  {
+                    name: "Gold", price: "₹800", icon: "👑", desc: "Party Hall", capacity: "Min 25 Kids",
+                    color: "text-star-gold", border: "border-star-gold", shadow: "shadow-[6px_6px_0_var(--star-gold)]", bg: "bg-white", badgeBg: "bg-star-gold",
+                    features: ["Welcome Drink x1", "Starters x3", "Mains x2", "Dessert x1"],
+                  },
+                  {
+                    name: "Diamond", price: "₹950", icon: "💎", desc: "Party Hall", capacity: "Min 25 Kids",
+                    color: "text-hot-pink", border: "border-hot-pink", shadow: "shadow-[6px_6px_0_var(--hot-pink)]", bg: "bg-white", badgeBg: "bg-hot-pink",
+                    features: ["Welcome Drink x1", "Starters x3", "Veg Gravy x1", "Paneer Gravy x1", "Dal x1", "Rice x1", "Breads x1 (Tandoor or Tawa)", "Dessert x2", "Accompaniments: Raita, Papad, Pickle, Salad"],
+                  },
+                ].map((tier) => (
+                  <div key={tier.name} className={`${tier.bg} rounded-3xl border-4 ${tier.border} ${tier.shadow} flex flex-col items-center text-center relative group hover:-translate-y-2 transition-transform overflow-hidden`}>
+                    {/* Header */}
+                    <div className={`${tier.badgeBg} w-full py-5 px-4 flex flex-col items-center border-b-4 border-deep-violet/10`}>
+                      <span className="text-5xl mb-2 group-hover:scale-110 group-hover:rotate-6 transition-transform inline-block drop-shadow-md">{tier.icon}</span>
+                      <span className={`font-black text-2xl lg:text-3xl font-display uppercase tracking-wider drop-shadow-sm text-white`}>{tier.name}</span>
+                      <span className="text-white/90 text-xs font-bold uppercase tracking-widest mt-1">{tier.desc}</span>
                     </div>
+                    {/* Price */}
+                    <div className="py-5 px-4 bg-magic-purple/5 w-full border-b border-magic-purple/10">
+                      <div className="flex items-baseline justify-center gap-1">
+                        <span className={`text-4xl lg:text-5xl font-black font-display ${tier.color} drop-shadow-[2px_2px_0_var(--magic-purple)]`}>{tier.price}</span>
+                        <span className="text-magic-purple/50 text-sm font-bold">/person</span>
+                      </div>
+                      <span className="text-[11px] font-black uppercase text-magic-purple tracking-widest bg-white px-4 py-1.5 rounded-full border border-magic-purple/20 shadow-sm mt-3 inline-block">{tier.capacity}</span>
+                    </div>
+                    {/* Features */}
+                    <ul className="px-6 py-6 space-y-3 w-full text-left flex-1 bg-white">
+                      {tier.features.map((feat) => (
+                        <li key={feat} className="flex items-start gap-3 text-[13px] font-bold text-magic-purple/80 tracking-wide uppercase leading-tight">
+                          <span className={`${tier.color} text-lg leading-none mt-[-2px] drop-shadow-sm`}>✦</span>
+                          {feat}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
+                ))}
+              </div>
 
-                  <a 
-                    href="https://wa.me/917996693125?text=Hi%20Aabracadabrrahh!%20I%27d%20love%20to%20learn%20more%20about%20your%20Play%20Zone%20and%20Birthday%20Party%20packages!" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="w-full flex items-center justify-center bg-star-gold hover:bg-star-gold/90 text-magic-purple font-black px-6 py-4 sm:py-5 rounded-full text-xl md:text-2xl shadow-[0_6px_0_var(--magic-purple)] hover:shadow-[0_8px_0_var(--magic-purple)] border-4 border-magic-purple transition-all hover:-translate-y-1 active:translate-y-0 active:shadow-none no-underline group uppercase tracking-widest mt-auto mb-2"
-                  >
-                    PLAN VIA WHATSAPP <MessageCircle className="ml-3 group-hover:rotate-12 transition-transform shadow-sm rounded-full bg-white text-magic-purple p-1 hidden sm:block" size={28} />
-                  </a>
-                  
-                  <div className="flex justify-center">
-                    <p className="text-magic-purple/60 text-[10px] font-bold uppercase tracking-widest bg-magic-purple/5 py-1.5 px-4 rounded-full inline-block border border-magic-purple/10">
-                      *18% GST Applicable · No Frozen Food
-                    </p>
-                  </div>
+              {/* Shared Party Inclusions Card */}
+              <div className="bg-white rounded-3xl p-6 md:p-8 border-4 border-white shadow-[10px_10px_0_var(--magic-purple)] mt-8 mx-auto max-w-4xl relative overflow-hidden">
+                <div className="absolute inset-x-0 top-0 h-2 bg-gradient-to-r from-sky-cyan via-star-gold to-hot-pink"></div>
+                <h4 className="text-magic-purple font-black uppercase text-xl mb-6 flex items-center justify-center gap-3 tracking-widest text-center font-display">
+                  <Sparkles size={24} className="text-star-gold" /> EVERY BIRTHDAY PACKAGE INCLUDES <Sparkles size={24} className="text-star-gold" />
+                </h4>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+                  {[
+                    { label: "3H Play Time", icon: <Clock size={28} className="text-slide-orange" /> },
+                    { label: "Premium Food", icon: <Pizza size={28} className="text-sky-cyan" /> },
+                    { label: "Theme Decor", icon: <Gift size={28} className="text-hot-pink" /> },
+                    { label: "Guided Games", icon: <PartyPopper size={28} className="text-ball-green" /> }
+                  ].map((feat) => (
+                    <div key={feat.label} className="flex flex-col items-center gap-3 bg-off-white p-4 rounded-2xl shadow-sm border-2 border-transparent hover:border-magic-purple/10 transition-colors text-center group">
+                      <div className="bg-white p-3 rounded-xl shadow-sm group-hover:-translate-y-1 transition-transform">{feat.icon}</div>
+                      <span className="font-black text-[12px] text-magic-purple uppercase leading-tight">{feat.label}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
+
+              <div className="mt-12 text-center flex flex-col items-center">
+                <a 
+                  href="https://wa.me/917996693125?text=Hi%20Aabracadabrrahh!%20I%20would%20like%20to%20enquire%20about%20your%20Birthday%20Party%20packages." 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="inline-flex items-center justify-center bg-star-gold hover:bg-star-gold/90 text-magic-purple font-black px-10 py-5 rounded-full text-xl md:text-2xl shadow-[0_6px_0_var(--magic-purple)] hover:shadow-[0_8px_0_var(--magic-purple)] border-4 border-magic-purple transition-all hover:-translate-y-1 active:translate-y-0 active:shadow-none no-underline group uppercase tracking-widest mb-4"
+                >
+                  PLAN IT VIA WHATSAPP <MessageCircle className="ml-3 group-hover:rotate-12 transition-transform shadow-sm rounded-full bg-white text-magic-purple p-1 hidden sm:block" size={32} />
+                </a>
+                <p className="text-white/80 text-xs font-bold uppercase tracking-widest bg-black/10 py-2 px-6 rounded-full inline-block border border-white/20">
+                  *18% GST Applicable · No Frozen Food
+                </p>
+              </div>
+
             </ScrollReveal>
 
           </div>
@@ -565,6 +732,61 @@ export default function HomePage() {
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ========= TIMINGS STRIP ========= */}
+      <section className="py-10 lg:py-14 px-4 bg-deep-violet relative z-10 overflow-hidden">
+        {/* Background sparkle pattern */}
+        <div className="absolute inset-0 bg-pattern-stripes opacity-10 pointer-events-none" />
+
+        <div className="mx-auto max-w-4xl relative z-10">
+          <ScrollReveal>
+            {/* Header */}
+            <div className="text-center mb-8">
+              <div className="inline-block bg-hot-pink text-white px-8 py-3 rounded-full font-black text-2xl md:text-3xl uppercase font-display shadow-[5px_5px_0_var(--star-gold)] border-4 border-white tracking-widest">
+                We Are Open!
+              </div>
+            </div>
+
+            {/* Timings card */}
+            <div className="bg-white/5 border-4 border-white/10 rounded-3xl overflow-hidden backdrop-blur-sm">
+              {/* Weekday row */}
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-2 px-8 py-5 border-b-2 border-dashed border-white/20">
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl">📅</span>
+                  <span className="text-white font-black text-lg md:text-xl uppercase tracking-wider font-display">Monday to Friday</span>
+                </div>
+                <span className="bg-star-gold text-magic-purple font-black text-lg md:text-xl px-6 py-2 rounded-full shadow-[3px_3px_0_var(--magic-purple)] border-2 border-white uppercase tracking-wider font-display">
+                  11 AM – 8:30 PM
+                </span>
+              </div>
+
+              {/* Weekend row */}
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-2 px-8 py-5 border-b-2 border-dashed border-white/20">
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl">🎉</span>
+                  <span className="text-white font-black text-lg md:text-xl uppercase tracking-wider font-display">Saturday to Sunday</span>
+                </div>
+                <span className="bg-hot-pink text-white font-black text-lg md:text-xl px-6 py-2 rounded-full shadow-[3px_3px_0_var(--magic-purple)] border-2 border-white uppercase tracking-wider font-display">
+                  11 AM – 9 PM
+                </span>
+              </div>
+
+              {/* Rules strip */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 px-8 py-5 bg-white/5">
+                <div className="flex items-center gap-2 text-white/80 font-black uppercase text-sm tracking-widest">
+                  <span className="text-sky-cyan text-lg">✦</span>
+                  Socks are mandatory for Kids &amp; Parents
+                </div>
+                <div className="hidden sm:block w-px h-6 bg-white/20" />
+                <div className="flex items-center gap-2 text-white/80 font-black uppercase text-sm tracking-widest">
+                  <span className="text-star-gold text-lg">✦</span>
+                  No outside food allowed
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -639,80 +861,97 @@ export default function HomePage() {
          </div>
       </section>
 
-      {/* ========= SIX: CONTACT (Explosive Banner) ========= */}
-      <section id="contact" className="py-20 lg:py-40 px-4 bg-deep-violet relative overflow-hidden scroll-mt-24">
-        <SparkleStars count={40} />
-        
-        <ScrollReveal>
-          <motion.div 
-            animate={{ y: [0, -15, 0], rotate: [1, -1, 1] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="mx-auto max-w-5xl bg-hot-pink bg-pattern-stripes rounded-3xl md:rounded-[4rem] p-8 sm:p-16 md:p-24 text-center shadow-[0_0_120px_var(--hot-pink)] border-[8px] md:border-[16px] border-white relative overflow-visible group cursor-wrapper"
-          >
-            {/* The Ticket Notches (Custom CSS Mask alternatives) */}
-            <div className="absolute top-1/2 -left-10 md:-left-20 w-20 h-20 md:w-40 md:h-40 bg-deep-violet rounded-full -translate-y-1/2 border-[8px] md:border-[16px] border-white z-40"></div>
-            <div className="absolute top-1/2 -right-10 md:-right-20 w-20 h-20 md:w-40 md:h-40 bg-deep-violet rounded-full -translate-y-1/2 border-[8px] md:border-[16px] border-white z-40"></div>
+      {/* ========= SIX: CONTACT US ========= */}
+      <section id="contact" className="py-16 lg:py-24 px-4 bg-deep-violet bg-pattern-stripes relative overflow-hidden scroll-mt-24">
+        <SparkleStars count={30} />
 
-            <div className="absolute inset-x-0 bottom-1/4 h-2 border-t-4 border-dashed border-white/40 z-30 opacity-50"></div>
+        {/* Floating decorators */}
+        <motion.span
+          className="absolute top-10 left-6 text-5xl pointer-events-none hidden md:block"
+          animate={{ y: [0, -20, 0], rotate: [-10, 10, -10] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        >🎈</motion.span>
+        <motion.span
+          className="absolute bottom-12 right-8 text-5xl pointer-events-none hidden md:block"
+          animate={{ y: [0, 20, 0], rotate: [10, -10, 10] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+        >🎉</motion.span>
+        <motion.span
+          className="absolute top-1/2 right-16 text-4xl pointer-events-none hidden lg:block"
+          animate={{ y: [0, -15, 0] }}
+          transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        >🎂</motion.span>
 
-            <div className="absolute inset-0 bg-gradient-to-r from-hot-pink/90 via-hot-pink/20 to-hot-pink/90 pointer-events-none"></div>
-
-            {/* Giant Spinning BG Props */}
-            <motion.div 
-              animate={{ rotate: 360 }}
-              transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-              className="absolute -top-32 -left-20 text-white/10 origin-center pointer-events-none hidden md:block"
-            >
-              <Sparkles size={350} strokeWidth={1} />
-            </motion.div>
-
-            {/* Floating 3D SVGs */}
-            <motion.div 
-              animate={{ y: [0, -30, 0], rotate: [-10, 10, -10] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-12 left-10 md:-top-16 md:left-24 z-50 pointer-events-none"
-            >
-              <div className="bg-white text-magic-purple p-5 rounded-full shadow-[8px_8px_0_var(--magic-purple)] border-4 border-magic-purple">
-                <MessageCircle size={56} strokeWidth={2.5} />
+        <div className="mx-auto max-w-6xl relative z-10">
+          {/* Section Header */}
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <div className="inline-block bg-hot-pink text-white px-8 py-3 rounded-full font-black text-2xl md:text-4xl uppercase font-display shadow-[6px_6px_0_var(--star-gold)] border-4 border-white -rotate-1 mb-4">
+                Contact Us 🎀
               </div>
-            </motion.div>
-
-            <motion.div 
-              animate={{ y: [0, 30, 0], rotate: [10, -10, 10] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-              className="absolute -bottom-12 right-10 md:-bottom-16 md:right-24 z-50 pointer-events-none"
-            >
-              <div className="bg-star-gold text-magic-purple p-5 rounded-full shadow-[8px_8px_0_var(--magic-purple)] border-4 border-white">
-                <PhoneCall size={56} strokeWidth={2.5} />
-              </div>
-            </motion.div>
-
-            <div className="relative z-30 flex flex-col items-center justify-center">
-               <span className="text-white font-black uppercase tracking-[0.3em] text-sm md:text-xl mb-4 md:mb-6 block drop-shadow-md">Admit One: Ultimate Fun</span>
-              <h2 className="text-4xl md:text-7xl lg:text-8xl font-black text-white mb-10 md:mb-16 uppercase font-display leading-[0.9] tracking-tight" 
-                  style={{ textShadow: "8px 8px 0 var(--magic-purple)", WebkitTextStroke: "2px var(--deep-violet)" }}>
-                Never Miss <br/> The <span className="text-star-gold animate-pulse inline-block" style={{ textShadow: "8px 8px 0 var(--magic-purple)" }}>Magic!</span>
-              </h2>
-
-              <a 
-                href="https://wa.me/917996693125?text=Hi%20Aabracadabrrahh!%20I%27d%20love%20to%20learn%20more%20about%20your%20Play%20Zone%20and%20Birthday%20Party%20packages!"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group/btn relative inline-flex items-center justify-center bg-star-gold text-magic-purple font-black uppercase tracking-widest px-8 md:px-20 py-5 md:py-8 rounded-[1.5rem] md:rounded-[2.5rem] text-2xl md:text-5xl shadow-[12px_12px_0_var(--magic-purple)] hover:translate-y-2 hover:shadow-[6px_6px_0_var(--magic-purple)] active:translate-y-5 active:shadow-none transition-all duration-200 border-4 border-magic-purple overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
-                <span className="relative z-10 flex items-center gap-4">
-                  <MessageCircle strokeWidth={3} size={40} className="group-hover/btn:scale-110 transition-transform" /> 
-                  Chat Now
-                </span>
-              </a>
-
-              <p className="mt-8 md:mt-12 text-white/80 font-bold uppercase tracking-widest text-xs md:text-base">
-                Instant Magic Updates via WhatsApp
-              </p>
+              <p className="text-white/70 font-bold text-lg mt-4">Got a question? We&apos;d love to hear from you!</p>
             </div>
-          </motion.div>
-        </ScrollReveal>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+
+            {/* LEFT — Info Panel */}
+            <ScrollReveal delay={100}>
+              <div className="bg-white/10 backdrop-blur-sm border-4 border-white/20 rounded-3xl p-8 md:p-10 h-full flex flex-col gap-8">
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-black text-star-gold uppercase font-display mb-6 drop-shadow-sm">Find Us Here! 📍</h3>
+                  <div className="flex flex-col gap-5">
+                    <div className="flex items-start gap-4">
+                      <div className="bg-hot-pink p-3 rounded-2xl shadow-[3px_3px_0_var(--magic-purple)] border-2 border-white flex-shrink-0">
+                        <MapPin size={22} className="text-white" strokeWidth={2.5} />
+                      </div>
+                      <div>
+                        <p className="text-white font-black uppercase text-sm tracking-widest mb-1">Address</p>
+                        <p className="text-white/75 font-semibold leading-relaxed text-sm">Electronic City Phase 1,<br />Bengaluru 560100</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <div className="bg-star-gold p-3 rounded-2xl shadow-[3px_3px_0_var(--magic-purple)] border-2 border-white flex-shrink-0">
+                        <PhoneCall size={22} className="text-magic-purple" strokeWidth={2.5} />
+                      </div>
+                      <div>
+                        <p className="text-white font-black uppercase text-sm tracking-widest mb-1">Call Us</p>
+                        <a href="tel:+917996693125" className="text-star-gold font-black text-lg hover:text-white transition-colors no-underline">+91 79966 93125</a>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <div className="bg-sky-cyan p-3 rounded-2xl shadow-[3px_3px_0_var(--magic-purple)] border-2 border-white flex-shrink-0">
+                        <Mail size={22} className="text-magic-purple" strokeWidth={2.5} />
+                      </div>
+                      <div>
+                        <p className="text-white font-black uppercase text-sm tracking-widest mb-1">Email Us</p>
+                        <a href="mailto:enquiry@aabra-ca-dabrrahh.com" className="text-sky-cyan font-black hover:text-white transition-colors no-underline text-sm break-all">enquiry@aabra-ca-dabrrahh.com</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* WhatsApp direct shortcut */}
+                <div className="mt-auto">
+                  <p className="text-white/50 font-bold uppercase text-xs tracking-widest mb-3">Prefer to chat directly?</p>
+                  <a
+                    href="https://wa.me/917996693125?text=Hi%20Aabracadabrrahh!%20I%27d%20love%20to%20learn%20more%20about%20your%20Play%20Zone%20and%20Birthday%20Party%20packages!"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-3 bg-ball-green text-white font-black px-6 py-3 rounded-full shadow-[4px_4px_0_var(--magic-purple)] border-4 border-white hover:-translate-y-1 transition-transform no-underline uppercase tracking-widest text-sm"
+                  >
+                    <MessageCircle size={20} strokeWidth={2.5} /> WhatsApp Us Directly
+                  </a>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* RIGHT — Contact Form */}
+            <ScrollReveal delay={200}>
+              <ContactForm />
+            </ScrollReveal>
+          </div>
+        </div>
       </section>
     </main>
   );
