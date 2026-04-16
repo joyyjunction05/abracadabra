@@ -907,7 +907,7 @@ export default function HomePage() {
                       </div>
                       <div>
                         <p className="text-white font-black uppercase text-sm tracking-widest mb-1">Address</p>
-                        <p className="text-white/75 font-semibold leading-relaxed text-sm">Electronic City Phase 1,<br />Bengaluru 560100</p>
+                        <a href="https://maps.app.goo.gl/XFj1o1yGNKX8xo1c9" target="_blank" rel="noopener noreferrer" className="text-white/75 hover:text-white font-semibold leading-relaxed text-sm transition-colors no-underline">Electronic City Phase 1, Bengaluru</a>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
@@ -952,6 +952,20 @@ export default function HomePage() {
             </ScrollReveal>
           </div>
         </div>
+      </section>
+
+      {/* ========= SEVEN: LOCATION MAP ========= */}
+      <section className="w-full h-[50vh] min-h-[400px] border-t-8 border-dashed border-sky-cyan/40 relative z-10">
+        <iframe 
+          src="https://maps.google.com/maps?cid=10043499588260165066&output=embed" 
+          width="100%" 
+          height="100%" 
+          style={{ border: 0 }} 
+          allowFullScreen 
+          loading="lazy" 
+          referrerPolicy="no-referrer-when-downgrade" 
+          className="w-full h-full filter contrast-125"
+        />
       </section>
     </main>
   );

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FiInstagram } from "react-icons/fi";
+import { FiInstagram, FiFacebook } from "react-icons/fi";
 
 const SOCIALS = [
   {
@@ -8,6 +8,12 @@ const SOCIALS = [
     label: "Instagram",
     icon: <FiInstagram size={22} strokeWidth={2} />,
     handle: "@aabracadabrrahh",
+  },
+  {
+    href: "https://www.facebook.com/share/18EMBbkZ8V/",
+    label: "Facebook",
+    icon: <FiFacebook size={22} strokeWidth={2} />,
+    handle: "Aabracadabrrahh Facebook",
   },
 ];
 
@@ -72,10 +78,9 @@ export default function Footer() {
           <div className="flex flex-col items-center text-center">
             <h4 className="text-hot-pink font-bold text-[15px] mb-5 tracking-widest uppercase">Branches</h4>
             <div className="text-white/80 text-[13px] leading-relaxed mb-10">
-              <p className="mb-1">- M/s. Infinite Learning & Entertainment – AABRACADABRRAHH</p>
+              <p className="mb-1">- M/s. Infinite Learning & Entertainment – Aabra-ca-dabrrahh</p>
               <p className="leading-snug">
-                No. 15, Sky-wards Sun Park Building, 5th Floor, Neeladri Rd,
-                <br />Karuna Nagar, Electronics City Phase 1, Bengaluru, 560100
+                <a href="https://maps.app.goo.gl/XFj1o1yGNKX8xo1c9" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors no-underline text-white/80">Electronic City Phase 1, Bengaluru</a>
               </p>
             </div>
 
