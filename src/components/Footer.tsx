@@ -30,7 +30,7 @@ export default function Footer() {
             <div className="text-white/80 text-[13px] leading-relaxed mb-10">
               <p className="mb-1">- M/s. Infinite Learning & Entertainment</p>
               <p className="leading-snug">
-                No. 702, 6th A Cross, 3rd Block, <br className="hidden sm:block md:hidden" />Koramangala, Bangalore – 560034
+                Electronic City Phase 1,{" "}<br className="hidden sm:block md:hidden" />Bengaluru – 560100
               </p>
             </div>
 
@@ -78,9 +78,9 @@ export default function Footer() {
           <div className="flex flex-col items-center text-center">
             <h4 className="text-hot-pink font-bold text-[15px] mb-5 tracking-widest uppercase">Branches</h4>
             <div className="text-white/80 text-[13px] leading-relaxed mb-10">
-              <p className="mb-1">- M/s. Infinite Learning & Entertainment – Aabra-ca-dabrrahh</p>
+              <p className="mb-1">- Aabracadabrrahh Indoor Play Zone</p>
               <p className="leading-snug">
-                <a href="https://maps.app.goo.gl/XFj1o1yGNKX8xo1c9" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors no-underline text-white/80">Electronic City Phase 1, Bengaluru</a>
+                <a href="https://maps.app.goo.gl/XFj1o1yGNKX8xo1c9" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors no-underline text-white/80">Electronic City Phase 1, Bengaluru – 560100</a>
               </p>
             </div>
 
@@ -120,7 +120,7 @@ export default function Footer() {
           </div>
           
           <div className="text-center text-white/50 text-[12px] tracking-wide mt-2">
-            Copyright © {new Date().getFullYear()} Joyy Junction. All rights reserved.
+            Copyright © {new Date().getFullYear()} Abracadabra. All rights reserved.
           </div>
         </div>
       </div>
