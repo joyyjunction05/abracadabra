@@ -28,7 +28,6 @@ export default function Footer() {
           <div className="flex flex-col items-center text-center">
             <h4 className="text-hot-pink font-bold text-[15px] mb-5 tracking-widest uppercase">Head Office</h4>
             <div className="text-white/80 text-[13px] leading-relaxed mb-10">
-              <p className="mb-1">- M/s. Infinite Learning & Entertainment</p>
               <p className="leading-snug">
                 Electronic City Phase 1,{" "}<br className="hidden sm:block md:hidden" />Bengaluru – 560100
               </p>
@@ -78,7 +77,6 @@ export default function Footer() {
           <div className="flex flex-col items-center text-center">
             <h4 className="text-hot-pink font-bold text-[15px] mb-5 tracking-widest uppercase">Branches</h4>
             <div className="text-white/80 text-[13px] leading-relaxed mb-10">
-              <p className="mb-1">- Aabracadabrrahh Indoor Play Zone</p>
               <p className="leading-snug">
                 <a href="https://maps.app.goo.gl/XFj1o1yGNKX8xo1c9" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors no-underline text-white/80">Electronic City Phase 1, Bengaluru – 560100</a>
               </p>
