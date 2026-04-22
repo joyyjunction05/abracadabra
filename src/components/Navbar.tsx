@@ -6,7 +6,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_LINKS = [
-  { href: "#home", label: "Home" },
+  { href: "/", label: "Home" },
   { href: "#play-zones", label: "Play Zones" },
   { href: "#birthday-parties", label: "Birthdays" },
   { href: "#pricing", label: "Pricing" },
@@ -36,13 +36,13 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-5 py-1">
-        <Link href="/" className="flex items-center py-1 gap-2 no-underline hover:scale-105 transition-transform mr-6 lg:mr-10 shrink-0">
+        <Link href="/" className="flex items-center h-full gap-2 no-underline hover:scale-105 transition-transform mr-4 lg:mr-8 shrink-0">
             <Image
               src="/logo.png"
               alt="Aabracadabrrahh Logo"
-              width={360}
-              height={132}
-              className="w-auto h-[82px] md:h-[100px] object-contain origin-left"
+              width={400}
+              height={150}
+              className="w-auto h-full object-contain origin-left drop-shadow-sm scale-[1.15] md:scale-[1.25]"
               priority
             />
         </Link>

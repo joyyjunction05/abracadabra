@@ -27,9 +27,9 @@ export default function Footer() {
           {/* Left Column: Head Office & Contact */}
           <div className="flex flex-col items-center text-center">
             <h4 className="text-hot-pink font-bold text-[15px] mb-5 tracking-widest uppercase">Head Office</h4>
-            <div className="text-white/80 text-[13px] leading-relaxed mb-10">
+            <div className="text-white/80 text-[13px] leading-relaxed mb-10 px-2 max-w-[280px]">
               <p className="leading-snug">
-                Electronic City Phase 1,{" "}<br className="hidden sm:block md:hidden" />Bengaluru – 560100
+                #30/19, GNR Building, 1<sup>st</sup> Floor,<br />Hulimangala Main Road, Near G M Infinity,<br />Neo Town Thirupalya, Anekal Taluk,<br />Bangalore-560100.
               </p>
             </div>
 
@@ -76,9 +76,11 @@ export default function Footer() {
           {/* Right Column: Branches & Timings */}
           <div className="flex flex-col items-center text-center">
             <h4 className="text-hot-pink font-bold text-[15px] mb-5 tracking-widest uppercase">Branches</h4>
-            <div className="text-white/80 text-[13px] leading-relaxed mb-10">
+            <div className="text-white/80 text-[13px] leading-relaxed mb-10 px-2 max-w-[280px]">
               <p className="leading-snug">
-                <a href="https://maps.app.goo.gl/XFj1o1yGNKX8xo1c9" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors no-underline text-white/80">Electronic City Phase 1, Bengaluru – 560100</a>
+                <a href="https://maps.app.goo.gl/XFj1o1yGNKX8xo1c9" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors no-underline text-white/80">
+                  #30/19, GNR Building, 1<sup>st</sup> Floor,<br />Hulimangala Main Road, Near G M Infinity,<br />Neo Town Thirupalya, Anekal Taluk,<br />Bangalore-560100.
+                </a>
               </p>
             </div>
 
@@ -118,7 +120,7 @@ export default function Footer() {
           </div>
           
           <div className="text-center text-white/50 text-[12px] tracking-wide mt-2">
-            Copyright © {new Date().getFullYear()} Abracadabra. All rights reserved.
+            Copyright © {new Date().getFullYear()} Joyy Junction. All rights reserved.
           </div>
         </div>
       </div>
