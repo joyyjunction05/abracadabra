@@ -108,15 +108,15 @@ export default function Footer() {
         {/* Bottom Section: Policies & Copyright */}
         <div className="mt-12 pt-8 flex flex-col items-center gap-6 border-t border-white/10">
           <div className="flex flex-row flex-wrap justify-center gap-6 md:gap-16 w-full text-[13px]">
-            <a href="/Privacy Policy.docx" target="_blank" rel="noopener noreferrer" className="text-hot-pink font-semibold hover:text-white transition-colors no-underline">
+            <Link href="/privacy" className="text-hot-pink font-semibold hover:text-white transition-colors no-underline">
               Privacy Policy
-            </a>
-            <a href="/T&C.docx" target="_blank" rel="noopener noreferrer" className="text-hot-pink font-semibold hover:text-white transition-colors no-underline">
-              Terms & Conditions
-            </a>
-            <a href="/Refund Policy.docx" target="_blank" rel="noopener noreferrer" className="text-hot-pink font-semibold hover:text-white transition-colors no-underline">
+            </Link>
+            <Link href="/terms" className="text-hot-pink font-semibold hover:text-white transition-colors no-underline">
+              Terms &amp; Conditions
+            </Link>
+            <Link href="/refund" className="text-hot-pink font-semibold hover:text-white transition-colors no-underline">
               Refund Policy
-            </a>
+            </Link>
           </div>
           
           <div className="text-center text-white/50 text-[12px] tracking-wide mt-2">
