@@ -277,6 +277,99 @@ function ContactForm() {
   );
 }
 
+/* ── Gallery Carousel (mobile) ─────────────────── */
+function GalleryCarousel() {
+  const [current, setCurrent] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const total = GALLERY_IMAGES.length;
+
+  const prev = () => setCurrent((c) => (c - 1 + total) % total);
+  const next = () => setCurrent((c) => (c + 1) % total);
+
+  const handleTouchStart = (e: React.TouchEvent) =>
+    setTouchStart(e.touches[0].clientX);
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStart === null) return;
+    const diff = touchStart - e.changedTouches[0].clientX;
+    if (diff > 40) next();
+    else if (diff < -40) prev();
+    setTouchStart(null);
+  };
+
+  const img = GALLERY_IMAGES[current];
+
+  return (
+    <div className="sm:hidden w-full">
+      {/* Card */}
+      <div
+        className="relative select-none"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={current}
+            initial={{ opacity: 0, x: 60 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -60 }}
+            transition={{ duration: 0.28, ease: "easeInOut" }}
+            className={`bg-white p-3 rounded-2xl shadow-[6px_6px_20px_rgba(0,0,0,0.55)] ${img.rotate} mx-auto w-[88%] max-w-sm`}
+          >
+            <div
+              className={`${img.bg} w-full aspect-[4/3] rounded-lg overflow-hidden relative shadow-inner`}
+            >
+              <Image
+                src={img.src}
+                alt={img.altText}
+                fill
+                sizes="88vw"
+                className="object-cover"
+                priority
+              />
+            </div>
+            <p className="text-center font-display text-magic-purple text-sm font-black uppercase tracking-widest mt-3 pb-1">
+              {img.label}
+            </p>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Prev / Next arrows */}
+        <button
+          onClick={prev}
+          aria-label="Previous image"
+          className="absolute left-0 top-1/2 -translate-y-1/2 bg-hot-pink text-white w-10 h-10 rounded-full shadow-[3px_3px_0_var(--magic-purple)] border-2 border-white flex items-center justify-center text-xl font-black transition-transform hover:scale-110 active:scale-95 z-20"
+        >
+          ‹
+        </button>
+        <button
+          onClick={next}
+          aria-label="Next image"
+          className="absolute right-0 top-1/2 -translate-y-1/2 bg-hot-pink text-white w-10 h-10 rounded-full shadow-[3px_3px_0_var(--magic-purple)] border-2 border-white flex items-center justify-center text-xl font-black transition-transform hover:scale-110 active:scale-95 z-20"
+        >
+          ›
+        </button>
+      </div>
+
+      {/* Dot indicators */}
+      <div className="flex justify-center gap-2 mt-5">
+        {GALLERY_IMAGES.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            aria-label={`Go to image ${i + 1}`}
+            className={`rounded-full border-2 border-white transition-all duration-300 ${
+              i === current
+                ? "w-6 h-3 bg-star-gold shadow-[0_0_6px_var(--star-gold)]"
+                : "w-3 h-3 bg-white/40"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 /* ── Home Page ─────────────────────────────────── */
 export default function HomePage() {
   return (
@@ -736,7 +829,11 @@ export default function HomePage() {
             </div>
           </ScrollReveal>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
+          {/* Mobile: swipeable carousel */}
+          <GalleryCarousel />
+
+          {/* sm+: original polaroid scatter grid */}
+          <div className="hidden sm:grid sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
             {GALLERY_IMAGES.map((img, i) => (
               <ScrollReveal key={i} delay={img.delay} className="flex justify-center w-full">
                 <div className={`w-full aspect-[4/3] lg:aspect-[16/9] bg-white p-2.5 md:p-3 rounded-xl shadow-[5px_5px_15px_rgba(0,0,0,0.5)] ${img.rotate} hover:rotate-0 hover:scale-105 hover:z-30 transition-all duration-300 relative group`}>

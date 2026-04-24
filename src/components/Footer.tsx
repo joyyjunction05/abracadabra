@@ -51,9 +51,9 @@ export default function Footer() {
             <Image
               src="/logo.png"
               alt="Aabracadabrrahh Logo"
-              width={220}
-              height={100}
-              className="w-auto h-24 object-contain mb-8 group-hover:scale-105 transition-transform opacity-90"
+              width={320}
+              height={145}
+              className="w-auto h-36 object-contain mb-8 group-hover:scale-105 transition-transform opacity-90"
               priority
             />
             <h4 className="text-white font-bold text-[15px] mb-5 tracking-widest uppercase">Follow Us</h4>
