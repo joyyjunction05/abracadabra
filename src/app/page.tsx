@@ -190,13 +190,16 @@ function ContactForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const text =
-      `Hi Aabracadabrrahh!\n\n` +
-      `My name is ${form.name} and I wanted to reach out.\n\n` +
-      `My Email: ${form.email}\n` +
-      `Subject: ${form.subject}\n\n` +
-      `My Message:\n${form.message}\n\n` +
-      `Looking forward to hearing from you.`;
+      `Hi Aabracadabrrahh,\n\n` +
+      `My name is ${form.name} and I am reaching out to you regarding ${form.subject}.\n\n` +
+      `${form.message}\n\n` +
+      `You can reply to me here on WhatsApp or at my email address: ${form.email}\n\n` +
+      `Looking forward to hearing from you!`;
     window.open(`https://wa.me/917996693125?text=${encodeURIComponent(text)}`, "_blank");
+    
+    setTimeout(() => {
+      setForm({ name: "", email: "", subject: "", message: "" });
+    }, 500);
   };
 
   const inputBase =
