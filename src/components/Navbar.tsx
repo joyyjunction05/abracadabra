@@ -3,10 +3,11 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_LINKS = [
-  { href: "/", label: "Home" },
+  { href: "#home", label: "Home" },
   { href: "#play-zones", label: "Play Zones" },
   { href: "#birthday-parties", label: "Birthdays" },
   { href: "#pricing", label: "Pricing" },
@@ -20,6 +21,12 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
+  // Resolve href: prefix hash links with '/' when not on home page
+  const resolveHref = (href: string) =>
+    href.startsWith("#") && !isHome ? `/${href}` : href;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -52,7 +59,7 @@ export default function Navbar() {
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
-              href={link.href}
+              href={resolveHref(link.href)}
               className="relative text-[11px] lg:text-[13px] xl:text-base font-black text-magic-purple/80 hover:text-magic-purple transition-all duration-200 no-underline tracking-normal lg:tracking-wide xl:tracking-wider px-2 lg:px-2.5 xl:px-4 py-1.5 rounded-full hover:bg-star-gold hover:shadow-[0_3px_0_var(--hot-pink)] hover:-translate-y-0.5 active:translate-y-0 active:shadow-none whitespace-nowrap"
             >
               {link.label}
@@ -102,7 +109,7 @@ export default function Navbar() {
               {NAV_LINKS.map((link) => (
                 <Link
                   key={link.href}
-                  href={link.href}
+                  href={resolveHref(link.href)}
                   className="relative block w-full text-center text-lg font-black text-magic-purple/90 bg-magic-purple/5 border-2 border-transparent hover:border-magic-purple hover:text-magic-purple transition-all duration-200 no-underline py-3 px-4 rounded-full hover:bg-star-gold active:bg-star-gold shadow-[0_3px_0_rgba(0,0,0,0.05)] hover:shadow-[0_4px_0_var(--hot-pink)] hover:-translate-y-1 active:translate-y-0 active:shadow-none mb-1"
                   onClick={() => setMobileOpen(false)}
                 >

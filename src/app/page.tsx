@@ -382,7 +382,7 @@ export default function HomePage() {
       {/* ========= ZERO: HERO (MAXIMALIST) ========= */}
       <section
         id="home"
-        className="relative flex items-center justify-center overflow-hidden bg-hero-carnival pt-2 md:pt-8 scroll-mt-24 min-h-[90vh] md:min-h-screen"
+        className="relative flex items-center justify-center overflow-hidden bg-hero-carnival pt-2 md:pt-8 scroll-mt-20 md:scroll-mt-24 min-h-[90vh] md:min-h-screen"
       >
         {/* Ninduga Background layers */}
         <div className="absolute inset-0 bg-pattern-stripes opacity-20" />
@@ -458,7 +458,7 @@ export default function HomePage() {
       {/* ========= ONE: PLAY ZONES (Overlapping Cards) ========= */}
       <section
         id="play-zones"
-        className="py-6 px-4 bg-pattern-dots bg-off-white relative z-10 scroll-mt-24 lg:h-[calc(100vh-6rem)] lg:flex lg:flex-col lg:justify-center lg:overflow-hidden"
+        className="py-6 px-4 bg-pattern-dots bg-off-white relative z-10 scroll-mt-20 md:scroll-mt-40 lg:h-[calc(100vh-6rem)] lg:flex lg:flex-col lg:justify-center lg:overflow-hidden"
       >
         <div className="mx-auto max-w-7xl w-full">
           <ScrollReveal>
@@ -509,7 +509,7 @@ export default function HomePage() {
       </section>
 
       {/* ========= TWO: BIRTHDAYS (Abundant & Loud) ========= */}
-      <section id="birthday-parties" className="bg-hot-pink bg-pattern-stripes text-white py-10 lg:py-16 px-4 relative shadow-[0_0_50px_rgba(255,20,147,0.5)] z-20 scroll-mt-24" style={{ clipPath: "polygon(0 4vw, 100% 0, 100% calc(100% - 4vw), 0 100%)", marginTop: "-4vw", marginBottom: "-4vw" }}>
+      <section id="birthday-parties" className="bg-hot-pink bg-pattern-stripes text-white py-10 lg:py-16 px-4 relative shadow-[0_0_50px_rgba(255,20,147,0.5)] z-20 scroll-mt-20 md:scroll-mt-40" style={{ clipPath: "polygon(0 4vw, 100% 0, 100% calc(100% - 4vw), 0 100%)", marginTop: "-4vw", marginBottom: "-4vw" }}>
         <SparkleStars count={30} />
         <div className="mx-auto max-w-6xl relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-12">
@@ -570,7 +570,7 @@ export default function HomePage() {
       </section>
 
       {/* ========= 2.5: PRICING TICKETS ========= */}
-      <section id="pricing" className="py-10 lg:py-14 px-4 bg-ball-green bg-pattern-dots relative z-10 shadow-[0_-10px_30px_rgba(0,0,0,0.2)] scroll-mt-24">
+      <section id="pricing" className="py-10 lg:py-14 px-4 bg-ball-green bg-pattern-dots relative z-10 shadow-[0_-10px_30px_rgba(0,0,0,0.2)] scroll-mt-20 md:scroll-mt-40">
         <SparkleStars count={20} />
         <div className="mx-auto max-w-6xl relative z-10">
           <ScrollReveal>
@@ -789,7 +789,7 @@ export default function HomePage() {
       </section>
 
       {/* ========= THREE: WHAT'S ON (Sticky Notes) ========= */}
-      <section id="events" className="py-10 lg:py-12 px-4 bg-slide-orange bg-pattern-dots relative z-10 scroll-mt-24 lg:h-[calc(100vh-6rem)] lg:min-h-[700px] flex flex-col justify-center">
+      <section id="events" className="py-10 lg:py-12 px-4 bg-slide-orange bg-pattern-dots relative z-10 scroll-mt-20 md:scroll-mt-40 lg:h-[calc(100vh-6rem)] lg:min-h-[700px] flex flex-col justify-center">
         <div className="mx-auto max-w-7xl">
           <ScrollReveal>
             <div className="text-center mb-8 lg:mb-10 relative">
@@ -822,7 +822,7 @@ export default function HomePage() {
       </section>
 
       {/* ========= FOUR: WALL OF MAGIC (Polaroid Scatter) ========= */}
-      <section id="gallery" className="bg-magic-purple py-8 lg:py-10 px-4 shadow-inner relative scroll-mt-24">
+      <section id="gallery" className="bg-magic-purple py-8 lg:py-10 px-4 shadow-inner relative scroll-mt-20 md:scroll-mt-40">
         <div className="mx-auto max-w-7xl relative z-10">
            <ScrollReveal>
             <div className="text-center mb-6 lg:mb-8">
@@ -909,7 +909,7 @@ export default function HomePage() {
       </section>
 
       {/* ========= FIVE: VISIT / TRUST STRIP ========= */}
-      <section id="visit" className="bg-sky-cyan text-white py-12 md:py-24 px-4 bg-pattern-stripes relative z-20 shadow-[0_-20px_50px_rgba(0,0,0,0.2)] scroll-mt-24">
+      <section id="visit" className="bg-sky-cyan text-white py-12 md:py-24 px-4 bg-pattern-stripes relative z-20 shadow-[0_-20px_50px_rgba(0,0,0,0.2)] scroll-mt-20 md:scroll-mt-40">
         <div className="mx-auto max-w-6xl">
           <div className="bg-white rounded-3xl md:rounded-[40px] p-6 sm:p-8 md:p-14 shadow-2xl relative border border-white/40">
              <ScrollReveal>
@@ -980,7 +980,7 @@ export default function HomePage() {
       </section>
 
       {/* ========= SIX: CONTACT US ========= */}
-      <section id="contact" className="py-8 lg:py-10 px-4 bg-deep-violet bg-pattern-stripes relative overflow-hidden scroll-mt-24 lg:h-[calc(100vh-6rem)] lg:min-h-[700px] flex flex-col justify-center">
+      <section id="contact" className="py-8 lg:py-10 px-4 bg-deep-violet bg-pattern-stripes relative overflow-hidden scroll-mt-20 md:scroll-mt-40 lg:h-[calc(100vh-6rem)] lg:min-h-[700px] flex flex-col justify-center">
         <SparkleStars count={30} />
 
         {/* Floating decorators */}
@@ -1000,10 +1000,10 @@ export default function HomePage() {
           transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         >🎂</motion.span>
 
-        <div className="mx-auto max-w-6xl relative z-10 w-full">
+        <div className="mx-auto max-w-6xl relative z-10 w-full" style={{ zoom: 0.9 }}>
           {/* Section Header */}
           <ScrollReveal>
-            <div className="text-center mb-6">
+            <div className="text-center mb-6 pt-6 md:pt-10">
               <div className="inline-block bg-hot-pink text-white px-6 py-2 rounded-full font-black text-xl md:text-2xl uppercase font-display shadow-[4px_4px_0_var(--star-gold)] border-4 border-white -rotate-1 mb-2">
                 Contact Us 🎀
               </div>
