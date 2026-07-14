@@ -405,7 +405,7 @@ export default function HomePage() {
           <div className="relative flex justify-center mt-4 md:mt-0 w-max max-w-[100vw]">
             <span className="absolute -top-4 -left-2 md:-top-6 md:-left-8 text-2xl md:text-5xl animate-wiggle drop-shadow-md">✨</span>
             <motion.h1
-              className="text-[2.2rem] xxs:text-3xl xs:text-4xl sm:text-6xl md:text-[5.5rem] lg:text-[7rem] text-white leading-tight md:leading-[0.9] font-black uppercase tracking-tighter mb-4 md:mb-6 relative z-10 w-max text-center"
+              className="text-[2.2rem] xxs:text-3xl xs:text-4xl sm:text-6xl md:text-[5.5rem] lg:text-[7rem] text-white leading-tight md:leading-[0.9] font-black tracking-tighter mb-4 md:mb-6 relative z-10 w-max text-center"
               style={{
                 fontFamily: "var(--font-display)",
                 textShadow: "0.05em 0.05em 0px var(--slide-orange), 0.1em 0.1em 0px var(--hot-pink), 0.15em 0.15em 0px var(--deep-violet)",
@@ -415,7 +415,7 @@ export default function HomePage() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6 }}
             >
-              Aabracadabrrahh!
+              Aabra-ca-dabrrahh!
             </motion.h1>
             <span className="absolute -bottom-1 -right-2 md:-bottom-4 md:-right-8 text-2xl md:text-5xl animate-bounce-slow drop-shadow-md z-0">✨</span>
           </div>
@@ -537,7 +537,7 @@ export default function HomePage() {
               </ScrollReveal>
             </div>
             
-            <div className="flex-1 w-full max-w-md relative">
+            <div className="flex-1 w-full max-w-md relative hidden">
               <ScrollReveal delay={200}>
                 {/* Layered overlapping tickets */}
                 <div className="bg-white p-5 md:p-8 rounded-3xl shadow-2xl md:rotate-3 border-8 border-star-gold relative z-10">
@@ -574,14 +574,14 @@ export default function HomePage() {
         <SparkleStars count={20} />
         <div className="mx-auto max-w-6xl relative z-10">
           <ScrollReveal>
-            <div className="text-center mb-8 lg:mb-10 relative">
+            <div className="text-center mb-8 lg:mb-10 relative hidden">
               <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tight font-display drop-shadow-[5px_5px_0_var(--magic-purple)] mb-3">
                 Admission <span className="text-star-gold" style={{ textShadow: "5px 5px 0 var(--magic-purple)" }}>Tickets</span>
               </h2>
             </div>
           </ScrollReveal>
 
-          <div className="flex flex-col lg:flex-row justify-center gap-10 lg:gap-14 items-stretch">
+          <div className="hidden flex flex-col lg:flex-row justify-center gap-10 lg:gap-14 items-stretch">
             
             {/* KIDS TICKET */}
             <ScrollReveal delay={100} className="w-full max-w-md">
@@ -674,16 +674,16 @@ export default function HomePage() {
           </div>
 
           {/* DETAILED BIRTHDAY PACKAGES GRID (Full Width) */}
-          <div className="mt-20 lg:mt-32 max-w-5xl mx-auto">
+          <div className="mt-4 max-w-5xl mx-auto">
             <ScrollReveal>
-              <div className="text-center mb-10">
+              <div className="text-center mb-10 hidden">
                 <h3 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight font-display drop-shadow-[3px_3px_0_var(--magic-purple)] mb-3">
                   Choose Your <span className="text-hot-pink" style={{ textShadow: "3px 3px 0 var(--magic-purple)" }}>Package</span>
                 </h3>
                 <p className="text-white/80 font-bold uppercase tracking-widest text-sm">Every party tailored to perfection</p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-12">
+              <div className="hidden grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-12">
                 {[
                   {
                     name: "Silver", price: "₹700", icon: "🍰", desc: "Cozy Corner", capacity: "5–10 Kids",
