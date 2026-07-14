@@ -10,7 +10,6 @@ const NAV_LINKS = [
   { href: "#home", label: "Home" },
   { href: "#play-zones", label: "Play Zones" },
   { href: "#birthday-parties", label: "Birthdays" },
-
   { href: "#events", label: "Events" },
   { href: "#visit", label: "Visit" },
   { href: "#gallery", label: "Gallery" },

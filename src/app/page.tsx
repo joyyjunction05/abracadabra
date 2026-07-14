@@ -581,7 +581,7 @@ export default function HomePage() {
             </div>
           </ScrollReveal>
 
-          <div className="hidden flex flex-col lg:flex-row justify-center gap-10 lg:gap-14 items-stretch">
+          <div className="hidden">
             
             {/* KIDS TICKET */}
             <ScrollReveal delay={100} className="w-full max-w-md">
@@ -683,7 +683,7 @@ export default function HomePage() {
                 <p className="text-white/80 font-bold uppercase tracking-widest text-sm">Every party tailored to perfection</p>
               </div>
 
-              <div className="hidden grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-12">
+              <div className="hidden">
                 {[
                   {
                     name: "Silver", price: "₹700", icon: "🍰", desc: "Cozy Corner", capacity: "5–10 Kids",
@@ -771,7 +771,7 @@ export default function HomePage() {
                   PLAN IT VIA WHATSAPP <MessageCircle className="ml-3 group-hover:rotate-12 transition-transform shadow-sm rounded-full bg-white text-magic-purple p-1 hidden sm:block" size={32} />
                 </a>
                 <div className="flex flex-col sm:flex-row items-center gap-3 mt-1">
-                  <p className="text-white/80 text-xs font-bold uppercase tracking-widest bg-black/10 py-2 px-6 rounded-full inline-block border border-white/20">
+                  <p className="hidden text-white/80 text-xs font-bold uppercase tracking-widest bg-black/10 py-2 px-6 rounded-full inline-block border border-white/20">
                     *18% GST Applicable
                   </p>
                   <p className="text-magic-purple text-xs font-black uppercase tracking-widest bg-star-gold py-2 px-5 rounded-full inline-flex items-center gap-2 border-2 border-magic-purple shadow-[0_3px_0_var(--magic-purple)]">
