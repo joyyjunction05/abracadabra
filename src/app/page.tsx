@@ -11,65 +11,99 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 const WHATS_ON = [
   {
-    title: "Happiness Party 🎉",
-    desc: "Families & friends together every weekend!",
-    pill: "Every Weekend",
+    title: "Happiness Party",
+    desc: "Fun moments for families every day.",
+    pill: "Parties",
     bg: "bg-hot-pink",
     emoji: "🥳",
     rotate: "-rotate-2",
   },
   {
-    title: "Art & Craft 🎨",
-    desc: "Arts and craft corner unleashes creativity.",
-    pill: "Saturdays",
+    title: "Magical Play",
+    desc: "Wonder-filled play for every child.",
+    pill: "Daily Fun",
     bg: "bg-star-gold",
-    emoji: "🎨",
+    emoji: "🪄",
+    rotate: "rotate-2",
+  },
+  {
+    title: "Toddler Mornings",
+    desc: "Safe, happy playtime for toddlers.",
+    pill: "Mornings",
+    bg: "bg-sky-cyan",
+    emoji: "👶",
+    rotate: "-rotate-1",
+  },
+  {
+    title: "After School Play",
+    desc: "Exciting fun after a long school day.",
+    pill: "Afternoons",
+    bg: "bg-slide-orange",
+    emoji: "🚀",
     rotate: "rotate-3",
   },
   {
-    title: "Toddler Mornings 🧸",
-    desc: "Exclusive safe play for tiny tots.",
-    pill: "Weekdays",
-    bg: "bg-sky-cyan",
-    emoji: "🧸",
+    title: "Art & Craft",
+    desc: "Little hands making big imagination.",
+    pill: "Creative",
+    bg: "bg-ball-green",
+    emoji: "🖌️",
+    rotate: "-rotate-3",
+  },
+  {
+    title: "Special Events",
+    desc: "Unique celebrations for every occasion.",
+    pill: "Events",
+    bg: "bg-hot-pink",
+    emoji: "🎈",
     rotate: "rotate-1",
   },
 ];
 
 const EXPLORE_ITEMS = [
-  { label: "Slide", image: "/gallery/gallery_play_structure_1775568255348.png", bg: "from-slide-orange to-deep-violet", rotate: "-rotate-2" },
-  { label: "Interactive Screen", image: "/interactive_screen.png", bg: "from-sky-cyan to-magic-purple", rotate: "rotate-2" },
-  { label: "Toddler Busy Board", image: "/gallery/gallery_busy_board_1775568236187.png", bg: "from-hot-pink to-ride-red", rotate: "-rotate-3" },
-  { label: "Lite-Brite", image: "/lite_brite.png", bg: "from-star-gold to-slide-orange", rotate: "rotate-1" },
-  { label: "Kids Soft Play Area", image: "/gallery/gallery_ball_pit_1775568277347.png", bg: "from-ball-green to-sky-cyan", rotate: "-rotate-2" },
-  { label: "Trampoline", image: "/gallery/gallery_trampoline_normal.png", bg: "from-deep-violet to-hot-pink", rotate: "rotate-3" },
+  { label: "Neon Light Slide", image: "/gallery/optimized/Neon_Light_Slide.webp", bg: "from-slide-orange to-deep-violet", rotate: "-rotate-2" },
+  { label: "Foam Pit & Climbing", image: "/gallery/optimized/FOAM_PIT_and_Wall_climbing.webp", bg: "from-sky-cyan to-magic-purple", rotate: "rotate-2" },
+  { label: "Toddler Zone", image: "/gallery/optimized/Dedicated_Toddler_Zone.webp", bg: "from-hot-pink to-ride-red", rotate: "-rotate-3" },
+  { label: "Pebble Pit", image: "/gallery/optimized/Pebble_Pit.webp", bg: "from-star-gold to-slide-orange", rotate: "rotate-1" },
+  { label: "Spider Tunnel", image: "/gallery/optimized/Spider_Tunnel.webp", bg: "from-ball-green to-sky-cyan", rotate: "-rotate-2" },
+  { label: "Trampoline Park", image: "/gallery/optimized/Trampoline,_FOAM_Pit_and_Wall_Climbing.webp", bg: "from-deep-violet to-hot-pink", rotate: "rotate-3" },
+  { label: "Obstacle Course", image: "/gallery/optimized/Obstacle_Course_(3).webp", bg: "from-magic-purple to-ride-red", rotate: "-rotate-1" },
+  { label: "Ball Shower", image: "/gallery/optimized/Ball_Shower.webp", bg: "from-slide-orange to-star-gold", rotate: "rotate-2" }
 ];
 
 const PLAY_ACTIVITIES = [
-  "Slide",
-  "Interactive Screen",
-  "Toddler Busy Board",
-  "Lite-Brite",
-  "Kids Soft Play Area",
-  "Trampoline"
+  "Neon Light Slide",
+  "Foam Pit & Climbing",
+  "Toddler Zone",
+  "Pebble Pit",
+  "Spider Tunnel",
+  "Trampoline Park",
+  "Obstacle Course",
+  "Ball Shower"
 ];
 
 const TRUST_ITEMS = [
-  { icon: <Eye size={28} strokeWidth={2.5} className="text-magic-purple" />, label: "Bright & Visible Play" },
-  { icon: <Sparkles size={28} strokeWidth={2.5} className="text-hot-pink" />, label: "Clean & Maintained" },
-  { icon: <ShieldCheck size={28} strokeWidth={2.5} className="text-sky-cyan" />, label: "Safe & Engaging" },
-  { icon: <Users size={28} strokeWidth={2.5} className="text-star-gold" />, label: "Friendly Staffing" },
-  { icon: <Coffee size={28} strokeWidth={2.5} className="text-deep-violet" />, label: "Comfortable Cafe" },
-  { icon: <Coffee size={28} strokeWidth={2.5} className="text-ball-green" />, label: "Air-conditioned & Comfortable Seating" },
+  { icon: <ShieldCheck size={28} strokeWidth={2.5} className="text-magic-purple" />, label: "Safe, Secure & Hygienic Environment" },
+  { icon: <Heart size={28} strokeWidth={2.5} className="text-hot-pink" />, label: "Women-Owned & Women-Operated" },
+  { icon: <Rocket size={28} strokeWidth={2.5} className="text-sky-cyan" />, label: "Soft Play, Trampoline & Active Play" },
+  { icon: <Eye size={28} strokeWidth={2.5} className="text-star-gold" />, label: "Dedicated Toddler Zone" },
+  { icon: <Sparkles size={28} strokeWidth={2.5} className="text-deep-violet" />, label: "Art Activities, Workshops & Classes" },
+  { icon: <PartyPopper size={28} strokeWidth={2.5} className="text-ball-green" />, label: "Holiday Activities & Special Events" },
+  { icon: <Users size={28} strokeWidth={2.5} className="text-magic-purple" />, label: "Space Built for Parent Comfort & Engagement" },
+  { icon: <Coffee size={28} strokeWidth={2.5} className="text-hot-pink" />, label: "Centralized AC (Heating & Cooling)" },
+  { icon: <Clock size={28} strokeWidth={2.5} className="text-sky-cyan" />, label: "Emergency Kids Drop-Off Available" },
+  { icon: <Ticket size={28} strokeWidth={2.5} className="text-star-gold" />, label: "Membership Plans Available" },
 ];
 
 const GALLERY_IMAGES = [
-  { src: "/gallery/gallery_busy_board_1775568236187.png", label: "Busy Board Fun", altText: "Toddlers developing fine motor skills at the wooden busy board within Aabracadabrrahh indoor play zone", rotate: "-rotate-6", bg: "bg-magic-purple", delay: 0 },
-  { src: "/gallery/gallery_play_structure_1775568255348.png", label: "Massive Play Structure", altText: "Huge multi-level indoor kids play structure with wave slides and colorful soft play obstacles", rotate: "rotate-3", bg: "bg-hot-pink", delay: 100 },
-  { src: "/gallery/gallery_ball_pit_1775568277347.png", label: "Colorful Ball Pit", altText: "Premium colorful toddler ball pit filled with cyan and pink balls in a modern Bengaluru playplace", rotate: "-rotate-2", bg: "bg-slide-orange", delay: 200 },
-  { src: "/gallery/gallery_birthday_party_1775568311467.png", label: "Premium Birthdays", altText: "Beautifully decorated kids birthday party banquet table inside a fun indoor amusement center", rotate: "rotate-6", bg: "bg-star-gold", delay: 300 },
-  { src: "/gallery/gallery_trampoline_normal.png", label: "Trampolines", altText: "Kids jumping safely on an indoor trampoline park", rotate: "-rotate-4", bg: "bg-sky-cyan", delay: 400 },
-  { src: "/gallery/gallery_parent_lounge_1775568363278.png", label: "Parent Lounge", altText: "Comfortable air-conditioned parent seating lounge with snacks, overlooking the children's play area", rotate: "rotate-2", bg: "bg-ball-green", delay: 500 },
+  { type: "video", youtubeId: "YOUR_FACILITY_VIDEO_ID", label: "Facility Tour", altText: "Facility Tour Video", rotate: "-rotate-2", bg: "bg-sky-cyan", delay: 0 },
+  { type: "video", youtubeId: "YOUR_BIRTHDAY_VIDEO_ID", label: "Epic Birthdays", altText: "Birthday Party Celebration Video", rotate: "rotate-2", bg: "bg-hot-pink", delay: 100 },
+  { type: "image", src: "/gallery/optimized/Neon_Light_Slide.webp", label: "Neon Slide", altText: "Awesome glowing neon light tube slide", rotate: "-rotate-4", bg: "bg-magic-purple", delay: 200 },
+  { type: "image", src: "/gallery/optimized/Dedicated_Toddler_Zone.webp", label: "Toddler Zone", altText: "Dedicated safe toddler soft play zone", rotate: "rotate-3", bg: "bg-star-gold", delay: 300 },
+  { type: "image", src: "/gallery/optimized/FOAM_PIT_and_Wall_climbing.webp", label: "Foam Pit", altText: "Large foam pit and rock climbing wall", rotate: "-rotate-2", bg: "bg-slide-orange", delay: 400 },
+  { type: "image", src: "/gallery/optimized/Obstacle_Course_(3).webp", label: "Obstacles", altText: "Fun challenging kids obstacle course", rotate: "rotate-4", bg: "bg-ball-green", delay: 500 },
+  { type: "image", src: "/gallery/optimized/Trampoline,_FOAM_Pit_and_Wall_Climbing.webp", label: "Trampolines", altText: "Massive trampoline park and foam pit", rotate: "-rotate-2", bg: "bg-sky-cyan", delay: 600 },
+  { type: "image", src: "/gallery/optimized/Ball_Shower.webp", label: "Ball Shower", altText: "Huge colorful ball shower pit at play zone", rotate: "rotate-3", bg: "bg-hot-pink", delay: 700 },
 ];
 
 /* ── Ninduga Decorators (Extreme abundance of floating elements) ── */
@@ -280,98 +314,7 @@ function ContactForm() {
   );
 }
 
-/* ── Gallery Carousel (mobile) ─────────────────── */
-function GalleryCarousel() {
-  const [current, setCurrent] = useState(0);
-  const [touchStart, setTouchStart] = useState<number | null>(null);
-  const total = GALLERY_IMAGES.length;
 
-  const prev = () => setCurrent((c) => (c - 1 + total) % total);
-  const next = () => setCurrent((c) => (c + 1) % total);
-
-  const handleTouchStart = (e: React.TouchEvent) =>
-    setTouchStart(e.touches[0].clientX);
-
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStart === null) return;
-    const diff = touchStart - e.changedTouches[0].clientX;
-    if (diff > 40) next();
-    else if (diff < -40) prev();
-    setTouchStart(null);
-  };
-
-  const img = GALLERY_IMAGES[current];
-
-  return (
-    <div className="sm:hidden w-full">
-      {/* Card */}
-      <div
-        className="relative select-none"
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
-      >
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={current}
-            initial={{ opacity: 0, x: 60 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -60 }}
-            transition={{ duration: 0.28, ease: "easeInOut" }}
-            className={`bg-white p-3 rounded-2xl shadow-[6px_6px_20px_rgba(0,0,0,0.55)] ${img.rotate} mx-auto w-[88%] max-w-sm`}
-          >
-            <div
-              className={`${img.bg} w-full aspect-[4/3] rounded-lg overflow-hidden relative shadow-inner`}
-            >
-              <Image
-                src={img.src}
-                alt={img.altText}
-                fill
-                sizes="88vw"
-                className="object-cover"
-                priority
-              />
-            </div>
-            <p className="text-center font-display text-magic-purple text-sm font-black uppercase tracking-widest mt-3 pb-1">
-              {img.label}
-            </p>
-          </motion.div>
-        </AnimatePresence>
-
-        {/* Prev / Next arrows */}
-        <button
-          onClick={prev}
-          aria-label="Previous image"
-          className="absolute left-0 top-1/2 -translate-y-1/2 bg-hot-pink text-white w-10 h-10 rounded-full shadow-[3px_3px_0_var(--magic-purple)] border-2 border-white flex items-center justify-center text-xl font-black transition-transform hover:scale-110 active:scale-95 z-20"
-        >
-          ‹
-        </button>
-        <button
-          onClick={next}
-          aria-label="Next image"
-          className="absolute right-0 top-1/2 -translate-y-1/2 bg-hot-pink text-white w-10 h-10 rounded-full shadow-[3px_3px_0_var(--magic-purple)] border-2 border-white flex items-center justify-center text-xl font-black transition-transform hover:scale-110 active:scale-95 z-20"
-        >
-          ›
-        </button>
-      </div>
-
-      {/* Dot indicators */}
-      <div className="flex justify-center gap-2 mt-5">
-        {GALLERY_IMAGES.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrent(i)}
-            aria-label={`Go to image ${i + 1}`}
-            className={`rounded-full border-2 border-white transition-all duration-300 ${
-              i === current
-                ? "w-6 h-3 bg-star-gold shadow-[0_0_6px_var(--star-gold)]"
-                : "w-3 h-3 bg-white/40"
-            }`}
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
 
 /* ── Home Page ─────────────────────────────────── */
 export default function HomePage() {
@@ -458,11 +401,11 @@ export default function HomePage() {
       {/* ========= ONE: PLAY ZONES (Overlapping Cards) ========= */}
       <section
         id="play-zones"
-        className="py-6 px-4 bg-pattern-dots bg-off-white relative z-10 scroll-mt-20 md:scroll-mt-40 lg:h-[calc(100vh-6rem)] lg:flex lg:flex-col lg:justify-center lg:overflow-hidden"
+        className="py-10 md:py-16 px-4 bg-pattern-dots bg-off-white relative z-10 scroll-mt-20 md:scroll-mt-40"
       >
         <div className="mx-auto max-w-7xl w-full">
           <ScrollReveal>
-            <div className="text-center mb-5 lg:mb-4 relative">
+            <div className="text-center mb-8 lg:mb-12 relative">
               <h2 className="text-4xl md:text-5xl lg:text-5xl font-black text-magic-purple uppercase tracking-tight font-display drop-shadow-[4px_4px_0_var(--slide-orange)] mb-2">
                 Play Zones
               </h2>
@@ -472,17 +415,17 @@ export default function HomePage() {
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 min-[390px]:gap-4 sm:gap-5 lg:gap-2 justify-items-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 justify-items-center">
             {EXPLORE_ITEMS.map((item, i) => (
               <ScrollReveal key={item.label} delay={i * 100} className="w-full flex justify-center">
-                <div className={`w-full max-w-[260px] aspect-[4/5] lg:aspect-auto lg:h-[27vh] rounded-2xl min-[390px]:rounded-[30px] p-2 min-[390px]:p-3 lg:p-5 shadow-xl flex flex-col items-center justify-center text-center cursor-pointer border-4 lg:border-[6px] border-white ${item.rotate} hover:rotate-0 hover:z-20 transition-all duration-300 relative bg-gradient-to-br ${item.bg} group`}>
+                <div className={`w-full max-w-[280px] aspect-[4/5] rounded-2xl min-[390px]:rounded-[30px] p-2 min-[390px]:p-3 lg:p-5 shadow-xl flex flex-col items-center justify-center text-center cursor-pointer border-4 lg:border-[6px] border-white ${item.rotate} hover:rotate-0 hover:z-20 hover:scale-105 transition-all duration-300 relative bg-gradient-to-br ${item.bg} group`}>
                   <div className="absolute -top-3 -right-3 min-[390px]:-top-4 min-[390px]:-right-4 w-8 h-8 min-[390px]:w-10 min-[390px]:h-10 lg:w-12 lg:h-12 bg-star-gold rounded-full flex items-center justify-center text-base min-[390px]:text-xl lg:text-2xl shadow-lg border-2 lg:border-4 border-white animate-wiggle z-20">
                     ⭐
                   </div>
-                  <div className="w-16 h-16 min-[390px]:w-20 min-[390px]:h-20 lg:w-24 lg:h-24 rounded-full border-4 lg:border-[6px] border-white shadow-xl overflow-hidden mb-1.5 lg:mb-3 relative flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                    <Image src={item.image} alt={item.label} fill sizes="(max-width: 640px) 80px, 96px" className="object-cover" />
+                  <div className="w-16 h-16 min-[390px]:w-20 min-[390px]:h-20 lg:w-28 lg:h-28 rounded-full border-4 lg:border-[6px] border-white shadow-xl overflow-hidden mb-2 lg:mb-4 relative flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <Image src={item.image} alt={item.label} fill sizes="(max-width: 640px) 80px, 112px" className="object-cover" />
                   </div>
-                  <h3 className="text-[13px] min-[390px]:text-[15px] lg:text-lg font-black text-white uppercase font-display leading-tight drop-shadow-[1px_1px_0_rgba(0,0,0,0.3)] lg:drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] pb-0.5">
+                  <h3 className="text-[13px] min-[390px]:text-[15px] lg:text-xl font-black text-white uppercase font-display leading-tight drop-shadow-[1px_1px_0_rgba(0,0,0,0.3)] lg:drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] pb-0.5 px-2">
                     {item.label}
                   </h3>
                 </div>
@@ -789,31 +732,34 @@ export default function HomePage() {
       </section>
 
       {/* ========= THREE: WHAT'S ON (Sticky Notes) ========= */}
-      <section id="events" className="py-10 lg:py-12 px-4 bg-slide-orange bg-pattern-dots relative z-10 scroll-mt-20 md:scroll-mt-40 lg:h-[calc(100vh-6rem)] lg:min-h-[700px] flex flex-col justify-center">
+      <section id="events" className="py-12 lg:py-20 px-4 bg-slide-orange bg-pattern-dots relative z-10 scroll-mt-20 md:scroll-mt-40 flex flex-col justify-center">
         <div className="mx-auto max-w-7xl">
           <ScrollReveal>
             <div className="text-center mb-8 lg:mb-10 relative">
               <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-white uppercase font-display drop-shadow-[5px_5px_0_var(--magic-purple)] mb-2">
                 What&apos;s On 🎪
               </h2>
+              <p className="text-white font-bold uppercase tracking-widest text-sm md:text-base mt-4 bg-magic-purple/20 inline-block px-6 py-2 rounded-full border-2 border-white/30 backdrop-blur-sm">
+                ✨ All activities available every day ✨
+              </p>
             </div>
           </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 justify-items-center">
             {WHATS_ON.map((item, i) => (
               <ScrollReveal key={item.title} delay={i * 100}>
-                <div className={`${item.bg} w-full max-w-[320px] p-5 sm:p-6 rounded-none shadow-[8px_8px_0_rgba(0,0,0,0.2)] ${item.rotate} hover:scale-105 transition-transform border-8 border-white relative`}>
+                <div className={`${item.bg} w-full max-w-[320px] p-5 sm:p-6 rounded-none shadow-[8px_8px_0_rgba(0,0,0,0.2)] ${item.rotate} hover:scale-105 transition-transform border-8 border-white relative h-full flex flex-col`}>
                   {/* Pin logic */}
                   <div className="absolute -top-4 left-1/2 -ml-3 w-6 h-6 rounded-full bg-ride-red shadow-md border-2 border-white" />
                   
-                  <span className="inline-block px-3 py-1 bg-white text-magic-purple text-xs font-black uppercase rounded-full border-2 border-magic-purple mb-3 shadow-[2px_2px_0_var(--magic-purple)]">
+                  <span className="inline-block self-start px-3 py-1 bg-white text-magic-purple text-xs font-black uppercase rounded-full border-2 border-magic-purple mb-3 shadow-[2px_2px_0_var(--magic-purple)]">
                     {item.pill}
                   </span>
                   <div className="text-5xl mb-3">{item.emoji}</div>
                   <h3 className="text-2xl font-black text-magic-purple mb-2 uppercase font-display leading-tight drop-shadow-sm">
                     {item.title}
                   </h3>
-                  <p className="text-magic-purple font-bold text-base leading-snug">{item.desc}</p>
+                  <p className="text-magic-purple font-bold text-base leading-snug mt-auto">{item.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -832,29 +778,47 @@ export default function HomePage() {
             </div>
           </ScrollReveal>
           
-          {/* Mobile: swipeable carousel */}
-          <GalleryCarousel />
+          {/* Unified responsive grid */}
+          <div className="flex flex-col gap-6 lg:gap-8">
+            {/* Videos Section */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {GALLERY_IMAGES.filter(img => img.type === 'video').map((img, i) => (
+                <ScrollReveal key={`video-${i}`} delay={img.delay} className="w-full">
+                  <div className={`w-full aspect-video bg-white p-2 rounded-2xl shadow-xl hover:scale-[1.02] transition-transform duration-300 relative group`}>
+                    <div className={`${img.bg} w-full h-full rounded-xl overflow-hidden shadow-inner relative`}>
+                      <iframe 
+                        src={`https://www.youtube.com/embed/${img.youtubeId}?rel=0`} 
+                        title={img.label} 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowFullScreen 
+                        className="w-full h-full border-0 absolute inset-0"
+                      ></iframe>
+                    </div>
+                  </div>
+                  <h3 className="text-center font-display text-white text-lg mt-4 tracking-wider uppercase drop-shadow-sm">{img.label}</h3>
+                </ScrollReveal>
+              ))}
+            </div>
 
-          {/* sm+: original polaroid scatter grid */}
-          <div className="hidden sm:grid sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
-            {GALLERY_IMAGES.map((img, i) => (
-              <ScrollReveal key={i} delay={img.delay} className="flex justify-center w-full">
-                <div className={`w-full aspect-[4/3] lg:aspect-[16/9] bg-white p-2.5 md:p-3 rounded-xl shadow-[5px_5px_15px_rgba(0,0,0,0.5)] ${img.rotate} hover:rotate-0 hover:scale-105 hover:z-30 transition-all duration-300 relative group`}>
-                  <div className={`${img.bg} w-full h-[85%] rounded-md flex items-center justify-center overflow-hidden shadow-inner relative`}>
-                    <Image src={img.src} alt={img.altText} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-110 transition-transform duration-500" />
+            {/* Photos Section */}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 mt-4">
+              {GALLERY_IMAGES.filter(img => img.type === 'image').map((img, i) => (
+                <ScrollReveal key={`img-${i}`} delay={img.delay} className={`w-full ${i === 4 ? 'lg:col-start-2' : ''}`}>
+                  <div className={`w-full aspect-[4/3] bg-white p-2 rounded-2xl shadow-xl hover:scale-[1.03] transition-transform duration-300 relative group`}>
+                    <div className={`${img.bg} w-full h-full rounded-xl overflow-hidden shadow-inner relative`}>
+                      <Image src={img.src!} alt={img.altText} fill sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw" className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                    </div>
                   </div>
-                  <div className="h-[15%] w-full flex items-center justify-center font-display text-magic-purple text-xs md:text-sm uppercase tracking-widest mt-2 border-t border-gray-200/50 pt-2 font-bold">
-                    {img.label}
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
+                  <h3 className="text-center font-display text-white text-sm mt-3 tracking-wide uppercase drop-shadow-sm">{img.label}</h3>
+                </ScrollReveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* ========= TIMINGS STRIP ========= */}
-      <section className="py-10 lg:py-14 px-4 bg-deep-violet relative z-10 overflow-hidden">
+      <section id="timings" className="py-10 lg:py-14 px-4 bg-deep-violet relative z-10 overflow-hidden scroll-mt-20 md:scroll-mt-40">
         {/* Background sparkle pattern */}
         <div className="absolute inset-0 bg-pattern-stripes opacity-10 pointer-events-none" />
 
@@ -914,15 +878,15 @@ export default function HomePage() {
           <div className="bg-white rounded-3xl md:rounded-[40px] p-6 sm:p-8 md:p-14 shadow-2xl relative border border-white/40">
              <ScrollReveal>
                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6 uppercase font-display leading-tight text-magic-purple">
-                 Built Only For Young Families
+                 More Than A Play Area — We&apos;re A Family Space
                </h2>
                <p className="text-foreground/70 font-semibold text-lg md:text-xl mb-10 leading-relaxed max-w-4xl">
-                  We built a massive, bright, and incredibly safe space designed strictly for kids under 12. And because we know the chaos of parenting, we built an air-conditioned, comfortable café right next to the play area — relax, grab a snack, and enjoy their playtime.
+                  A space designed exclusively for children under 12. Bright, safe, and comfortable play environment. Airconditioned café beside the play area for parents to relax and enjoy while kids play.
                </p>
                
                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-12">
-                 {TRUST_ITEMS.map((item) => (
-                   <div key={item.label} className="flex gap-4 items-center bg-white p-4 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-gray-100 hover:shadow-[0_8px_30px_rgba(0,0,0,0.1)] transition-shadow">
+                 {TRUST_ITEMS.map((item, i) => (
+                   <div key={item.label} className={`flex gap-4 items-center bg-white p-4 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-gray-100 hover:shadow-[0_8px_30px_rgba(0,0,0,0.1)] transition-shadow ${i === 9 ? 'md:col-start-2' : ''}`}>
                      <div className="p-3 rounded-xl bg-gray-50 flex items-center justify-center shadow-sm border border-gray-100">
                        {item.icon}
                      </div>
