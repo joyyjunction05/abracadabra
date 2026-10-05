@@ -62,24 +62,24 @@ const WHATS_ON = [
 
 const EXPLORE_ITEMS = [
   { label: "Neon Light Slide", image: "/gallery/optimized/Neon_Light_Slide.webp", bg: "from-slide-orange to-deep-violet", rotate: "-rotate-2" },
-  { label: "Foam Pit & Climbing", image: "/gallery/optimized/FOAM_PIT_and_Wall_climbing.webp", bg: "from-sky-cyan to-magic-purple", rotate: "rotate-2" },
-  { label: "Toddler Zone", image: "/gallery/optimized/Dedicated_Toddler_Zone.webp", bg: "from-hot-pink to-ride-red", rotate: "-rotate-3" },
+  { label: "Toddler Zone", image: "/gallery/optimized/Toddler_Zone_.webp", bg: "from-hot-pink to-ride-red", rotate: "-rotate-3" },
   { label: "Pebble Pit", image: "/gallery/optimized/Pebble_Pit.webp", bg: "from-star-gold to-slide-orange", rotate: "rotate-1" },
-  { label: "Spider Tunnel", image: "/gallery/optimized/Spider_Tunnel.webp", bg: "from-ball-green to-sky-cyan", rotate: "-rotate-2" },
-  { label: "Trampoline Park", image: "/gallery/optimized/Trampoline,_FOAM_Pit_and_Wall_Climbing.webp", bg: "from-deep-violet to-hot-pink", rotate: "rotate-3" },
-  { label: "Obstacle Course", image: "/gallery/optimized/Obstacle_Course_(3).webp", bg: "from-magic-purple to-ride-red", rotate: "-rotate-1" },
-  { label: "Ball Shower", image: "/gallery/optimized/Ball_Shower.webp", bg: "from-slide-orange to-star-gold", rotate: "rotate-2" }
+  { label: "Spider Tower", image: "/gallery/optimized/Spider_Climbing_and_watch_tower.webp", bg: "from-ball-green to-sky-cyan", rotate: "-rotate-2" },
+  { label: "Trampoline Park", image: "/gallery/optimized/Trampoline,_FOAM_Pit_and_Wall_Climbing_.webp", bg: "from-deep-violet to-hot-pink", rotate: "rotate-3" },
+  { label: "Obstacle Course", image: "/gallery/optimized/Obstacle_course_.webp", bg: "from-magic-purple to-ride-red", rotate: "-rotate-1" },
+  { label: "Ball Shower", image: "/gallery/optimized/Ball_Shower_.webp", bg: "from-slide-orange to-star-gold", rotate: "rotate-2" },
+  { label: "Spiral Slide", image: "/gallery/optimized/Spiral_Slide.webp", bg: "from-sky-cyan to-magic-purple", rotate: "rotate-2" },
 ];
 
 const PLAY_ACTIVITIES = [
   "Neon Light Slide",
-  "Foam Pit & Climbing",
   "Toddler Zone",
   "Pebble Pit",
-  "Spider Tunnel",
+  "Spider Tower",
   "Trampoline Park",
   "Obstacle Course",
-  "Ball Shower"
+  "Ball Shower",
+  "Spiral Slide"
 ];
 
 const TRUST_ITEMS = [
@@ -96,14 +96,14 @@ const TRUST_ITEMS = [
 ];
 
 const GALLERY_IMAGES = [
-  { type: "video", youtubeId: "YOUR_FACILITY_VIDEO_ID", label: "Facility Tour", altText: "Facility Tour Video", rotate: "-rotate-2", bg: "bg-sky-cyan", delay: 0 },
-  { type: "video", youtubeId: "YOUR_BIRTHDAY_VIDEO_ID", label: "Epic Birthdays", altText: "Birthday Party Celebration Video", rotate: "rotate-2", bg: "bg-hot-pink", delay: 100 },
+  { type: "video", youtubeId: "aFeY5o1hjPE", label: "Facility Tour", altText: "Facility Tour Video", rotate: "-rotate-2", bg: "bg-sky-cyan", delay: 0 },
+  { type: "video", youtubeId: "ljs3SiCfIgc", label: "Epic Birthdays", altText: "Birthday Party Celebration Video", rotate: "rotate-2", bg: "bg-hot-pink", delay: 100 },
   { type: "image", src: "/gallery/optimized/Neon_Light_Slide.webp", label: "Neon Slide", altText: "Awesome glowing neon light tube slide", rotate: "-rotate-4", bg: "bg-magic-purple", delay: 200 },
-  { type: "image", src: "/gallery/optimized/Dedicated_Toddler_Zone.webp", label: "Toddler Zone", altText: "Dedicated safe toddler soft play zone", rotate: "rotate-3", bg: "bg-star-gold", delay: 300 },
-  { type: "image", src: "/gallery/optimized/FOAM_PIT_and_Wall_climbing.webp", label: "Foam Pit", altText: "Large foam pit and rock climbing wall", rotate: "-rotate-2", bg: "bg-slide-orange", delay: 400 },
-  { type: "image", src: "/gallery/optimized/Obstacle_Course_(3).webp", label: "Obstacles", altText: "Fun challenging kids obstacle course", rotate: "rotate-4", bg: "bg-ball-green", delay: 500 },
-  { type: "image", src: "/gallery/optimized/Trampoline,_FOAM_Pit_and_Wall_Climbing.webp", label: "Trampolines", altText: "Massive trampoline park and foam pit", rotate: "-rotate-2", bg: "bg-sky-cyan", delay: 600 },
-  { type: "image", src: "/gallery/optimized/Ball_Shower.webp", label: "Ball Shower", altText: "Huge colorful ball shower pit at play zone", rotate: "rotate-3", bg: "bg-hot-pink", delay: 700 },
+  { type: "image", src: "/gallery/optimized/Toddler_Zone_.webp", label: "Toddler Zone", altText: "Dedicated safe toddler soft play zone", rotate: "rotate-3", bg: "bg-star-gold", delay: 300 },
+  { type: "image", src: "/gallery/optimized/Spiral_Slide.webp", label: "Spiral Slide", altText: "Fun spiral slide for kids", rotate: "-rotate-2", bg: "bg-slide-orange", delay: 400 },
+  { type: "image", src: "/gallery/optimized/Obstacle_course_.webp", label: "Obstacles", altText: "Fun challenging kids obstacle course", rotate: "rotate-4", bg: "bg-ball-green", delay: 500 },
+  { type: "image", src: "/gallery/optimized/Trampoline,_FOAM_Pit_and_Wall_Climbing_.webp", label: "Trampolines", altText: "Massive trampoline park and foam pit", rotate: "-rotate-2", bg: "bg-sky-cyan", delay: 600 },
+  { type: "image", src: "/gallery/optimized/Ball_Shower_.webp", label: "Ball Shower", altText: "Huge colorful ball shower pit at play zone", rotate: "rotate-3", bg: "bg-hot-pink", delay: 700 },
 ];
 
 /* ── Ninduga Decorators (Extreme abundance of floating elements) ── */

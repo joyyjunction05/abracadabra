@@ -11,7 +11,7 @@ const NAV_LINKS = [
   { href: "#play-zones", label: "Play Zones" },
   { href: "#birthday-parties", label: "Birthdays" },
   { href: "#events", label: "Events" },
-  { href: "#timings", label: "Hours" },
+  { href: "#timings", label: "Business Hours" },
   { href: "#visit", label: "Visit" },
   { href: "#gallery", label: "Gallery" },
   { href: "/blog", label: "Blog" },
