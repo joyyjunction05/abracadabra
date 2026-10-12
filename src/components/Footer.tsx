@@ -88,11 +88,11 @@ export default function Footer() {
             <div className="w-full max-w-xs flex flex-col gap-3 text-[13px] text-white/80">
               <div className="flex justify-between border-b border-dashed border-white/10 pb-2">
                 <span>Monday To Friday</span>
-                <span className="font-semibold text-white">11 AM – 8:30 PM</span>
+                <span className="font-semibold text-white">11 AM – 9 PM</span>
               </div>
               <div className="flex justify-between border-b border-dashed border-white/10 pb-2">
                 <span>Saturday To Sunday</span>
-                <span className="font-semibold text-white">11 AM – 9 PM</span>
+                <span className="font-semibold text-white">11 AM – 10 PM</span>
               </div>
               <div className="pt-1 pb-1">
                 Socks are mandatory for Kids & Parents

@@ -840,7 +840,7 @@ export default function HomePage() {
                   <span className="text-white font-black text-lg md:text-xl uppercase tracking-wider font-display">Monday to Friday</span>
                 </div>
                 <span className="bg-star-gold text-magic-purple font-black text-lg md:text-xl px-6 py-2 rounded-full shadow-[3px_3px_0_var(--magic-purple)] border-2 border-white uppercase tracking-wider font-display">
-                  11 AM – 8:30 PM
+                  11 AM – 9 PM
                 </span>
               </div>
 
@@ -851,7 +851,7 @@ export default function HomePage() {
                   <span className="text-white font-black text-lg md:text-xl uppercase tracking-wider font-display">Saturday to Sunday</span>
                 </div>
                 <span className="bg-hot-pink text-white font-black text-lg md:text-xl px-6 py-2 rounded-full shadow-[3px_3px_0_var(--magic-purple)] border-2 border-white uppercase tracking-wider font-display">
-                  11 AM – 9 PM
+                  11 AM – 10 PM
                 </span>
               </div>
 
